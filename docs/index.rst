@@ -7,7 +7,6 @@ Contents
 --------
 
 .. toctree::
-    :glob:
     :maxdepth: 2
 
     readme

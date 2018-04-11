@@ -6,7 +6,6 @@ Usage
 Imports
 -------
 
-^^^^^^^^^^^
 binary_tree
 ^^^^^^^^^^^
 
@@ -14,7 +13,6 @@ binary_tree
 
     import binary_tree as tree
 
-^^^^
 Node
 ^^^^
 
@@ -29,7 +27,6 @@ Node
 Node creation
 -------------
 
-^^^^^^^^^^^
 Using string
 ^^^^^^^^^^^
 
@@ -38,7 +35,6 @@ Using string
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
 From in-order and pre-order
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -48,7 +44,6 @@ From in-order and pre-order
     preorder = "1,2,4,3,5,6"
     root = Node.from_in_pre_orders(inorder, preorder)
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 From in-order and post-order
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -65,7 +60,6 @@ From in-order and post-order
 Tree processing
 ---------------
 
-^^^^^^^^^^^^^^^
 Checking a tree
 ^^^^^^^^^^^^^^^
 
@@ -77,7 +71,6 @@ Checking a tree
     if tree.is_symmetric(root):
         print(str(root) + "is symmetrical!")
 
-^^^^^^^^^^^^^^^^^
 Traversing a tree
 ^^^^^^^^^^^^^^^^^
 
@@ -87,7 +80,6 @@ Traversing a tree
         if tree.is_leaf_node(node):  # Checking for leaf nodes
             print(str(node) + "is a leaf node!")
 
-^^^^^^^^^^^^^^^^^^^^^^^
 Getting paths in a tree
 ^^^^^^^^^^^^^^^^^^^^^^^
 
