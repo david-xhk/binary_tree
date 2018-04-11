@@ -5,7 +5,7 @@ Usage
 Imports
 -------
 
-To use the functions provided by ``binary_tree``, you can do the following import::
+To use the functions provided by :module:`binary_tree`, you can do the following import::
 
     import binary_tree as tree
 
@@ -26,7 +26,7 @@ Nodes have a ``left`` and a ``right`` attribute which are expected to also be in
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may get very tedious. The preferrable way of initiating a binary tree structure is to pass in a string of values to the :method:`Node.from_string` constructor::
+However, manually setting up a binary tree structure may get very tedious. The preferrable way of initiating a binary tree structure is to pass in a string of values to the :func:`Node.from_string` constructor::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)

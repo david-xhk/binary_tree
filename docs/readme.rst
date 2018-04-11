@@ -8,22 +8,18 @@ binary_tree provides a Node object and some useful functions like constructors a
 Features
 --------
 
-1. Construct a binary tree
-  * Using string
-  * From in-order and pre-order traversal
-  * From in-order and post-order traversal
+* Construct a binary tree using string
+* Construct a binary tree from in-order and pre-order traversal
+* Construct a binary tree from in-order and post-order traversal
 
-2. Traverse a binary tree  
-  * Pre-order
-  * In-order
-  * Post-order
-  * Level-order
+* Traverse a binary tree by pre-order
+* Traverse a binary tree by in-order
+* Traverse a binary tree by post-order
+* Traverse a binary tree by level-order
 
-3. Get from a binary tree
-  * All root-to-leaf paths
-  * The maximum depth
+* Get all root-to-leaf paths in a binary tree 
+* Get the maximum depth of a binary tree 
 
-4. Check a binary tree
-  * If it has a certain path sum
-  * For symmetry
+* Check if a binary tree has a certain path sum
+* Check if a binary tree is symmetrical
 
