@@ -1,18 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `master` package."""
+"""Tests for `binary_tree` package."""
 
 import pytest
 from binary_tree import Node
-
 
 @pytest.fixture
 def make_tree():
     """Test from_string constructor."""
     treestring = "1, 2, 3, 4, 5, null, 6, 7"
     return Node.from_string(treestring)
-
 
 def test_tree(node):
     """Check the tree structure."""
