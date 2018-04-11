@@ -47,11 +47,11 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 ^^^^^^^^^^^^^
 
-To create a :class:`Node` object, you can simply do::
+To create a :class:`~binary_tree.Node` object, you can simply do::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to also be instances of :class:`Node`. They can be set on initialization like so::
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to also be instances of :class:`~binary_tree.Node`. They can be set on initialization like so::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
@@ -87,7 +87,7 @@ With a tree set up, there are several functions available such as :func:`~binary
     if tree.is_symmetric(root):
         print(str(root) + "is symmetrical!")
 
-You can also :func:`traverse <binary_tree.traverse_pre_order>` down a tree, yielding the respective node with each step of the way. There are four different ways to do so::
+You can also :func:`traverse <binary_tree.traverse_pre_order>` down the tree, yielding the respective node with each step of the way. There are four different methods to do so::
 
     for node in tree.traverse_pre_order(root):
         print(node, "(pre-order traversal)")
@@ -102,7 +102,7 @@ You can also :func:`traverse <binary_tree.traverse_pre_order>` down a tree, yiel
         for node in level:
             print(node, "(level-order traversal)")
 
-On top of doing tree traversals, you can also get the paths between the root node and all the leaf nodes of the binary tree structure using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests. ::
+On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree structure using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
