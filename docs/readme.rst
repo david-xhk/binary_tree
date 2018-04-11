@@ -112,7 +112,7 @@ A single dispatch function, :func:`traverse <binary_tree.traverse>`, is availabl
     for kind in ("pre", "in", "post", "level"):
         traversals.append(list(tree.traverse(root, kind)))
 
-On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree structure using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
+On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
