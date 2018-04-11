@@ -30,7 +30,10 @@ Binary tree data structure with traversal and other utilities.
 Features
 --------
 
-* TODO
+.. py:module:: binary_tree
+
+    .. autoclass:: Node
+        :members:
 
 Credits
 -------
