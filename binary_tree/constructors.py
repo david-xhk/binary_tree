@@ -38,7 +38,6 @@ def from_string(cls, treestring):
                     next_level.append(child)
         level = next_level
 
-
 def from_orders(cls, kind, *orders):
     """Instantiate the parent, the left child, and then the right child.
 
@@ -77,7 +76,6 @@ _sides = {
     "right": 1
 }
 
-
 def _slice_orders(kind, side, *orders):
     """Slice orders based on which order and what side is provided.
     
@@ -103,7 +101,6 @@ def _slice_orders(kind, side, *orders):
         slice_index = _get_binary_index(_kinds[kind], _sides[side], index)
         exec(f"orders[index] = orders[index][{_slices[slice_index]}]")
     return orders
-
 
 def _get_binary_index(*bools):
     """Transform a succession of boolean numbers into a decimal integer.
