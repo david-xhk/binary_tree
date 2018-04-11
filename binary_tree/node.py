@@ -48,58 +48,58 @@ class Node:
         return f"Node({', '.join(args)})"
     
     @classmethod
-    def from_string(cls, treestring):
+    def from_string(cls, tree_string):
         """Instantiate and return a new :class:`Node` from a string.
         
         Args:
-            treestring (str): A flattened, level-order binary tree traversal.
+            tree_string (str): A flattened, level-order binary tree traversal.
                 The node values should be separated by commas.
         
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` representing `treestring`.
-            None: If `treestring` has an invalid root value or does not contain any node values.
+            :class:`Node`: A newly instantiated :class:`Node` representing `tree_string`.
+            None: If `tree_string` has an invalid root value or does not contain any node values.
         """
-        return _make_node_from_string(cls, treestring)
+        return _make_node_from_string(cls, tree_string)
 
     @classmethod
-    def from_in_pre_orders(cls, inorder, preorder):
+    def from_in_pre_orders(cls, in_order, pre_order):
         """Instantiate and return a new :class:`Node` from an in-order and a pre-order traversal.
         
         Note:
-            There cannot be any duplicates in `inorder` and `preorder`.
+            There cannot be any duplicates in `in_order` and `pre_order`.
 
         Args:
-            inorder (:obj:`list` of :obj:`int`): An in-order binary tree traversal.
-            preorder (:obj:`list` of :obj:`int`): A pre-order binary tree traversal.
+            in_order (:obj:`list` of :obj:`int`): An in-order binary tree traversal.
+            pre_order (:obj:`list` of :obj:`int`): A pre-order binary tree traversal.
         
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` entailing `inorder` and `preorder`.
-            None: If `inorder` or `preorder` is empty.
+            :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `pre_order`.
+            None: If `in_order` or `pre_order` is empty.
 
         Raises:
-            IndexError: If `inorder` and `preorder` do not constitute a binary tree,
+            IndexError: If `in_order` and `pre_order` do not constitute a binary tree,
                 or if they contain any duplicates.
         """
-        return _make_node_from_orders(cls, "in-pre", inorder, preorder)
+        return _make_node_from_orders(cls, "in-pre", in_order, pre_order)
 
     @classmethod
-    def from_in_post_orders(cls, inorder, postorder):
+    def from_in_post_orders(cls, in_order, post_order):
         """Instantiate and return a new :class:`Node` from an in-order and a post-order traversal.
         
         Note:
-            There cannot be any duplicates in `inorder` and `postorder`.
+            There cannot be any duplicates in `in_order` and `post_order`.
         
         Args:
-            inorder (:obj:`list` of :obj:`int`): An in-order binary tree traversal.
-            postorder (:obj:`list` of :obj:`int`): A post-order binary tree traversal.
+            in_order (:obj:`list` of :obj:`int`): An in-order binary tree traversal.
+            post_order (:obj:`list` of :obj:`int`): A post-order binary tree traversal.
         
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` entailing `inorder` and `postorder`.
-            None: If `inorder` or `postorder` is empty.
+            :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `post_order`.
+            None: If `in_order` or `post_order` is empty.
 
         Raises:
-            IndexError: If `inorder` and `postorder` do not constitute a binary tree,
+            IndexError: If `in_order` and `post_order` do not constitute a binary tree,
                 or if they contain any duplicates.
         """
-        return _make_node_from_orders(cls, "in-post", inorder, postorder)
+        return _make_node_from_orders(cls, "in-post", in_order, post_order)
 
