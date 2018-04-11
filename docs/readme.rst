@@ -13,7 +13,7 @@ Features
     * From in-order and pre-order traversal
     * From in-order and post-order traversal
 
-2. Traverse a binary tree
+2. Traverse a binary tree  
     * Pre-order
     * In-order
     * Post-order

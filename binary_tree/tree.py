@@ -51,8 +51,8 @@ class Node:
         """Instantiate and return a new :class:`Node` from an in-order and a pre-order traversal.
 
         Args:
-            in_order (``list`` of ``int``): An in-order binary tree traversal.
-            pre_order (``list`` of ``int``): A pre-order binary tree traversal.
+            in_order (``list``[``int``, ...]): An in-order binary tree traversal.
+            pre_order (``list``[``int``, ...]): A pre-order binary tree traversal.
         
         Returns:
             A newly instantiated :class:`Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
@@ -67,8 +67,8 @@ class Node:
         """Instantiate and return a new :class:`Node` from an in-order and a post-order traversal.
         
         Args:
-            in_order (``list`` of ``int``): An in-order binary tree traversal.
-            post_order (``list`` of ``int``): A post-order binary tree traversal.
+            in_order (``list``[``int``, ...]): An in-order binary tree traversal.
+            post_order (``list``[``int``, ...]): A post-order binary tree traversal.
         
         Returns:
             A newly instantiated :class:`Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
@@ -159,11 +159,11 @@ def _slice_orders(kind, side, *orders):
     Args:
         kind (``str``): Either "in-pre" or "in-post".
         side (``str``): Either "left" or "right".
-        *orders (``list`` of ``int``): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
+        *orders (``list``[``int``, ...]): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
             where `in_order` and `pre_order` or `post_order` are lists of ints.
     
     Returns:
-        ``list`` of ``list``: Sliced copies of the orders provided.
+        ``list``[``list``, ``list``]: Sliced copies of the orders provided.
     
     Raises:
         KeyError: If `kind` or `side` is invalid.
@@ -266,7 +266,7 @@ def traverse_level_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``tuple`` of :class:`Node`: A level of nodes in the binary tree.
+        ``tuple``[:class:`Node`, ...]: A level of nodes in the binary tree.
     """
     level = [node]
     while any(level):
@@ -301,7 +301,7 @@ def get_all_paths(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``tuple`` of :class:`Node`: A copy of every node from the root to a leaf.
+        ``tuple``[:class:`Node`, ...]: A copy of every node from the root to a leaf.
     '''
     queue = [node]
     visited = []
