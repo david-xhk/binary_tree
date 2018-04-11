@@ -14,11 +14,11 @@ def make_tree():
 
 def test_tree(node):
     """Check the tree structure."""
-    assert node.value = 1
-    assert node.left.value = 2
-    assert node.right.value = 3
-    assert node.left.left.value = 4
-    assert node.left.right.value = 5
-    assert node.right.right.value = 6
-    assert node.left.left.left.value = 7
+    assert node.value == 1
+    assert node.left.value == 2
+    assert node.right.value == 3
+    assert node.left.left.value == 4
+    assert node.left.right.value == 5
+    assert node.right.right.value == 6
+    assert node.left.left.left.value == 7
 
