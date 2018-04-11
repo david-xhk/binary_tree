@@ -97,3 +97,4 @@ def traverse_level_order(node):
                 next_level.append(getattr(node, side))
         yield tuple(values)
         level = next_level
+
