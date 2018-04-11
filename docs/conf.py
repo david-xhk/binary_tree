@@ -43,7 +43,7 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
-binary_tree_toc = "index"
+binary_treetoc = "index"
 
 # General information about the project.
 project = u'binary_tree'
