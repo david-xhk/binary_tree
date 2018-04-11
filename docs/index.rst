@@ -1,6 +1,27 @@
 Welcome to Binary Tree's documentation!
 ======================================
 
+Contents:
+---------
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   readme
+   usage
+   reference
+   credits
+   installation
+   contributing
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+Badges:
+-------
 .. image:: https://img.shields.io/pypi/v/binary_tree.svg
         :target: https://pypi.python.org/pypi/binary_tree
 .. image:: https://img.shields.io/travis/han-keong/binary_tree.svg
@@ -11,18 +32,3 @@ Welcome to Binary Tree's documentation!
 .. image:: https://pyup.io/repos/github/han-keong/binary_tree/shield.svg
      :target: https://pyup.io/repos/github/han-keong/binary_tree/
      :alt: Updates
-
-Contents:
----------
-
-.. toctree::
-   :maxdepth: 2
-   readme
-   usage
-   reference
-   credits
-   installation
-   contributing
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
