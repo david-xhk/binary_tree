@@ -10,7 +10,7 @@ __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
 __version__ = '0.0.2'
 
-from tree import *
+from .tree import *
 del tree
 
 __all__ = [
