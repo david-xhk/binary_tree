@@ -10,8 +10,15 @@ from helpers import get_all_paths as _get_all_paths
 from node import Node as _Node
 
 
-def is_node(node):
-    return isinstance(node, _Node)
+def is_node(obj):
+    """Check if obj is an instance of Node.
+    Args:
+        obj: Any old object.
+
+    Return:
+        bool: True if obj is indeed a Node, False otherwise.
+    """
+    return isinstance(obj, _Node)
 
 
 def is_symmetric(node):
