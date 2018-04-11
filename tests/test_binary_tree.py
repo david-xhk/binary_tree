@@ -5,31 +5,17 @@
 
 import pytest
 
-from binary_tree import Node
-
 @pytest.fixture
-def response():
+def node():
     """Test from_string constructor."""
-    tree_string = "1,2,3,4,5,null,6,7"
+    from binary_tree import Node
+    tree_string = "1,2,3,null,4"
     return Node.from_string(tree_string)
 
-def test_content(response):
+def test_content(node):
     """Check the tree structure."""
-    assert response.value == 1
-    left_node = response.left
-    assert left_node.value == 2
-    right_node = response.right
-    assert right_node.value == 3
-
-    leftleft_node = left_node.left
-    assert leftleft_node.value == 4
-    leftright_node = left_node.right
-    assert leftright_node.value == 5
-
-    rightleft_node = right_node.left
-    assert rightleft_node is None
-    rightright_node = right_node.right
-    assert rightright_node.value == 6
-
-    leftleftleft_node = leftleft_node.left
-    assert leftleftleft_node.value == 7
+    assert node.value == 1
+    assert node.left.value == 2
+    assert node.right.value == 3
+    assert node.left.left is None
+    assert node.left.right.value == 4
