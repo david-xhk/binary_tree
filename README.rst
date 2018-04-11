@@ -27,15 +27,25 @@ Binary tree data structure with traversal and other utilities.
 * Documentation: https://binary-tree.readthedocs.io.
 
 
-API Reference
--------------
+Features
+--------
 
-:mod:`binary_tree`
-========================
+* Construct a binary tree from:
+    - String
+    - An in-order and a pre-order traversal
+    - An in-order and a post-order traversal
 
-.. currentmodule:: binary_tree
-.. autoclass:: Node
-    :members:
+* Traverse a binary tree in:
+    - Pre-order
+    - In-order
+    - Post-order
+    - Level-order
+
+* Get all root-to-leaf paths in a binary tree
+
+* Check if a tree:
+    - Has a certain path sum
+    - Is symmetrical
 
 
 Credits

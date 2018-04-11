@@ -16,10 +16,20 @@ def response():
 def test_content(response):
     """Check the tree structure."""
     assert response.value == 1
-    assert (response.left).value == 2
-    assert (response.right).value == 3
-    assert ((response.left).left).value == 4
-    assert ((response.left).right).value == 5
-    assert ((response.right).right).value == 6
-    assert (((response.left).left).left).value == 7
+    left_node = response.left
+    assert left_node.value == 2
+    right_node = response.right
+    assert right_node.value == 3
 
+    leftleft_node = left_node.left
+    assert leftleft_node.value == 4
+    leftright_node = left_node.right
+    assert leftright_node.value == 5
+
+    rightleft_node = right_node.left
+    assert rightleft_node is None
+    rightright_node = right_node.right
+    assert rightright_node.value == 6
+
+    leftleftleft_node = leftleft_node.left
+    assert leftleftleft_node.value == 7

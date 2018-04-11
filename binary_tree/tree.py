@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 11/04/2018 2133 +0800
+Last updated on 11/04/2018 2258 +0800
 """
 
 from __future__ import print_function
@@ -71,6 +71,8 @@ class Node:
         
         Returns:
             :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `pre_order`.
+            
+        Returns:
             None: If `in_order` or `pre_order` is empty.
 
         Raises:
@@ -92,6 +94,8 @@ class Node:
         
         Returns:
             :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `post_order`.
+        
+        Returns:
             None: If `in_order` or `post_order` is empty.
 
         Raises:
@@ -225,7 +229,7 @@ def traverse_pre_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        int: Node values in the binary tree.
+        int: A node value in the binary tree.
     """
     queue = [node]
     while queue:
@@ -244,7 +248,7 @@ def traverse_in_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        int: Node values in the binary tree.
+        int: A node value in the binary tree.
     """
     queue = [node]
     while True:
@@ -267,7 +271,7 @@ def traverse_post_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        int: Node values in the binary tree.
+        int: A node value in the binary tree.
     """
     queue = [node]
     visited = []
@@ -293,7 +297,7 @@ def traverse_level_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        :obj:`tuple` of :obj:`int`: Node levels in the binary tree.
+        :obj:`tuple` of :obj:`int`: A level of nodes in the binary tree.
     """
     level = [node]
     while any(level):
@@ -351,16 +355,23 @@ def get_all_paths(node):
 # Miscellaneous functions for Node objects.
 
 def is_node(obj):
-    """Check if obj is an instance of Node.
+    """Check if `obj` is an instance of Node.
     Args:
         obj: Any old object.
 
     Return:
-        bool: True if obj is indeed a Node, False otherwise.
+        bool: True if `obj` is indeed a :class:`Node`, False otherwise.
     """
     return isinstance(obj, Node)
 
 def is_leaf_node(node):
+    """Check if `node` is a leaf node.
+    Args:
+        node (:class:`Node`): Any node.
+
+    Return:
+        bool: True if `node` has no more children, False otherwise.
+    """
     return node.left is node.right is None
 
 def is_symmetric(node):
