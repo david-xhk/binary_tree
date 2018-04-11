@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use binary_tree in a project::
+To use Binary Tree in a project::
 
-    import binary_tree as tree
+    import binary_tree

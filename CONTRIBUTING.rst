@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-binary_tree could always use more documentation, whether as part of the
-official binary_tree docs, in docstrings, or even on the web in blog posts,
+Binary Tree could always use more documentation, whether as part of the
+official Binary Tree docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback

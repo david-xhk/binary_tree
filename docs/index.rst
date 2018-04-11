@@ -1,20 +1,16 @@
-Welcome to binary_tree's documentation!
+Welcome to Binary Tree's documentation!
 ======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-.. py:module:: binary_tree
-
-    .. autoclass:: Node
-        :members:
-
    readme
    installation
    usage
    modules
    contributing
+   authors
    history
 
 Indices and tables

@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install master, run this command in your terminal:
+To install Binary Tree, run this command in your terminal:
 
 .. code-block:: console
 
     $ pip install binary_tree
 
-This is the preferred method to install binary_tree, as it will always install the most recent stable release.
+This is the preferred method to install Binary Tree, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,7 +26,7 @@ you through the process.
 From sources
 ------------
 
-The sources for binary_tree can be downloaded from the `Github repo`_.
+The sources for Binary Tree can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
@@ -38,7 +38,7 @@ Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/han-keong/binary_tree/tarball/binary_tree
+    $ curl  -OL https://github.com/han-keong/binary_tree/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -48,4 +48,4 @@ Once you have a copy of the source, you can install it with:
 
 
 .. _Github repo: https://github.com/han-keong/binary_tree
-.. _tarball: https://github.com/han-keong/binary_tree/tarball/binary_tree
+.. _tarball: https://github.com/han-keong/binary_tree/tarball/master
