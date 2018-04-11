@@ -84,7 +84,7 @@ On top of doing tree traversals, you can also get all the paths between the root
         else:
             return False
 
-Finally, there are tests for nodes too, which might come in handy for the above-mentioned processes:
+Finally, there are tests for nodes too, which might come in handy for the above-mentioned processes. ::
 
         if tree.is_leaf_node(node):
             print(str(node) + "is a leaf node!")
