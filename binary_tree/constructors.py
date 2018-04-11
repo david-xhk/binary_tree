@@ -52,7 +52,6 @@ def from_orders(cls, kind, *orders):
         setattr(node, side, child)
     return node
 
-
 # Helper objects
 
 _slices = (
