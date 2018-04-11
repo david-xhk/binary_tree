@@ -1,6 +1,6 @@
 """
 Binary tree implementation.
-For a demonstration, run "./tree treestring".
+For a demonstration, run "./tree.py treestring".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
