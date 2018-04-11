@@ -1,9 +1,9 @@
 ====
 Home
 ====
------------------
-Table of contents
------------------
+----
+Home
+----
 
 .. toctree::
     :maxdepth: 2
