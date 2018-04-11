@@ -7,7 +7,7 @@ import pytest
 from binary_tree import Node
 
 @pytest.fixture
-def make_tree():
+def node():
     """Test from_string constructor."""
     treestring = "1, 2, 3, 4, 5, null, 6, 7"
     return Node.from_string(treestring)
