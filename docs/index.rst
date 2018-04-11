@@ -1,9 +1,9 @@
-====
-Home
-====
-----
-Home
-----
+===========
+binary_tree
+===========
+--------
+Contents
+--------
 
 .. toctree::
     :maxdepth: 2
