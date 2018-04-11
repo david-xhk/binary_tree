@@ -5,6 +5,11 @@ Welcome to binary_tree's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. py:module:: binary_tree
+
+    .. autoclass:: Node
+        :members:
+
    readme
    installation
    usage
