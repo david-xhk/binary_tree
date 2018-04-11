@@ -1,9 +1,9 @@
 """
-Tree traversal functions.
+Tree traversal generators.
 
 Done by Han Keong
 Created on 10/04/2018 2232 +0800
-Last updated on 11/04/2018 0025 +0800
+Last updated on 11/04/2018 1300 +0800
 """
 
 from node import Node
@@ -89,9 +89,16 @@ def traverse_level_order(node):
     Yields:
         :obj:`tuple` of :obj:`int`: Node levels in the binary tree.
     """
-    level = (node,)
+    level = [node]
     while level:
-        yield tuple(node.value for node in level)
-        level = tuple(getattr(node, branch) for node in level 
-            for branch in ("left", "right") if getattr(node, branch))
+        next_level = []
+        values = []
+        for node in level:
+            if not node:
+                continue
+            values.append(node.value)
+            for side in ("left", "right"): 
+                next_level.append(getattr(node, side))
+        yield tuple(values)
+        level = next_level
 
