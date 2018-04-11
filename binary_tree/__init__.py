@@ -4,13 +4,14 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 11/04/2018 1803 +0800
+Last updated on 11/04/2018 1847 +0800
 """
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
 __version__ = '0.0.2'
 
 from tree import *
+del tree
 
 __all__ = [
     "Node",
