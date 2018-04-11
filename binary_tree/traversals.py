@@ -6,11 +6,7 @@ Created on 10/04/2018 2232 +0800
 Last updated on 11/04/2018 1300 +0800
 """
 
-from node import Node as _Node
-
-# Identity tester
-def _is_node(node):
-    return isinstance(node, _Node)
+from misc import is_node as _is_node
 
 
 def traverse_pre_order(node):
