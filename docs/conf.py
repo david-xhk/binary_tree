@@ -43,8 +43,10 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
+binary_tree_toc = "index"
+
 # General information about the project.
-project = u'master'
+project = u'binary-tree'
 copyright = u"2018, Han Keong"
 author = u"Han Keong"
 
@@ -72,7 +74,6 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
-
 
 # -- Options for HTML output -------------------------------------------
 
