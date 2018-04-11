@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0735 +0800
+Last updated on 12/04/2018 0736 +0800
 """
 
 from __future__ import print_function
@@ -16,8 +16,8 @@ class Node:
 
         Args:
             value: The node value.
-            left (:class:`Node`, optional): The left child node.
-            right (:class:`Node`, optional): The right child node.
+            left (`Node`, optional): The left child node.
+            right (`Node`, optional): The right child node.
         """
         self.value = value
         self.left = left
