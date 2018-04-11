@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use master in a project::
+To use binary_tree in a project::
 
-    import binary_tree
+    import binary_tree as tree
