@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Binary tree implementation.
-For a demonstration, run "./tree treestring".
+For a demonstration, run "./tree tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
@@ -34,8 +34,8 @@ if __name__ == "__main__":
                     print_out(*arg)
 
     commands = [
-        "treestring",
-        "repr(Node.from_string(treestring))",
+        "tree_string",
+        "repr(Node.from_string(tree_string))",
         "list(traverse_pre_order(root))",
         "list(traverse_in_order(root))",
         "list(traverse_post_order(root))",
@@ -44,18 +44,18 @@ if __name__ == "__main__":
         "is_symmetric(root)",
         "list(get_all_paths(root))",
         "has_path_sum(root, 22)",
-        "repr(Node.from_in_pre_orders(inorder, preorder))",
-        "repr(Node.from_in_post_orders(inorder, postorder))",
+        "repr(Node.from_in_pre_orders(in_order, pre_order))",
+        "repr(Node.from_in_post_orders(in_order, post_order))",
     ]
     
-    for treestring in listenLines():
-        root = Node.from_string(treestring)
+    for tree_string in listen_lines():
+        root = Node.from_string(tree_string)
         if not root:
-            print("Invalid treestring.")
+            print("Invalid tree.")
             continue
-        preorder = list(traverse_pre_order(root))
-        inorder = list(traverse_in_order(root))
-        postorder = list(traverse_post_order(root))
+        pre_order = list(traverse_pre_order(root))
+        in_order = list(traverse_in_order(root))
+        post_order = list(traverse_post_order(root))
         for command in commands:
             print_in(command)
             exec(f"print_out({command})")
