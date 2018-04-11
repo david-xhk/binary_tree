@@ -21,7 +21,7 @@ To create a :class:`Node` object, you can simply do::
     
     node = Node(1)
 
-Nodes have a :attr:`left`` and a :attr:`right` attribute which are expected to also be instances of :class:`Node`. They can be set on initialization like so::
+Nodes have a :attr:`Node.left` and a :attr:`Node.right` attribute which are expected to also be instances of :class:`Node`. They can be set on initialization like so::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
