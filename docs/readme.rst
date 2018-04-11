@@ -106,7 +106,7 @@ You can also traverse down the tree, yielding the respective node with each step
         for node in level:
             print(node, "(level-order traversal)")
 
-A single dispatch function, :func:`traverse <binary_tree.traverse>`, is available for these traversals.
+A single dispatch function, :func:`traverse <binary_tree.traverse>`, is available for these traversals. ::
     
     traversals = []
     for kind in ("pre", "in", "post", "level"):
