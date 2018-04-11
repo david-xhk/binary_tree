@@ -1,43 +1,43 @@
-===========
+***********
 binary_tree
-===========
+***********
 
 :mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful functions like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
---------
+========
 Features
---------
+========
 
-1. Construct a binary tree using 
+Construct a binary tree using 
 
-  * String
-  * In-order and pre-order traversal
-  * In-order and post-order traversal
+    * String
+    * In-order and pre-order traversal
+    * In-order and post-order traversal
 
-2. Traverse a binary tree by 
+Traverse a binary tree by 
 
-  * Pre-order
-  * In-order
-  * Post-order
-  * Level-order
+    * Pre-order
+    * In-order
+    * Post-order
+    * Level-order
 
-3. Get from a binary tree
+Get from a binary tree
 
-  * All root-to-leaf paths
-  * The maximum depth
+    * All root-to-leaf paths
+    * The maximum depth
 
-4. Check if a binary tree
+Check if a binary tree
 
-  * Is symmetrical
-  * Has a certain path sum
+    * Is symmetrical
+    * Has a certain path sum
 
------
+=====
 Usage
------
+=====
 
-^^^^^^^
+-------
 Imports
-^^^^^^^
+-------
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
@@ -47,9 +47,9 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
     
     from binary_tree import Node
 
-^^^^^^^^^^^^^
+-------------
 Node creation
-^^^^^^^^^^^^^
+-------------
 
 To create a :class:`~binary_tree.Node` object, you can simply do::
     
@@ -79,9 +79,9 @@ Similarly, you can use in-order and post-order traversals with :func:`~binary_tr
     postorder = "4,2,5,6,3,1"
     root = Node.from_in_post_orders(inorder, postorder)
 
-^^^^^^^^^^^^^^^
+---------------
 Tree processing
-^^^^^^^^^^^^^^^
+---------------
 
 With a tree set up, there are several functions available such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetric` to analyse the nature of the tree. ::
 
@@ -136,9 +136,9 @@ Finally, there are :func:`tests <binary_tree.is_node>` for nodes too, which migh
     if tree.is_node(node.left):
         print(str(node) + "has left child!")
 
--------
+=======
 Credits
--------
+=======
 
 binary_tree was written by Han Keong <hk997@live.com>.
 

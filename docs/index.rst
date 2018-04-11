@@ -1,9 +1,9 @@
-====
+****
 Home
-====
---------
+****
+========
 Contents
---------
+========
 
 .. toctree::
     :maxdepth: 3
@@ -11,9 +11,9 @@ Contents
     readme
     documentation
 
--------
+=======
 Indexes
--------
+=======
 
 * :ref:`genindex`
 * :ref:`modindex`

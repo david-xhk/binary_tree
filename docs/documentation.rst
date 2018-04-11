@@ -1,6 +1,6 @@
-=============
+*************
 Documentation
-=============
+*************
 
 To look at a demonstration, run "./tree.py" in your terminal.
 

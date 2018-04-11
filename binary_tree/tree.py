@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0714 +0800
+Last updated on 12/04/2018 0730 +0800
 """
 
 from __future__ import print_function
@@ -438,6 +438,7 @@ if __name__ == "__main__":
         "list(traverse_in_order(root))",
         "list(traverse_post_order(root))",
         "list(traverse_level_order(root))",
+        "list(traverse(root, 'level'))",
         "get_max_depth(root)",
         "is_symmetric(root)",
         "list(get_all_paths(root))",
