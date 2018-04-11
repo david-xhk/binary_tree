@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
+requirements = []
 
 setup_requirements = ['pytest-runner', ]
 
@@ -31,22 +31,22 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="master",
+    description="binary_tree",
     entry_points={
         'console_scripts': [
-            'master=master.cli:main',
+            'binary_tree=binary_tree:main',
         ],
     },
     install_requires=requirements,
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='master',
-    name='master',
-    packages=find_packages(include=['master']),
+    keywords='binary_tree',
+    name='binary_tree',
+    packages=find_packages(include=['binary_tree']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/han-keong/master',
+    url='https://github.com/han-keong/binary_tree',
     version='0.0.1',
     zip_safe=False,
 )
