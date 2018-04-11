@@ -6,22 +6,24 @@ Usage
 Imports
 -------
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Importing from binary_tree
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
+binary_tree module
+^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
     import binary_tree as tree
 
-^^^^^^^^^^^^^^
-Importing Node
-^^^^^^^^^^^^^^
+^^^^^^^^^^
+Node class
+^^^^^^^^^^
 
 .. code-block:: python
     
     from binary_tree import Node
 
+
+---------------------------------------------------------------------
 
 -------------
 Node creation
@@ -36,9 +38,9 @@ Using string
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-From in-order and pre-order traversals
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From in-order and pre-order
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -46,9 +48,9 @@ From in-order and pre-order traversals
     preorder = "1,2,4,3,5,6"
     root = Node.from_in_pre_orders(inorder, preorder)
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-From in-order and post-order traversals
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From in-order and post-order
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -56,6 +58,8 @@ From in-order and post-order traversals
     postorder = "4,2,5,6,3,1"
     root = Node.from_in_post_orders(inorder, postorder)
 
+
+---------------------------------------------------------------------
 
 ---------------
 Tree processing
