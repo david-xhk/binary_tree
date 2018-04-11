@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0736 +0800
+Last updated on 12/04/2018 0745 +0800
 """
 
 from __future__ import print_function
@@ -16,8 +16,8 @@ class Node:
 
         Args:
             value: The node value.
-            left (`Node`, optional): The left child node.
-            right (`Node`, optional): The right child node.
+            left (``Node``, optional): The left child node.
+            right (``Node``, optional): The right child node.
         """
         self.value = value
         self.left = left
@@ -39,10 +39,10 @@ class Node:
         """Instantiate and return a new :class:`Node` from a string.
         
         Args:
-            tree_string (`str`): A flattened, level-order binary tree traversal. The node values should be separated by commas.
+            tree_string (``str``): A flattened, level-order binary tree traversal. The node values should be separated by commas.
         
         Returns:
-            A newly instantiated `Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
+            A newly instantiated ``Node`` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
         """
         return _from_string(cls, tree_string)
 
@@ -51,11 +51,11 @@ class Node:
         """Instantiate and return a new :class:`Node` from an in-order and a pre-order traversal.
 
         Args:
-            in_order (`list[int, ...]`): An in-order binary tree traversal.
-            pre_order (`list[int, ...]`): A pre-order binary tree traversal.
+            in_order (``list[int, ...]``): An in-order binary tree traversal.
+            pre_order (``list[int, ...]``): A pre-order binary tree traversal.
         
         Returns:
-            A newly instantiated `Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
+            A newly instantiated ``Node`` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
@@ -67,11 +67,11 @@ class Node:
         """Instantiate and return a new :class:`Node` from an in-order and a post-order traversal.
         
         Args:
-            in_order (`list[int, ...]`): An in-order binary tree traversal.
-            post_order (`list[int, ...]`): A post-order binary tree traversal.
+            in_order (``list[int, ...]``): An in-order binary tree traversal.
+            post_order (``list[int, ...]``): A post-order binary tree traversal.
         
         Returns:
-            A newly instantiated `Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
+            A newly instantiated ``Node`` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
@@ -157,13 +157,13 @@ def _slice_orders(kind, side, *orders):
     """Slice orders based on which order and what side is provided.
 
     Args:
-        kind (`str`): Either "in-pre" or "in-post".
-        side (`str`): Either "left" or "right".
-        *orders (`list[int, ...]`): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
+        kind (``str``): Either "in-pre" or "in-post".
+        side (``str``): Either "left" or "right".
+        *orders (``list[int, ...]``): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
             where `in_order` and `pre_order` or `post_order` are lists of ints.
     
     Returns:
-        `list[list, list]`: Sliced copies of the orders provided.
+        ``list[list, list]``: Sliced copies of the orders provided.
     
     Raises:
         KeyError: If `kind` or `side` is invalid.
@@ -179,10 +179,10 @@ def _get_binary_index(*bools):
     """Transform a succession of boolean numbers into a decimal integer.
 
     Args:
-        *bools (`int`): A succession of boolean numbers.
+        *bools (``int``): A succession of boolean numbers.
     
     Returns:
-        `int`: A decimal integer.
+        ``int``: A decimal integer.
 
     Raises:
         ValueError: If any argument in `bools` is not a boolean number.
@@ -195,10 +195,10 @@ def traverse_pre_order(node):
     """Visit the parent, the left child, and then the right child.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Yields:
-        `Node`: A node in the binary tree.
+        ``Node``: A node in the binary tree.
     """
     queue = [node]
     while queue:
@@ -214,10 +214,10 @@ def traverse_in_order(node):
     """Visit the left child, the parent, and then the right child.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Yields:
-        `Node`: A node in the binary tree.
+        ``Node``: A node in the binary tree.
     """
     queue = [node]
     while True:
@@ -237,10 +237,10 @@ def traverse_post_order(node):
     """Visit the left and right children, and then the parent.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Yields:
-        `Node`: A node in the binary tree.
+        ``Node``: A node in the binary tree.
     """
     queue = [node]
     visited = []
@@ -263,10 +263,10 @@ def traverse_level_order(node):
     """Visit each parent in the level, and then each of their left and right children.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Yields:
-        `tuple[Node, ...]`: A level of nodes in the binary tree.
+        ``tuple[Node, ...]``: A level of nodes in the binary tree.
     """
     level = [node]
     while any(level):
@@ -292,8 +292,8 @@ def traverse(node, kind):
     """Dispatch the requested kind of traversal.
     
     Args:
-        node (:class:`Node`): A binary tree root.
-        kind (`str`): "pre" or "in" or "post" or "level"
+        node (``Node``): A binary tree root.
+        kind (``str``): "pre" or "in" or "post" or "level"
 
     Returns:
         The requested traversal generator iterator.
@@ -309,10 +309,10 @@ def get_max_depth(node):
     """Calculate the maximum depth of a binary tree.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Return:
-        `int`: The total number of levels of the binary tree.
+        ``int``: The total number of levels of the binary tree.
     """
     return sum(1 for level in traverse_level_order(node))
 
@@ -320,10 +320,10 @@ def get_all_paths(node):
     """Find every root-to-leaf path in a binary tree.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Yields:
-        `tuple[Node, ...]`: A copy of every node from the root to a leaf.
+        ``tuple[Node, ...]``: A copy of every node from the root to a leaf.
     """
     queue = [node]
     visited = []
@@ -349,10 +349,10 @@ def is_node(obj):
     """Check if `obj` is an instance of Node.
 
     Args:
-        obj: Any :obj:`object`.
+        obj: Any ``object``.
 
     Return:
-        ``True`` if `obj` is an instance of :class:`Node`, ``False`` otherwise.
+        ``True`` if `obj` is an instance of ``Node``, ``False`` otherwise.
     """
     return isinstance(obj, Node)
 
@@ -360,7 +360,7 @@ def is_leaf_node(node):
     """Check if `node` is a leaf node.
 
     Args:
-        node (:class:`Node`): Any node.
+        node (``Node``): Any node.
 
     Return:
         ``True`` if `node` has no children, ``False`` otherwise.
@@ -371,7 +371,7 @@ def is_symmetric(node):
     """Check for symmetry in a binary tree.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
 
     Return:
         ``True`` if the binary tree is symmetrical, ``False`` otherwise.
@@ -393,7 +393,7 @@ def has_path_sum(node, value):
     """Determine if a binary tree contains a root-to-leaf path that sums to `value`.
     
     Args:
-        node (:class:`Node`): A binary tree root.
+        node (``Node``): A binary tree root.
         value: The value to check for.
 
     Returns:
