@@ -6,17 +6,17 @@ Usage
 Imports
 -------
 
-^^^^^^^^^^^^^^^^^^
-binary_tree module
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
+binary_tree
+^^^^^^^^^^^
 
 .. code-block:: python
 
     import binary_tree as tree
 
-^^^^^^^^^^
-Node class
-^^^^^^^^^^
+^^^^
+Node
+^^^^
 
 .. code-block:: python
     

@@ -7,16 +7,21 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+    :glob:
+    :maxdepth: 2
 
-   readme
-   usage
-   reference
-   credits
+    readme
+    usage
+    reference
+    credits
+
+------------------
+Indices and tables
+------------------
+
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
 
 .. image:: https://img.shields.io/pypi/v/binary_tree.svg
         :target: https://pypi.python.org/pypi/binary_tree

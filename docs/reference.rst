@@ -9,6 +9,7 @@ Here is the documentation for binary_tree. To look at a demonstration, run "./tr
 .. currentmodule:: binary_tree
 
 .. autoclass:: Node
+    :glob:
 
     .. automethod:: __init__
 
@@ -19,6 +20,7 @@ Here is the documentation for binary_tree. To look at a demonstration, run "./tr
     .. automethod:: from_in_post_orders
 
 .. automodule:: binary_tree
+    :glob:
     :members:
     :member-order:
 
