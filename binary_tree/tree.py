@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0315 +0800
+Last updated on 12/04/2018 0318 +0800
 """
 
 from __future__ import print_function
@@ -198,7 +198,7 @@ def traverse_pre_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``int``: A node value in the binary tree.
+        :class:`Node`: A node in the binary tree.
     """
     queue = [node]
     while queue:
@@ -217,7 +217,7 @@ def traverse_in_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``int``: A node value in the binary tree.
+        :class:`Node`: A node in the binary tree.
     """
     queue = [node]
     while True:
@@ -240,7 +240,7 @@ def traverse_post_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``int``: A node value in the binary tree.
+        :class:`Node`: A node in the binary tree.
     """
     queue = [node]
     visited = []
@@ -266,7 +266,7 @@ def traverse_level_order(node):
         node (:class:`Node`): A binary tree root.
 
     Yields:
-        ``tuple`` of ``int``: A level of nodes in the binary tree.
+        ``tuple`` of :class:`Node`: A level of nodes in the binary tree.
     """
     level = [node]
     while any(level):
