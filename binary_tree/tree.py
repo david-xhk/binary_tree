@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0108 +0800
+Last updated on 12/04/2018 0125 +0800
 """
 
 from __future__ import print_function
@@ -59,9 +59,6 @@ class Node:
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
-
-        Note:
-            There cannot be any duplicates in `in_order` and `pre-order` or `post_order` for from_in_pre_orders and from_in_post_orders respectively.
         """
         return _from_orders(cls, "in-pre", in_order, pre_order)
 
@@ -78,6 +75,9 @@ class Node:
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
+        
+        Note:
+            There cannot be any duplicates in `in_order` and `pre-order` or `post_order`.
         """
         return _from_orders(cls, "in-post", in_order, post_order)
 
@@ -85,7 +85,9 @@ class Node:
 
 def _from_string(cls, tree_string):
     """Instantiate each parent in the level, and then each of their left and right children."""
-    values = iter(tree_string.translate(None, " []\n'\"").split(","))
+    for char in " []\n'\"":
+        tree_string = tree_string.replace(char, "")
+    values = iter(tree_string.split(","))
     try:
         value = next(values)
     except StopIteration:  # tree_string has no values.

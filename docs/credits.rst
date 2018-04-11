@@ -2,7 +2,6 @@
 Credits
 =======
 
-
 binary_tree was written by Han Keong <hk997@live.com>.
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
