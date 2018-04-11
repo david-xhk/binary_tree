@@ -23,8 +23,6 @@ Contents:
    credits
    installation
    contributing
-
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
