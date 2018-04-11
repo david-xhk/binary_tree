@@ -84,8 +84,8 @@ def _slice_orders(kind, side, *orders):
     Args:
         kind (str): Either "in-pre" or "in-post".
         side (str): Either "left" or "right".
-        *orders (:obj:`list` of :obj:`int`): Either (`inorder`, `preorder`) or (`inorder`, `postorder`),
-            where `inorder` and `preorder` or `postorder` are lists of ints.
+        *orders (:obj:`list` of :obj:`int`): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
+            where `in_order` and `pre_order` or `post_order` are lists of ints.
     
     Returns:
         :obj:`list` of :obj:`list`: Sliced copies of the orders provided.
