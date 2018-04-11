@@ -15,7 +15,7 @@ from misc import is_node, is_symmetric, has_path_sum
 
 __author__ = "Han Keong"
 __email__ = "hk997@live.com"
-__version__ = "0.0.2"
+__version__ = "0.0.1"
 
 if __name__ == "__main__":
     def listen_lines():
