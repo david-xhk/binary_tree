@@ -9,7 +9,7 @@ To use the functions provided by :mod:`binary_tree`, you can do the following im
 
     import binary_tree as tree
 
-If you would like to use :class:`Node` on its own, you may also do this::
+If you would like to use :class:`binary_tree.Node` on its own, you may also do this::
     
     from binary_tree import Node
 

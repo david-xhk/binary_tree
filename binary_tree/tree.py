@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0606 +0800
+Last updated on 12/04/2018 0608 +0800
 """
 
 from __future__ import print_function
@@ -42,7 +42,7 @@ class Node:
             tree_string (`str`): A flattened, level-order binary tree traversal. The node values should be separated by commas.
         
         Returns:
-            A newly instantiated :class:`Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
+            A newly instantiated `Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
         """
         return _from_string(cls, tree_string)
 
@@ -55,7 +55,7 @@ class Node:
             pre_order (`list[int, ...]`): A pre-order binary tree traversal.
         
         Returns:
-            A newly instantiated :class:`Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
+            A newly instantiated `Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
@@ -71,7 +71,7 @@ class Node:
             post_order (`list[int, ...]`): A post-order binary tree traversal.
         
         Returns:
-            A newly instantiated :class:`Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
+            A newly instantiated `Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
