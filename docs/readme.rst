@@ -9,27 +9,23 @@ Features
 --------
 
 1. Construct a binary tree using 
-
-    * String
-    * In-order and pre-order traversal
-    * In-order and post-order traversal
+  * String
+  * In-order and pre-order traversal
+  * In-order and post-order traversal
 
 2. Traverse a binary tree by 
-
-    * Pre-order
-    * In-order
-    * Post-order
-    * Level-order.
+  * Pre-order
+  * In-order
+  * Post-order
+  * Level-order.
 
 3. Get from a binary tree
-
-    * All root-to-leaf paths 
-    * The maximum depth
+  * All root-to-leaf paths
+  * The maximum depth
 
 4. Check if a binary tree
-    
-    * Is symmetrical
-    * Has a certain path sum.
+  * Is symmetrical
+  * Has a certain path sum.
 
 -----
 Usage
@@ -51,11 +47,11 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 ^^^^^^^^^^^^^
 
-To create a :class:`~binary_tree.Node` object, you can simply do::
+To create a :class:`Node` object, you can simply do::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to also be instances of :class:`~binary_tree.Node`. They can be set on initialization like so::
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to also be instances of :class:`Node`. They can be set on initialization like so::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
@@ -73,7 +69,7 @@ Another way to construct a binary tree is through retrosynthesis from its in-ord
     preorder = "1,2,4,3,5,6"
     root = Node.from_in_pre_orders(inorder, preorder)
 
-Similarly, you can use in-order and post-order traversals with :func:`binary_tree.Node.from_in_post_orders`. ::
+Similarly, you can use in-order and post-order traversals with :func:`~binary_tree.Node.from_in_post_orders`. ::
 
     inorder = "4,2,1,5,3,6"
     postorder = "4,2,5,6,3,1"
@@ -83,7 +79,7 @@ Similarly, you can use in-order and post-order traversals with :func:`binary_tre
 Tree processing
 ^^^^^^^^^^^^^^^
 
-With a tree set up, there are several functions available to analyse the nature of the tree. For instance, :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetric`::
+With a tree set up, there are several functions available such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetric` to analyse the nature of the tree. ::
 
     if tree.has_path_sum(root, 10):
         print(str(root) + "has path with sum 10!")
@@ -118,13 +114,17 @@ On top of doing tree traversals, you can also get the paths between the root nod
         else:
             return False
 
-Finally, there are :func:`tests <binary_tree.is_leaf_node>` for nodes too, which might come in handy for the above-mentioned processes. ::
+You can also call :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
+    
+    depth = tree.get_max_depth(root)
 
-        if tree.is_leaf_node(node):
-            print(str(node) + "is a leaf node!")
+Finally, there are :func:`tests <binary_tree.is_node>` for nodes too, which might come in handy for the above-mentioned processes. ::
 
-        if tree.is_node(node.left):
-            print(str(node) + "has left child!")
+    if tree.is_leaf_node(node):
+        print(str(node) + "is a leaf node!")
+
+    if tree.is_node(node.left):
+        print(str(node) + "has left child!")
 
 -------
 Credits
