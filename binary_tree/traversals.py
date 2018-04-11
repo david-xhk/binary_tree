@@ -27,7 +27,6 @@ def traverse_pre_order(node):
         if _is_node(node.left):
             queue.append(node.left)
 
-
 def traverse_in_order(node):
     """Visit the left child, the parent, and then the right child.
     
@@ -50,7 +49,6 @@ def traverse_in_order(node):
                 break
         else:
             return
-
 
 def traverse_post_order(node):
     """Visit the left and right children, and then the parent.
@@ -78,7 +76,6 @@ def traverse_post_order(node):
         else:
             return
 
-
 def traverse_level_order(node):
     """Visit each parent in the level, and then each of their left and right children.
     
@@ -100,4 +97,3 @@ def traverse_level_order(node):
                 next_level.append(getattr(node, side))
         yield tuple(values)
         level = next_level
-
