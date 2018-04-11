@@ -6,7 +6,12 @@ Created on 10/04/2018 2239 +0800
 Last updated on 11/04/2018 0050 +0800
 """
 
-from helpers import get_all_paths
+from helpers import get_all_paths as _get_all_paths
+from node import Node as _Node
+
+
+def is_node(node):
+    return isinstance(node, _Node)
 
 
 def is_symmetric(node):
@@ -38,5 +43,5 @@ def has_path_sum(node, value):
         bool: True if a path that sums to `value` exists, False otherwise.
     """
     return any(sum(node.value for node in path) == value 
-        for path in get_all_paths(node))
+        for path in _get_all_paths(node))
 
