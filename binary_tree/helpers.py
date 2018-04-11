@@ -3,12 +3,11 @@ Helper functions for Node objects.
 
 Done by Han Keong
 Created on 10/04/2018 2235 +0800
-Last updated on 11/04/2018 1334 +0800
+Last updated on 11/04/2018 1342 +0800
 """
 
-from misc import is_node as _is_node
-from traversals import traverse_level_order as _traverse_level_order
 
+from traversals import traverse_level_order as _traverse_level_order
 
 def get_max_depth(node):
     '''Calculate the maximum depth of a binary tree.
@@ -21,6 +20,8 @@ def get_max_depth(node):
     '''
     return sum(1 for level in _traverse_level_order(node))
 
+
+from misc import is_node as _is_node
 
 def get_all_paths(node):
     '''Find every unique root-to-leaf path in a binary tree.
