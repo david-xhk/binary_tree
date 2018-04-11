@@ -3,11 +3,11 @@ Helper functions for Node objects.
 
 Done by Han Keong
 Created on 10/04/2018 2235 +0800
-Last updated on 11/04/2018 0038 +0800
+Last updated on 11/04/2018 1334 +0800
 """
 
-from node import Node
-from traversals import traverse_level_order
+from misc import is_node as _is_node
+from traversals import traverse_level_order as _traverse_level_order
 
 
 def get_max_depth(node):
@@ -19,7 +19,7 @@ def get_max_depth(node):
     Return:
         int: The total number of levels of the binary tree.
     '''
-    return sum(1 for level in traverse_level_order(node))
+    return sum(1 for level in _traverse_level_order(node))
 
 
 def get_all_paths(node):
@@ -34,16 +34,16 @@ def get_all_paths(node):
     queue = [node]
     visited = []
     while True:
-        while isinstance(queue[-1].left, Node):
+        while _is_node(queue[-1].left):
             queue.append(queue[-1].left)
         while queue:
             node = queue[-1]
-            if isinstance(node.right, Node):
+            if _is_node(node.right):
                 if node not in visited:
                     visited.append(node)
                     queue.append(node.right)
                     break
-            elif not isinstance(node.left, Node):
+            elif not _is_node(node.left):
                 yield tuple(queue)
             queue.pop()
         else: 
