@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""Tests for `binary_tree` package."""
+"""Tests the `from_string` method of `Node`."""
 
 import pytest
 from binary_tree import Node
