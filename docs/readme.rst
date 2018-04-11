@@ -56,7 +56,7 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may get very tedious. The preferrable way of initiating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+However, manually setting up a binary tree structure may get very tedious. The preferable way of initiating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
