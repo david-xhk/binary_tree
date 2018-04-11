@@ -58,7 +58,7 @@ class Node:
         
         Returns:
             :class:`Node`: A newly instantiated :class:`Node` representing `treestring`.
-            None: If `treestring` does not contain any node values.
+            None: If `treestring` has an invalid root value or does not contain any node values.
         """
         return _make_node_from_string(cls, treestring)
 
