@@ -11,7 +11,7 @@ Last updated on 11/04/2018 1402 +0800
 from . import *
 
 if __name__ == "__main__":
-  def listen_lines():
+    def listen_lines():
         while True:
             line = input("Enter a binary tree:\n")
             if line:
