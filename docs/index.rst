@@ -1,17 +1,15 @@
-===========
-binary_tree
-===========
+====
+Home
+====
 --------
 Contents
 --------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     readme
-    usage
-    reference
-    credits
+    documentation
 
 -------
 Indexes
