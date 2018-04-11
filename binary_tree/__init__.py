@@ -16,7 +16,6 @@ from misc import is_node, is_symmetric, has_path_sum
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
 
-
 if __name__ == "__main__":
     def listen_lines():
         while True:
@@ -68,4 +67,3 @@ if __name__ == "__main__":
             exec(f"print_out({command})")
         print()
             
-
