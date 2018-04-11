@@ -2,6 +2,7 @@
 Welcome to Binary Tree's documentation!
 =======================================
 
+--------
 Contents
 --------
 

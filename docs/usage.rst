@@ -2,30 +2,68 @@
 Usage
 =====
 
+-------
+Imports
+-------
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 Importing from binary_tree
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
     import binary_tree as tree
 
+^^^^^^^^^^^^^^
 Importing Node
---------------
+^^^^^^^^^^^^^^
 
 .. code-block:: python
     
     from binary_tree import Node
 
-Instantiating Node
-------------------
+
+-------------
+Node creation
+-------------
+
+^^^^^^^^^^^
+Using string
+^^^^^^^^^^^
 
 .. code-block:: python
 
-    tree_string = "1,2,3,4,,5,6,"
+    tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
-Checking a tree
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From in-order and pre-order traversals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    inorder = "4,2,1,5,3,6"
+    preorder = "1,2,4,3,5,6"
+    root = Node.from_in_pre_orders(inorder, preorder)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+From in-order and post-order traversals
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    inorder = "4,2,1,5,3,6"
+    postorder = "4,2,5,6,3,1"
+    root = Node.from_in_post_orders(inorder, postorder)
+
+
 ---------------
+Tree processing
+---------------
+
+^^^^^^^^^^^^^^^
+Checking a tree
+^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -35,8 +73,9 @@ Checking a tree
     if tree.is_symmetric(root):
         print("Is symmetrical!")
 
+^^^^^^^^^^^^^^^^^
 Traversing a tree
------------------
+^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -44,8 +83,9 @@ Traversing a tree
         if tree.is_leaf_node(node):  # Checking for leaf nodes
             print(str(node) + "is a leaf node!")
 
+^^^^^^^^^^^^^^^^^^^^^^^
 Getting paths in a tree
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 

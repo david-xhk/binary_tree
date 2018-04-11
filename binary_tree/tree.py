@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0232 +0800
+Last updated on 12/04/2018 0309 +0800
 """
 
 from __future__ import print_function
@@ -203,8 +203,8 @@ def traverse_pre_order(node):
     queue = [node]
     while queue:
         node = queue.pop()
-        if node.value:
-            yield node.value
+        if is_node(node):
+            yield node
         if is_node(node.right):
             queue.append(node.right)
         if is_node(node.left):
@@ -225,8 +225,8 @@ def traverse_in_order(node):
             queue.append(queue[-1].left)
         while queue:
             node = queue.pop()
-            if node.value:
-                yield node.value
+            if is_node(node):
+                yield node
             if is_node(node.right):
                 queue.append(node.right)
                 break
@@ -253,8 +253,8 @@ def traverse_post_order(node):
                 visited.append(node)
                 queue.append(node.right)
                 break
-            if node.value:
-                yield node.value
+            if is_node(node):
+                yield node
             queue.pop()
         else:
             return
@@ -271,14 +271,14 @@ def traverse_level_order(node):
     level = [node]
     while any(level):
         next_level = []
-        values = []
+        nodes = []
         for node in level:
             if not is_node(node):
                 continue
-            values.append(node.value)
+            nodes.append(node)
             for side in _sides: 
                 next_level.append(getattr(node, side))
-        yield tuple(values)
+        yield tuple(nodes)
         level = next_level
 
 # Helper functions for Node objects.
