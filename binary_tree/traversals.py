@@ -6,7 +6,11 @@ Created on 10/04/2018 2232 +0800
 Last updated on 11/04/2018 1300 +0800
 """
 
-from node import Node
+from node import Node as _Node
+
+# Identity tester
+def _is_node(node):
+    return isinstance(node, _Node)
 
 
 def traverse_pre_order(node):
@@ -23,9 +27,9 @@ def traverse_pre_order(node):
         node = queue.pop()
         if node.value:
             yield node.value
-        if isinstance(node.right, Node):
+        if _is_node(node.right):
             queue.append(node.right)
-        if isinstance(node.left, Node):
+        if _is_node(node.left):
             queue.append(node.left)
 
 
@@ -40,13 +44,13 @@ def traverse_in_order(node):
     """
     queue = [node]
     while True:
-        while isinstance(queue[-1].left, Node):
+        while _is_node(queue[-1].left):
             queue.append(queue[-1].left)
         while queue:
             node = queue.pop()
             if node.value:
                 yield node.value
-            if isinstance(node.right, Node):
+            if _is_node(node.right):
                 queue.append(node.right)
                 break
         else:
@@ -65,11 +69,11 @@ def traverse_post_order(node):
     queue = [node]
     visited = []
     while True:
-        while isinstance(queue[-1].left, Node):
+        while _is_node(queue[-1].left):
             queue.append(queue[-1].left)
         while queue:
             node = queue[-1]
-            if isinstance(node.right, Node) and node not in visited:
+            if _is_node(node.right) and node not in visited:
                 visited.append(node)
                 queue.append(node.right)
                 break
@@ -94,7 +98,7 @@ def traverse_level_order(node):
         next_level = []
         values = []
         for node in level:
-            if not node:
+            if not _is_node(node):
                 continue
             values.append(node.value)
             for side in ("left", "right"): 
