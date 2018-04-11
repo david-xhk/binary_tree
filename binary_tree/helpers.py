@@ -19,7 +19,6 @@ def get_max_depth(node):
     '''
     return sum(1 for level in _traverse_level_order(node))
 
-
 from misc import is_node as _is_node
 
 def get_all_paths(node):
