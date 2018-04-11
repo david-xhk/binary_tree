@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 """
-Binary tree implementation.
-For a demonstration, run "./tree.py".
-
-Done by Han Keong
-Created on 10/04/2018 2251 +0800
-Last updated on 11/04/2018 2327 +0800
+Binary tree implementation. To look at a demonstration, run "./tree.py".
 """
 
 from __future__ import print_function
