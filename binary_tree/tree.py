@@ -85,7 +85,7 @@ class Node:
 
 def _from_string(cls, tree_string):
     """Instantiate each parent in the level, and then each of their left and right children."""
-    for char in " []\n'\"":
+    for char in _ignore:
         tree_string = tree_string.replace(char, "")
     values = iter(tree_string.split(","))
     try:
@@ -107,7 +107,7 @@ def _from_string(cls, tree_string):
                 except StopIteration:  # values has been exhausted.
                     return root
                 else:
-                    if value in ("", "null"):  # Not a node.
+                    if value in _null:  # Not a node.
                         continue
                     try:
                         value = int(value)
@@ -124,13 +124,17 @@ def _from_orders(cls, kind, *orders):
     """Instantiate the parent, the left child, and then the right child."""
     if not all(orders):
         return None
-    node = cls(orders[1][-1*_kinds[kind]])
+    node = cls(orders[1][-1*_kinds_dict[kind]])
     for side in _sides:
         child = _from_orders(cls, kind, *_slice_orders(kind, side, *orders))
         setattr(node, side, child)
     return node
 
 # Constructor helper objects
+
+_ignore = " []\n'\""
+
+_null = ("", "null")
 
 _slices = (
     ":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
@@ -140,18 +144,14 @@ _slices = (
     ":orders[0].index(orders[1][-1])",    # in-post,  left, 0
     ":len(orders[0])",                    # in-post,  left, 1
     "orders[0].index(orders[1][-1])+1:",  # in-post, right, 0
-    "-len(orders[0])-1:-1",               # in-post, right, 1
+    "-len(orders[0])-1:-1"                # in-post, right, 1
     )
 
-_kinds = {
-    "in-pre": 0,
-    "in-post": 1
-}
+_kinds = ("in-pre", "in-post")
+_kinds_dict = dict(enumerate(_kinds))
 
-_sides = {
-    "left": 0,
-    "right": 1
-}
+_sides = ("left", "right")
+_sides_dict = dict(enumerate(_sides))
 
 def _slice_orders(kind, side, *orders):
     """Slice orders based on which order and what side is provided.
@@ -171,7 +171,7 @@ def _slice_orders(kind, side, *orders):
     """
     orders = list(orders)
     for index in (0, 1):
-        slice_index = _get_binary_index(_kinds[kind], _sides[side], index)
+        slice_index = _get_binary_index(_kinds_dict[kind], _sides_dict[side], index)
         exec("orders[index] = orders[index][" + _slices[slice_index] + "]")
     return orders
 

@@ -13,7 +13,6 @@ Contents
    usage
    reference
    credits
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

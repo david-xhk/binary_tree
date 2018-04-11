@@ -4,6 +4,8 @@ Binary Tree
 
 Binary Tree provides a Node object and some useful functions like constructors and tree traversals for a binary tree data structure.
 
+--------------------------------------------------------------------
+
 --------
 Features
 --------
