@@ -1,4 +1,4 @@
-Welcome to master's documentation!
+Welcome to binary_tree's documentation!
 ======================================
 
 .. toctree::
