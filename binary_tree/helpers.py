@@ -6,7 +6,6 @@ Created on 10/04/2018 2235 +0800
 Last updated on 11/04/2018 1342 +0800
 """
 
-
 from traversals import traverse_level_order as _traverse_level_order
 
 def get_max_depth(node):
