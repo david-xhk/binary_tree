@@ -9,23 +9,27 @@ Features
 --------
 
 1. Construct a binary tree using 
-* String
-* In-order and pre-order traversal
-* In-order and post-order traversal
+
+ * String
+ * In-order and pre-order traversal
+ * In-order and post-order traversal
 
 2. Traverse a binary tree by 
-* Pre-order
-* In-order
-* Post-order
-* Level-order.
+
+ * Pre-order
+ * In-order
+ * Post-order
+ * Level-order.
 
 3. Get from a binary tree
-* All root-to-leaf paths
-* The maximum depth
+
+ * All root-to-leaf paths
+ * The maximum depth
 
 4. Check if a binary tree
-* Is symmetrical
-* Has a certain path sum.
+
+ * Is symmetrical
+ * Has a certain path sum.
 
 -----
 Usage
@@ -87,7 +91,7 @@ With a tree set up, there are several functions available such as :func:`~binary
     if tree.is_symmetric(root):
         print(str(root) + "is symmetrical!")
 
-You can also :func:`traverse <binary_tree.traverse_pre_order>` down the tree, yielding the respective node with each step of the way. There are four different methods to do so::
+You can also traverse down the tree, yielding the respective node with each step of the way. There are four different methods to do so::
 
     for node in tree.traverse_pre_order(root):
         print(node, "(pre-order traversal)")
@@ -98,9 +102,15 @@ You can also :func:`traverse <binary_tree.traverse_pre_order>` down the tree, yi
     for node in tree.traverse_post_order(root):
         print(node, "(post-order traversal)")
 
-    for level in tree.traverse_in_order(root):
+    for level in tree.traverse_level_order(root):
         for node in level:
             print(node, "(level-order traversal)")
+
+A single dispatch function, :func:`traverse <binary_tree.traverse>`, is available for these traversals.
+    
+    traversals = []
+    for kind in ("pre", "in", "post", "level"):
+        traversals.append(list(tree.traverse(root, kind)))
 
 On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree structure using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
     

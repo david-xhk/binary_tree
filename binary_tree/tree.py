@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0624 +0800
+Last updated on 12/04/2018 0714 +0800
 """
 
 from __future__ import print_function
@@ -281,28 +281,50 @@ def traverse_level_order(node):
         yield tuple(nodes)
         level = next_level
 
+_traversals = {
+    "pre": traverse_pre_order, 
+    "in": traverse_in_order, 
+    "post": traverse_post_order, 
+    "level": traverse_level_order
+    }
+
+def traverse(node, kind):
+    """Dispatch the requested kind of traversal.
+    
+    Args:
+        node (:class:`Node`): A binary tree root.
+        kind (`str`): "pre" or "in" or "post" or "level"
+
+    Returns:
+        The requested traversal generator iterator.
+    
+    Raises:
+        KeyError: If `kind` is not one of the possible options
+    """
+    return _traversals[kind](node)
+
 # Helper functions for Node objects.
 
 def get_max_depth(node):
-    '''Calculate the maximum depth of a binary tree.
+    """Calculate the maximum depth of a binary tree.
     
     Args:
         node (:class:`Node`): A binary tree root.
 
     Return:
         `int`: The total number of levels of the binary tree.
-    '''
+    """
     return sum(1 for level in traverse_level_order(node))
 
 def get_all_paths(node):
-    '''Find every root-to-leaf path in a binary tree.
+    """Find every root-to-leaf path in a binary tree.
     
     Args:
         node (:class:`Node`): A binary tree root.
 
     Yields:
         `tuple[Node, ...]`: A copy of every node from the root to a leaf.
-    '''
+    """
     queue = [node]
     visited = []
     while True:
