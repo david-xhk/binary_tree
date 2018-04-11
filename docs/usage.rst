@@ -5,11 +5,11 @@ Usage
 Imports
 -------
 
-To use the functions provided by binary_tree, you can do the following import::
+To use the functions provided by ``binary_tree``, you can do the following import::
 
     import binary_tree as tree
 
-If you would like to use the Node object on its own, you may also do this::
+If you would like to use :class:`Node` on its own, you may also do this::
     
     from binary_tree import Node
 
@@ -17,16 +17,16 @@ If you would like to use the Node object on its own, you may also do this::
 Node creation
 -------------
 
-To create a Node object, you can simply do::
+To create a :class:`Node` object, you can simply do::
     
     node = Node(1)
 
-Nodes have a ``left`` and a ``right`` attribute which are expected to also be instances of Node. They can be set on initialization like so::
+Nodes have a ``left`` and a ``right`` attribute which are expected to also be instances of :class:`Node`. They can be set on initialization like so::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may get very tedious. The preferrable way of initiating a binary tree structure is to pass in a string of values to the Node.from_string constructor::
+However, manually setting up a binary tree structure may get very tedious. The preferrable way of initiating a binary tree structure is to pass in a string of values to the :method:`Node.from_string` constructor::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
