@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0608 +0800
+Last updated on 12/04/2018 0610 +0800
 """
 
 from __future__ import print_function
@@ -298,7 +298,7 @@ def get_all_paths(node):
     '''Find every root-to-leaf path in a binary tree.
     
     Args:
-        node (`Node`): A binary tree root.
+        node (:class:`Node`): A binary tree root.
 
     Yields:
         `tuple[Node, ...]`: A copy of every node from the root to a leaf.
