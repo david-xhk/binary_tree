@@ -2,14 +2,16 @@
 Usage
 =====
 
-To instantiate a node from string::
+To instantiate a node from string
+---------------------------------
 
     from binary_tree import Node
 
     tree_string = "1,2,3,4,5,,6,7"
     root = Node.from_string(tree_string)
 
-Using functions from binary_tree::
+Using functions from binary_tree
+--------------------------------
     
     import binary_tree as tree
 

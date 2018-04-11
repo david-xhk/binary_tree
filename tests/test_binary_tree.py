@@ -10,7 +10,7 @@ from binary_tree import Node
 @pytest.fixture
 def response():
     """Test from_string constructor."""
-    tree_string = "1, 2, 3, 4, 5, null, 6, 7"
+    tree_string = "1,2,3,4,5,null,6,7"
     return Node.from_string(tree_string)
 
 def test_content(response):
