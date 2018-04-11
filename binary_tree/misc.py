@@ -6,7 +6,6 @@ Created on 10/04/2018 2239 +0800
 Last updated on 11/04/2018 1341 +0800
 """
 
-
 from node import Node as _Node
 
 def is_node(obj):
@@ -18,7 +17,6 @@ def is_node(obj):
         bool: True if obj is indeed a Node, False otherwise.
     """
     return isinstance(obj, _Node)
-
 
 def is_symmetric(node):
     """Check for symmetry in a binary tree.
@@ -41,7 +39,6 @@ def is_symmetric(node):
                 return False
         level = next_level
     return True
-
 
 from helpers import get_all_paths as _get_all_paths
 
