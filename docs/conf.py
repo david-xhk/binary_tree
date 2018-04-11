@@ -46,7 +46,7 @@ source_suffix = '.rst'
 binary_tree_toc = "index"
 
 # General information about the project.
-project = u'binary-tree'
+project = u'binary_tree'
 copyright = u"2018, Han Keong"
 author = u"Han Keong"
 
