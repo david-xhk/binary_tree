@@ -5,11 +5,11 @@ Reference: https://leetcode.com/explore/learn/card/data-structure-tree/
 
 Done by Han Keong
 Created on 10/04/2018 2220 +0800
-Last updated on 11/04/2018 0048 +0800
+Last updated on 11/04/2018 1343 +0800
 """
 
-from constructors import from_string as _make_node_from_string, from_orders as _make_node_from_orders
 
+from constructors import from_string as _make_node_from_string, from_orders as _make_node_from_orders
 
 class Node:
     def __init__(self, value, left=None, right=None):
