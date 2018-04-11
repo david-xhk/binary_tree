@@ -10,26 +10,26 @@ Features
 
 1. Construct a binary tree using 
 
-    * String
-    * In-order and pre-order traversal
-    * In-order and post-order traversal
+  * String
+  * In-order and pre-order traversal
+  * In-order and post-order traversal
 
 2. Traverse a binary tree by 
 
-    * Pre-order
-    * In-order
-    * Post-order
-    * Level-order.
+  * Pre-order
+  * In-order
+  * Post-order
+  * Level-order.
 
 3. Get from a binary tree
 
-    * All root-to-leaf paths
-    * The maximum depth
+  * All root-to-leaf paths
+  * The maximum depth
 
 4. Check if a binary tree
 
-    * Is symmetrical
-    * Has a certain path sum.
+  * Is symmetrical
+  * Has a certain path sum.
 
 -----
 Usage
