@@ -4,27 +4,29 @@ Binary Tree
 
 Binary Tree provides a Node object and some useful functions like constructors and tree traversals for a binary tree data structure.
 
+--------
 Features
 --------
-* Construct a binary tree from
 
-    * String
-    * An in-order and a pre-order traversal
-    * An in-order and a post-order traversal
+1. Construct a binary tree
+    
+    * Using string
+    * From in-order and pre-order traversal
+    * From in-order and post-order traversal
 
-* Traverse a binary tree in
-
+2. Traverse a binary tree
+    
     * Pre-order
     * In-order
     * Post-order
     * Level-order
 
-* Get all root-to-leaf paths in a binary tree
+3. Get all root-to-leaf paths in a binary tree
 
-* Check if a tree
-
-    * Has a certain path sum
-    * Is symmetrical
+4. Check a binary tree
+    
+    * If it has a certain path sum
+    * For symmetry
 
 
 

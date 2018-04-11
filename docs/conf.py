@@ -34,6 +34,7 @@ import binary_tree
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 
+autodoc_member_order = 'bysource'
 napoleon_include_init_with_doc = True
 
 # Add any paths that contain templates here, relative to this directory.
@@ -98,6 +99,9 @@ html_theme = 'default'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Configure HTML sidebar to use the global toc
+html_sidebars = { '**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html'], }
 
 
 # -- Options for HTMLHelp output ---------------------------------------

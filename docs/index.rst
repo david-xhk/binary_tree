@@ -1,8 +1,10 @@
 Welcome to Binary Tree's documentation!
 ======================================
 
-Contents:
----------
+--------
+Contents
+--------
+
 .. toctree::
    :maxdepth: 2
 
