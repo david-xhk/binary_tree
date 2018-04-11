@@ -48,4 +48,3 @@ def get_all_paths(node):
         else: 
             return
 
-
