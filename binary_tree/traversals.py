@@ -3,11 +3,10 @@ Tree traversal generators.
 
 Done by Han Keong
 Created on 10/04/2018 2232 +0800
-Last updated on 11/04/2018 1300 +0800
+Last updated on 11/04/2018 1344 +0800
 """
 
 from misc import is_node as _is_node
-
 
 def traverse_pre_order(node):
     """Visit the parent, the left child, and then the right child.
