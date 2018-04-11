@@ -2,7 +2,7 @@
 binary_tree
 ===========
 
-:mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful functions like constructors and tree traversals for a binary tree data structure.
+:mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful functions like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
 --------
 Features
@@ -19,7 +19,7 @@ Features
   * Pre-order
   * In-order
   * Post-order
-  * Level-order.
+  * Level-order
 
 3. Get from a binary tree
 
@@ -29,7 +29,7 @@ Features
 4. Check if a binary tree
 
   * Is symmetrical
-  * Has a certain path sum.
+  * Has a certain path sum
 
 -----
 Usage
