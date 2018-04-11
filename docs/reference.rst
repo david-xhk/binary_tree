@@ -8,6 +8,8 @@ Here is the documentation for binary_tree. To look at a demonstration, run "./tr
 
 .. autoclass:: Node
 
+    .. automethod:: __init__
+    
     .. automethod:: from_string
 
     .. automethod:: from_in_pre_orders

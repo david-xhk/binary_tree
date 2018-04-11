@@ -72,10 +72,10 @@ Checking a tree
 .. code-block:: python
 
     if tree.has_path_sum(root, 10):
-        print("Has path with sum 10!")
+        print(str(root) + "has path with sum 10!")
 
     if tree.is_symmetric(root):
-        print("Is symmetrical!")
+        print(str(root) + "is symmetrical!")
 
 ^^^^^^^^^^^^^^^^^
 Traversing a tree
