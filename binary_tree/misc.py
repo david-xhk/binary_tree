@@ -6,9 +6,8 @@ Created on 10/04/2018 2239 +0800
 Last updated on 11/04/2018 1335 +0800
 """
 
-from helpers import get_all_paths as _get_all_paths
-from node import Node as _Node
 
+from node import Node as _Node
 
 def is_node(obj):
     """Check if obj is an instance of Node.
@@ -30,15 +29,21 @@ def is_symmetric(node):
     Return:
         bool: True if the binary tree is symmetrical, False otherwise.
     """
-    level = (node,)
+    level = [node]
     while any(level):
-        values = tuple(getattr(node, "value", None) for node in level)
-        if values != values[::-1]:
-            return False
-        level = tuple(getattr(node, side) for node in level
-            for side in ("left", "right"))
+        values = []
+        next_level = []
+        for node in level:
+            values.append(getattr(node, "value", None))
+            for side in ("left", "right"):
+                next_level.append(getattr(node, side))
+            if values != values[::-1]:
+                return False
+        level = next_level
     return True
 
+
+from helpers import get_all_paths as _get_all_paths
 
 def has_path_sum(node, value):
     """Determine if a binary tree contains a root-to-leaf path that sums to `value`.
