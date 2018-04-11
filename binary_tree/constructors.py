@@ -3,7 +3,7 @@ Node constructors.
 
 Done by Han Keong
 Created on 10/04/2018 2204 +0800
-Last updated on 11/04/2018 0109 +0800
+Last updated on 11/04/2018 1334 +0800
 """
 
 def from_string(cls, treestring):
