@@ -6,15 +6,15 @@ Created on 10/04/2018 2204 +0800
 Last updated on 11/04/2018 1334 +0800
 """
 
-def from_string(cls, treestring):
+def from_string(cls, tree_string):
     """Instantiate each parent in the level, and then each of their left and right children.
 
     See :ref:`Node.from_string` for more documentation.
     """
-    values = iter(treestring.replace(' []\n\'"', '').split(','))
+    values = iter(tree_string.replace(' []\n\'"', '').split(','))
     try:
         value = next(values)
-    except StopIteration:  # treestring has no values
+    except StopIteration:  # tree_string has no values
         return None
     try:
         root = cls(value)
