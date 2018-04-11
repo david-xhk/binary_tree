@@ -1,20 +1,17 @@
 Welcome to Binary Tree's documentation!
 ======================================
 
+Contents:
+---------
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-
+   :caption: 
    readme
-   installation
    usage
-   modules
+   reference
+   credits
+   installation
    contributing
-   authors
-   history
-
-Indices and tables
-==================
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`

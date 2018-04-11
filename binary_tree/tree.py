@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Binary tree implementation.
+For a demonstration, run "./tree.py tree_string".
+
+Done by Han Keong
+Created on 10/04/2018 2251 +0800
+Last updated on 11/04/2018 2358 +0800
+"""
 
 from __future__ import print_function
 
@@ -34,7 +42,7 @@ class Node:
             tree_string (``str``): A flattened, level-order binary tree traversal. The node values should be separated by commas.
         
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
+            A newly instantiated :class:`Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
         """
         return _from_string(cls, tree_string)
 
@@ -46,11 +54,8 @@ class Node:
             in_order (``list`` of ``int``): An in-order binary tree traversal.
             pre_order (``list`` of ``int``): A pre-order binary tree traversal.
         
-        Note:
-            There cannot be any duplicates in `in_order` and `pre_order`.
-
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
+            A newly instantiated :class:`Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
@@ -65,14 +70,14 @@ class Node:
             in_order (``list`` of ``int``): An in-order binary tree traversal.
             post_order (``list`` of ``int``): A post-order binary tree traversal.
         
-        Note:
-            There cannot be any duplicates in `in_order` and `post_order`.
-
         Returns:
-            :class:`Node`: A newly instantiated :class:`Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
+            A newly instantiated :class:`Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
+        
+        Note:
+            There cannot be any duplicates in `in_order` and `pre-order` or `post_order` for from_in_pre_orders and from_in_post_orders respectively.
         """
         return _from_orders(cls, "in-post", in_order, post_order)
 
@@ -148,9 +153,6 @@ _sides = {
 
 def _slice_orders(kind, side, *orders):
     """Slice orders based on which order and what side is provided.
-    
-    Note:
-        There cannot be any duplicates in the orders provided.
 
     Args:
         kind (``str``): Either "in-pre" or "in-post".
@@ -326,7 +328,7 @@ def is_node(obj):
         obj: Any ``object``.
 
     Return:
-        ``bool``: ``True`` if `obj` is an instance of :class:`Node`, ``False`` otherwise.
+        ``True`` if `obj` is an instance of :class:`Node`, ``False`` otherwise.
     """
     return isinstance(obj, Node)
 
@@ -337,7 +339,7 @@ def is_leaf_node(node):
         node (:class:`Node`): Any node.
 
     Return:
-        ``bool``: ``True`` if `node` has no children, ``False`` otherwise.
+        ``True`` if `node` has no children, ``False`` otherwise.
     """
     return node.left is node.right is None
 
@@ -348,7 +350,7 @@ def is_symmetric(node):
         node (:class:`Node`): A binary tree root.
 
     Return:
-        ``bool``: ``True`` if the binary tree is symmetrical, ``False`` otherwise.
+        ``True`` if the binary tree is symmetrical, ``False`` otherwise.
     """
     level = [node]
     while any(level):
@@ -368,9 +370,10 @@ def has_path_sum(node, value):
     
     Args:
         node (:class:`Node`): A binary tree root.
+        value: The value to check for.
 
     Returns:
-        ``bool``: ``True`` if a path that sums to `value` exists, ``False`` otherwise.
+        ``True`` if a path that sums to `value` exists, ``False`` otherwise.
     """
     
     for path in get_all_paths(node):

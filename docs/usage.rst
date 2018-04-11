@@ -2,11 +2,49 @@
 Usage
 =====
 
-To use Binary Tree in a project::
-
-    import binary_tree as tree
+To instantiate a node from string::
 
     from binary_tree import Node
 
     tree_string = "1,2,3,4,5,6,7,8"
-    node = Node.from_string(tree_string)
+
+    root = Node.from_string(tree_string)
+
+
+Using functions from binary_tree::
+    
+    import binary_tree as tree
+
+    tree.has_path_sum(root, 12)
+
+    tree.is_symmetric(root)
+
+
+Traversing a tree::
+
+    for node in tree.traverse_pre_order(root):
+        print(node)
+
+
+Checking for leaf nodes::
+    
+    for node in tree.traverse_in_order(root):
+        if tree.is_leaf_node(node):
+            print(node)
+
+
+Getting paths in a tree::
+    
+    for path in tree.get_all_paths(root):
+        print(path)
+
+
+Checking if a node has children::
+    
+    for path in tree.get_all_paths(root):
+        for node in path:
+            if tree.is_node(node.left):
+                print("Has left child!")
+            if tree.is_node(node.right):
+                print("Has right child!")
+
