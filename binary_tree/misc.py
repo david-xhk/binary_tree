@@ -3,7 +3,7 @@ Miscellaneous functions for Node objects.
 
 Done by Han Keong
 Created on 10/04/2018 2239 +0800
-Last updated on 11/04/2018 1335 +0800
+Last updated on 11/04/2018 1341 +0800
 """
 
 
