@@ -5,8 +5,10 @@ For a demonstration, run "./tree.py".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 11/04/2018 1805 +0800
+Last updated on 11/04/2018 2133 +0800
 """
+
+from __future__ import print_function
 
 class Node:
     def __init__(self, value, left=None, right=None):
@@ -17,10 +19,7 @@ class Node:
             left (:obj:`Node`, optional): The left child node.
             right (:obj:`Node`, optional): The right child node.
         """
-        try:
-            self.value = int(value)
-        except ValueError:  # value is not a number.
-            self.value = value
+        self.value = value
         self.left = left
         self.right = right
 
@@ -30,7 +29,7 @@ class Node:
         Returns:
             str: A short representation of `self`.
         """
-        return f"Node({self.value})"
+        return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
         """Get repr(str).
@@ -43,7 +42,7 @@ class Node:
             args.append(repr(self.left))
             if is_node(self.right):
                 args.append(repr(self.right))
-        return f"Node({', '.join(args)})"
+        return "Node(" + ", ".join(args) + ")"
     
     @classmethod
     def from_string(cls, tree_string):
@@ -113,6 +112,10 @@ def _from_string(cls, tree_string):
         value = next(values)
     except StopIteration:  # tree_string has no values.
         return None
+    try:
+        value = int(value)
+    except ValueError:  # value is not a number.
+        pass
     root = cls(value)
     level = [root]
     while level:
@@ -126,6 +129,10 @@ def _from_string(cls, tree_string):
                 else:
                     if value in ("", "null"):  # Not a node.
                         continue
+                    try:
+                        value = int(value)
+                    except ValueError:  # value is not a number.
+                        pass
                     child = cls(value)
                     setattr(node, side, child)
                     next_level.append(child)
@@ -192,7 +199,7 @@ def _slice_orders(kind, side, *orders):
     orders = list(orders)
     for index in (0, 1):
         slice_index = _get_binary_index(_kinds[kind], _sides[side], index)
-        exec(f"orders[index] = orders[index][{_slices[slice_index]}]")
+        exec("orders[index] = orders[index][" + _slices[slice_index] + "]")
     return orders
 
 def _get_binary_index(*bools):
@@ -438,7 +445,7 @@ if __name__ == "__main__":
         width = max(map(len, commands)) + 4
         print_dashes(width)
         print("Methods:")
-        print("\n".join(f"{index:2}: {command}" for index, command in enumerate(commands)))
+        print("\n".join("{:2}: {}".format(index, command) for index, command in enumerate(commands)))
         print_dashes(width)
 
     help_text = \
@@ -460,7 +467,7 @@ The binary tree will be constructed in level order."""
 
     def main():
         while True:
-            tree_string = input("Enter a binary tree, 'h' for help, or 'q' to quit:\n")
+            tree_string = str(input("Enter a binary tree, 'h' for help, or 'q' to quit:\n"))
             if tree_string == "q":
                 return
             if tree_string == "h":
@@ -473,14 +480,13 @@ The binary tree will be constructed in level order."""
             pre_order = list(traverse_pre_order(root))
             in_order = list(traverse_in_order(root))
             post_order = list(traverse_post_order(root))
-                
             print_commands()
             while True:
                 choice = slice(None)
-                response = input(\
+                response = str(input(\
 """Type 'r' to reset the tree, or 'q' to quit.
 To view the methods again, type 'm'.
-Select a method, or 'a' for all: """)
+Select a method, or 'a' for all: """))
                 if response == "q":
                     return
                 elif response == "r":
@@ -495,7 +501,7 @@ Select a method, or 'a' for all: """)
                     continue
                 for command in commands[choice]:
                     print_in(command)
-                    exec(f"print_out({command})")
+                    exec("print_out(" + command + ")")
     main()
     print("Goodbye!")
 
