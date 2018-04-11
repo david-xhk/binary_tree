@@ -1,9 +1,9 @@
-=======================================
-Welcome to Binary Tree's documentation!
-=======================================
---------
-Contents
---------
+========
+Home
+========
+-----------------
+Table of contents
+-----------------
 
 .. toctree::
     :maxdepth: 2
@@ -13,9 +13,9 @@ Contents
     reference
     credits
 
-------------------
-Indices and tables
-------------------
+-------
+Indexes
+-------
 
 * :ref:`genindex`
 * :ref:`modindex`
