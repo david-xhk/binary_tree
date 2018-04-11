@@ -27,13 +27,16 @@ Binary tree data structure with traversal and other utilities.
 * Documentation: https://binary-tree.readthedocs.io.
 
 
-Features
---------
+API Reference
+-------------
 
-.. py:module:: binary_tree
+:mod:`binary_tree`
+========================
 
-    .. autoclass:: Node
-        :members:
+.. currentmodule:: binary_tree
+.. autoclass:: Node
+    :members:
+
 
 Credits
 -------
