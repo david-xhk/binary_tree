@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=master
+set SPHINXPROJ=binary_tree
 
 if "%1" == "" goto help
 
