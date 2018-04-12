@@ -8,28 +8,28 @@ binary_tree
 Features
 ========
 
-1. Construct a binary tree using 
+* Construct a binary tree using 
 
-   - :meth:`String <binary_tree.Node.from_string>`
-   - :meth:`In-order and pre-order traversal <binary_tree.Node.from_in_pre_orders>`
-   - :meth:`In-order and post-order traversal <binary_tree.Node.from_in_post_orders>`
+  * :func:`String <binary_tree.Node.from_string>`
+  * :func:`In-order and pre-order traversal <binary_tree.Node.from_in_pre_orders>`
+  * :func:`In-order and post-order traversal <binary_tree.Node.from_in_post_orders>`
 
-2. Traverse a binary tree by 
+* Traverse a binary tree by 
     
-   - :func:`Pre-order <binary_tree.traverse_pre_order>`
-   - :func:`In-order <binary_tree.traverse_in_order>`
-   - :func:`Post-order <binary_tree.traverse_post_order>`
-   - :func:`Level-order <binary_tree.traverse_level_order>`
+  * :func:`Pre-order <binary_tree.traverse_pre_order>`
+  * :func:`In-order <binary_tree.traverse_in_order>`
+  * :func:`Post-order <binary_tree.traverse_post_order>`
+  * :func:`Level-order <binary_tree.traverse_level_order>`
 
-3. Get from a binary tree
+* Get from a binary tree
 
-   - :func:`All root-to-leaf paths <binary_tree.get_all_paths>`
-   - :func:`The maximum depth <binary_tree.get_max_depth>`
+  * :func:`All root-to-leaf paths <binary_tree.get_all_paths>`
+  * :func:`The maximum depth <binary_tree.get_max_depth>`
 
-4. Check if a binary tree
+* Check if a binary tree
    
-   - :func:`Is symmetrical <binary_tree.is_symmetrical>`
-   - :func:`Has a certain path sum <binary_tree.has_path_sum>`
+  * :func:`Is symmetrical <binary_tree.is_symmetrical>`
+  * :func:`Has a certain path sum <binary_tree.has_path_sum>`
 
 =====
 Usage
