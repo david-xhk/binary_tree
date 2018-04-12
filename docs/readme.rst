@@ -10,26 +10,26 @@ Features
 
 1. Construct a binary tree using 
 
-   - :ref:`String <documentation/binary_tree.Node.from_string>`
-   - :ref:`In-order and pre-order traversal <documentation/binary_tree.Node.from_in_pre_orders>`
-   - :ref:`In-order and post-order traversal <documentation/binary_tree.Node.from_in_post_orders>`
+   - :ref:`String <documentation.html#binary_tree.Node.from_string>`
+   - :ref:`In-order and pre-order traversal <documentation.html#binary_tree.Node.from_in_pre_orders>`
+   - :ref:`In-order and post-order traversal <documentation.html#binary_tree.Node.from_in_post_orders>`
 
 2. Traverse a binary tree by 
     
-   - :ref:`Pre-order <documentation/binary_tree.traverse_pre_order>`
-   - :ref:`In-order <documentation/binary_tree.traverse_in_order>`
-   - :ref:`Post-order <documentation/binary_tree.traverse_post_order>`
-   - :ref:`Level-order <documentation/binary_tree.traverse_level_order>`
+   - :ref:`Pre-order <documentation.html#binary_tree.traverse_pre_order>`
+   - :ref:`In-order <documentation.html#binary_tree.traverse_in_order>`
+   - :ref:`Post-order <documentation.html#binary_tree.traverse_post_order>`
+   - :ref:`Level-order <documentation.html#binary_tree.traverse_level_order>`
 
 3. Get from a binary tree
 
-   - :ref:`All root-to-leaf paths <documentation/binary_tree.get_all_paths>`
-   - :ref:`The maximum depth <documentation/binary_tree.get_max_depth>`
+   - :ref:`All root-to-leaf paths <documentation.html#binary_tree.get_all_paths>`
+   - :ref:`The maximum depth <documentation.html#binary_tree.get_max_depth>`
 
 4. Check if a binary tree
    
-   - :ref:`Is symmetrical <documentation/binary_tree.is_symmetrical>`
-   - :ref:`Has a certain path sum <documentation/binary_tree.has_path_sum>`
+   - :ref:`Is symmetrical <documentation.html#binary_tree.is_symmetrical>`
+   - :ref:`Has a certain path sum <documentation.html#binary_tree.has_path_sum>`
 
 =====
 Usage
