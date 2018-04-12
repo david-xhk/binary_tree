@@ -2,7 +2,7 @@
 binary_tree
 ***********
 
-:ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful functions like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
+:ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful tools like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
 ========
 Features
