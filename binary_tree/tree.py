@@ -282,7 +282,6 @@ def has_path_sum(node, value):
     Returns:
         ``True`` if a path that sums to `value` exists, ``False`` otherwise.
     """
-    
     for path in get_all_paths(node):
         total = None
         for node in path:
@@ -401,10 +400,10 @@ _slices = (
     )
 
 _kinds = ("in-pre", "in-post")
-_kinds_dict = dict((kind, num) for num, kind in enumerate(_kinds))
+_kinds_dict = dict(zip(_kinds, range(2)))
 
 _sides = ("left", "right")
-_sides_dict = dict((side, num) for num, side in enumerate(_sides))
+_sides_dict = dict(zip(_sides, range(2)))
 
 _traversals = {
     "pre": traverse_pre_order, 
