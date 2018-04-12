@@ -4,6 +4,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+import re
 
 with open('docs/readme.rst') as readme_file:
     readme = readme_file.read()
@@ -41,6 +42,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/han-keong/binary_tree.py',
-    version='0.0.3',
+    version=re.search(r'__version__ = [\'"]([^\'"]*)[\'"]', open('binary_tree/__init__.py').read()).group(1),
     zip_safe=False,
 )
