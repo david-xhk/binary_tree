@@ -9,7 +9,7 @@ binary_tree
 To look at a demonstration, run "binary_tree/tree.py" in your terminal.
 
 
-.. module:: binary_tree::
+.. automodule:: binary_tree::
 
     .. autofunction:: traverse_pre_order
 
