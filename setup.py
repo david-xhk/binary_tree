@@ -29,7 +29,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="binary_tree.py provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.",
+    description="binary_tree.py provides a Node object and useful tools for a binary tree data structure.",
     install_requires=requirements,
     license="MIT license",
     long_description=readme,
