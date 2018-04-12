@@ -10,26 +10,26 @@ Features
 
 1. Construct a binary tree using 
 
-   :ref:`String <binary_tree.Node.from_string>`
-   :ref:`In-order and pre-order traversal <binary_tree.Node.from_in_pre_orders>`
-   :ref:`In-order and post-order traversal <binary_tree.Node.from_in_post_orders>`
+   - :ref:`String <documentation/binary_tree.Node.from_string>`
+   - :ref:`In-order and pre-order traversal <documentation/binary_tree.Node.from_in_pre_orders>`
+   - :ref:`In-order and post-order traversal <documentation/binary_tree.Node.from_in_post_orders>`
 
 2. Traverse a binary tree by 
     
-   :ref:`Pre-order <binary_tree.traverse_pre_order>`
-   :ref:`In-order <binary_tree.traverse_in_order>`
-   :ref:`Post-order <binary_tree.traverse_post_order>`
-   :ref:`Level-order <binary_tree.traverse_level_order>`
+   - :ref:`Pre-order <documentation/binary_tree.traverse_pre_order>`
+   - :ref:`In-order <documentation/binary_tree.traverse_in_order>`
+   - :ref:`Post-order <documentation/binary_tree.traverse_post_order>`
+   - :ref:`Level-order <documentation/binary_tree.traverse_level_order>`
 
 3. Get from a binary tree
 
-   :ref:`All root-to-leaf paths <binary_tree.get_all_paths>`
-   :ref:`The maximum depth <binary_tree.get_max_depth>`
+   - :ref:`All root-to-leaf paths <documentation/binary_tree.get_all_paths>`
+   - :ref:`The maximum depth <documentation/binary_tree.get_max_depth>`
 
 4. Check if a binary tree
    
-   :ref:`Is symmetrical <binary_tree.is_symmetrical>`
-   :ref:`Has a certain path sum <binary_tree.has_path_sum>`
+   - :ref:`Is symmetrical <documentation/binary_tree.is_symmetrical>`
+   - :ref:`Has a certain path sum <documentation/binary_tree.has_path_sum>`
 
 =====
 Usage
@@ -39,19 +39,25 @@ Usage
 Imports
 -------
 
-To use the functions provided by .. _tree: :mod:`binary_tree`, you can do the following import::
+.. _tree:
+
+To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
     import binary_tree as tree
+
+.. _node:
 
 If you would like to use :class:`~binary_tree.Node` on its own, you may also do this::
     
     from binary_tree import Node
 
+.. _constructors: 
+
 -------------
 Node creation
 -------------
 
-To create a .. _node: :class:`~binary_tree.Node` object, you can simply do::
+To create a :class:`~binary_tree.Node` object, you can simply do::
     
     node = Node(1)
 
@@ -60,8 +66,7 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-
-However, manually setting up a binary tree structure may get very tedious. The preferable way of generating a binary tree structure is to pass in a string of values to the .. _constructors: :func:`~binary_tree.Node.from_string` constructor. ::
+However, manually setting up a binary tree structure may get very tedious. The preferable way of generating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
@@ -80,6 +85,8 @@ Similarly, you can use in-order and post-order traversals with :func:`~binary_tr
     postorder = "4,2,5,6,3,1"
     root = Node.from_in_post_orders(inorder, postorder)
 
+.. _traversals:
+
 ---------------
 Tree processing
 ---------------
@@ -92,7 +99,7 @@ With a tree set up, there are several functions available such as :func:`~binary
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also .. _traversals: traverse down the tree, yielding the respective node at each step on the way. There are four different methods to do so::
+You can also traverse down the tree, yielding the respective node at each step on the way. There are four different methods to do so::
 
     for node in tree.traverse_pre_order(root):
         print(node, "(pre-order traversal)")
