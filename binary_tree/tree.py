@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Binary tree implementation.
-For a demonstration, run "./tree.py tree_string".
-
-Done by Han Keong
-Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 1656 +0800
-"""
 
 from __future__ import print_function
 
@@ -80,6 +72,12 @@ class Node:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
         """
         return _from_orders(cls, "in-post", in_order, post_order)
+
+    """
+    .. note::
+    
+            There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
+    """
 
 # Node constructors.
 
