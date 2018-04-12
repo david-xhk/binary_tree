@@ -1,6 +1,6 @@
-**************
-binary_tree.py
-**************
+*****
+About
+*****
 
 :ref:`binary_tree.py <Imports>` provides a :ref:`Node <Imports>` object and some useful tools like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
