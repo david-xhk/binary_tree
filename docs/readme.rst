@@ -4,8 +4,6 @@ About
 
 :ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful tools like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
---------------------------------------------------------------------------------
-
 ========
 Features
 ========
@@ -154,6 +152,3 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-
---------------------------------------------------------------------------------
-

@@ -4,8 +4,6 @@ Documentation
 
 This page provides a reference for both the :ref:`Node <Node interface>` object and the :ref:`tree functions <Tree functions>` in binary_tree.py.
 
----------------------------------------------------------------------------------
-
 ==============
 Node interface
 ==============
@@ -44,6 +42,10 @@ Properties
 Tree functions
 ==============
 
+.. note::
+
+    For a demonstration of binary_tree, run "binary_tree/tree.py".
+
 ----------
 Traversals
 ----------
@@ -77,11 +79,4 @@ Properties
 .. autofunction:: is_symmetrical
 
 .. autofunction:: has_path_sum
-
-
-.. note::
-
-    For a demonstration of binary_tree, run "binary_tree/tree.py".
-
----------------------------------------------------------------------------------
 
