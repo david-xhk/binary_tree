@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 1508 +0800
+Last updated on 12/04/2018 1513 +0800
 """
 
 from __future__ import print_function
@@ -293,13 +293,13 @@ def traverse(node, kind):
     
     Args:
         node (``Node``): A binary tree root.
-        kind (``str``): "pre" or "in" or "post" or "level"
+        kind (``str``): "pre" or "in" or "post" or "level".
 
     Returns:
         The requested traversal generator iterator.
     
     Raises:
-        KeyError: If `kind` is not one of the possible options
+        KeyError: If `kind` is not one of the possible options.
     """
     return _traversals[kind](node)
 
