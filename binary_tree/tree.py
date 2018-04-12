@@ -5,14 +5,14 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 1527 +0800
+Last updated on 12/04/2018 1546 +0800
 """
 
 from __future__ import print_function
 
 class Node:
     def __init__(self, value, left=None, right=None):
-        """Initialize a new instance of :class:`Node`.
+        """Initialize a new instance of ``Node``.
 
         Args:
             value: The node value.
@@ -36,7 +36,7 @@ class Node:
     
     @classmethod
     def from_string(cls, tree_string):
-        """Instantiate and return a new :class:`Node` from a string.
+        """Instantiate and return a new ``Node`` from a string.
         
         Args:
             tree_string (``str``): A flattened, level-order binary tree traversal. The node values should be separated by commas.
@@ -48,7 +48,7 @@ class Node:
 
     @classmethod
     def from_in_pre_orders(cls, in_order, pre_order):
-        """Instantiate and return a new :class:`Node` from an in-order and a pre-order traversal.
+        """Instantiate and return a new ``Node`` from an in-order and a pre-order traversal.
 
         Args:
             in_order (``list[int, ...]``): An in-order binary tree traversal.
@@ -64,7 +64,7 @@ class Node:
 
     @classmethod
     def from_in_post_orders(cls, in_order, post_order):
-        """Instantiate and return a new :class:`Node` from an in-order and a post-order traversal.
+        """Instantiate and return a new ``Node`` from an in-order and a post-order traversal.
         
         Args:
             in_order (``list[int, ...]``): An in-order binary tree traversal.
