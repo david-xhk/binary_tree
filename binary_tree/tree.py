@@ -31,26 +31,26 @@ class Node:
     
     @classmethod
     def from_string(cls, tree_string):
-        """Instantiate and return a new `Node` from a string.
+        """Instantiate and return a new Node from a string.
         
         Args:
             tree_string (str): A flattened, level-order binary tree traversal. The node values should be separated by commas.
         
         Returns:
-            A newly instantiated `Node` representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
+            A newly instantiated Node representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
         """
         return _from_string(cls, tree_string)
 
     @classmethod
     def from_in_pre_orders(cls, in_order, pre_order):
-        """Instantiate and return a new `Node` from an in-order and a pre-order traversal.
+        """Instantiate and return a new Node from an in-order and a pre-order traversal.
 
         Args:
             in_order (list[int, ...]): An in-order binary tree traversal.
             pre_order (list[int, ...]): A pre-order binary tree traversal.
         
         Returns:
-            A newly instantiated `Node` entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
+            A newly instantiated Node entailing `in_order` and `pre_order`. If `in_order` or `pre_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
@@ -62,14 +62,14 @@ class Node:
 
     @classmethod
     def from_in_post_orders(cls, in_order, post_order):
-        """Instantiate and return a new `Node` from an in-order and a post-order traversal.
+        """Instantiate and return a new Node from an in-order and a post-order traversal.
         
         Args:
             in_order (list[int, ...]): An in-order binary tree traversal.
             post_order (list[int, ...]): A post-order binary tree traversal.
         
         Returns:
-            A newly instantiated `Node` entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
+            A newly instantiated Node entailing `in_order` and `post_order`. If `in_order` or `post_order` is empty, returns ``None``.
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
@@ -344,13 +344,13 @@ def get_all_paths(node):
 # Miscellaneous functions for Node objects.
 
 def is_node(obj):
-    """Check if `obj` is an instance of `Node`.
+    """Check if `obj` is an instance of Node.
 
     Args:
         obj: Any object.
 
     Return:
-        ``True`` if `obj` is an instance of `Node`, ``False`` otherwise.
+        ``True`` if `obj` is an instance of Node, ``False`` otherwise.
     """
     return isinstance(obj, Node)
 

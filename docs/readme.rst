@@ -68,7 +68,7 @@ However, manually setting up a binary tree structure may be tedious. A more pref
 
 .. note::
     
-    :func:`~binary_tree.Node.from_string` will generate the tree structure in `level-order`.
+    Node.from_string() will generate the tree structure in *level-order*.
 
 Another way to construct a binary tree is from its in-order and pre-order traversals. You can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
 
@@ -124,7 +124,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for them
         traversal = list(tree.traverse(root, kind))
         traversals.append(traversal)
 
-On top of traversals, you can get the paths between the root node and each leaf nodes using :func:`~binary_tree.get_all_paths`. This can be useful for functions like :func:`~binary_tree.has_path_sum`. ::
+On top of traversals, you can get the paths between the root node and each leaf node using :func:`~binary_tree.get_all_paths`. This can be useful for functions like :func:`~binary_tree.has_path_sum`. ::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
