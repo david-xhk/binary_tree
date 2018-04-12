@@ -29,7 +29,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    description="Binary tree data structure with tree traversal and other utilities.",
+    description="binary_tree.py provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.",
     install_requires=requirements,
     license="MIT license",
     long_description=readme,
@@ -41,6 +41,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/han-keong/binary_tree',
-    version='0.0.1',
+    version='0.0.3',
     zip_safe=False,
 )

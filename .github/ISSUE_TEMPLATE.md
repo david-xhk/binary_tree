@@ -1,4 +1,4 @@
-* Binary Tree version:
+* binary_tree.py version:
 * Python version:
 * Operating System:
 

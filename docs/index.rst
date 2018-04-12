@@ -2,7 +2,7 @@
 Home
 ****
 
-Welcome to the documentation page of binary_tree!
+Welcome to the documentation page of binary_tree.py!
 
 ========
 Contents
