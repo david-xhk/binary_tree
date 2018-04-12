@@ -13,7 +13,12 @@ Contents
 
     readme
     docs
-    index <genindex>
+
+=====
+Index
+=====
+
+* :ref:`genindex`
 
 .. image:: https://img.shields.io/pypi/v/binary_tree.svg
     :target: https://pypi.python.org/pypi/binary_tree
