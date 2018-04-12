@@ -2,7 +2,7 @@
 binary_tree
 ***********
 
-:ref:`binary_tree <imports>` provides a :ref:`Node <imports>` object and some useful functions like :ref:`constructors <creation>` and :ref:`tree traversals <processing>` for a binary tree data structure.
+:ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful functions like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
 ========
 Features
@@ -35,8 +35,6 @@ Features
 Usage
 =====
 
-.. _imports:
-
 -------
 Imports
 -------
@@ -49,8 +47,6 @@ To use the functions provided by :mod:`binary_tree`, you can do the following im
 If you would like to use :class:`~binary_tree.Node` on its own, you may also do this::
     
     from binary_tree import Node
-
-.. _creation: 
 
 -------------
 Node creation
@@ -83,8 +79,6 @@ Similarly, you can use in-order and post-order traversals with :func:`~binary_tr
     inorder = "4,2,1,5,3,6"
     postorder = "4,2,5,6,3,1"
     root = Node.from_in_post_orders(inorder, postorder)
-
-.. _processing:
 
 ---------------
 Tree processing
