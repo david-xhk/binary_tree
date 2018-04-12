@@ -27,6 +27,7 @@ Features
    * :func:`The maximum depth <binary_tree.get_max_depth>`
 
 4. Check if a binary tree
+   
    * :func:`Is symmetrical <binary_tree.is_symmetrical>`
    * :func:`Has a certain path sum <binary_tree.has_path_sum>`
 
