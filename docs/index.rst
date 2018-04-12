@@ -1,6 +1,9 @@
 ****
 Home
 ****
+
+Welcome to the documentation page of binary_tree!
+
 ========
 Contents
 ========
@@ -8,8 +11,8 @@ Contents
 .. toctree::
     :maxdepth: 3
 
-    readme
-    documentation
+    about
+    docs
 
 =======
 Indexes
