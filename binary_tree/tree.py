@@ -54,6 +54,9 @@ class Node:
 
         Raises:
             ValueError: If `in_order` and `pre_order` do not constitute a binary tree or contain any duplicates.
+        
+        Note:
+            There cannot be any duplicates in `in_order` and `pre_order`.
         """
         return _from_orders(cls, "in-pre", in_order, pre_order)
 
@@ -70,6 +73,9 @@ class Node:
 
         Raises:
             ValueError: If `in_order` and `post_order` do not constitute a binary tree or contain any duplicates.
+        
+        Note:
+            There cannot be any duplicates in `in_order` and `post_order`.
         """
         return _from_orders(cls, "in-post", in_order, post_order)
 

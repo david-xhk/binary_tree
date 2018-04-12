@@ -2,6 +2,10 @@
 Documentation
 *************
 
+This page provides a reference for both the :ref:`Node <Node interface>` object and the :ref:`tree functions <Tree functions>` in binary_tree.py.
+
+---------------------------------------------------------------------------------
+
 ==============
 Node interface
 ==============
@@ -26,20 +30,18 @@ Constructors
 
     .. automethod:: from_in_post_orders
 
-    .. note::
-
-        There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
-
--------
-Testing
--------
+----------
+Properties
+----------
 
 .. autofunction:: is_node
 
 .. autofunction:: is_leaf_node
 
+---------------------------------------------------------------------------------
+
 ==============
-Tree processes
+Tree functions
 ==============
 
 ----------
@@ -68,16 +70,18 @@ Finding depth
 
 .. autofunction:: get_max_depth
 
--------
-Testing
--------
+----------
+Properties
+----------
 
 .. autofunction:: is_symmetrical
 
 .. autofunction:: has_path_sum
 
----------------------------------------------------------------------------------
 
 .. note::
 
     For a demonstration of binary_tree, run "binary_tree/tree.py".
+
+---------------------------------------------------------------------------------
+

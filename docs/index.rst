@@ -4,6 +4,8 @@ Home
 
 Welcome to the documentation page of binary_tree.py!
 
+---------------------------------------------------------------------------------
+
 ========
 Contents
 ========
@@ -13,6 +15,8 @@ Contents
 
     readme
     docs
+
+---------------------------------------------------------------------------------
 
 =====
 Index
@@ -33,4 +37,6 @@ Index
 .. image:: https://pyup.io/repos/github/han-keong/binary_tree/shield.svg
     :target: https://pyup.io/repos/github/han-keong/binary_tree/
     :alt: Updates
+
+---------------------------------------------------------------------------------
 

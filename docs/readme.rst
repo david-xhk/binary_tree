@@ -4,6 +4,8 @@ About
 
 :ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful tools like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
 
+--------------------------------------------------------------------------------
+
 ========
 Features
 ========
@@ -30,6 +32,8 @@ Features
    
   * :func:`Is symmetrical <binary_tree.is_symmetrical>`
   * :func:`Has a certain path sum <binary_tree.has_path_sum>`
+
+--------------------------------------------------------------------------------
 
 =====
 Usage
@@ -138,6 +142,8 @@ Finally, there are tests for nodes too, such as :func:`~binary_tree.is_node` and
     if tree.is_node(node.left):
         print(str(node) + "has left child!")
 
+--------------------------------------------------------------------------------
+
 =======
 Credits
 =======
@@ -149,5 +155,5 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
-
+--------------------------------------------------------------------------------
 
