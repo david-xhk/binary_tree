@@ -1,14 +1,15 @@
+
+.. module:: binary_tree
+
 *************
 Documentation
 *************
 
-This page provides a reference for the Node object and tree functions in binary_tree.py.
+This page displays the documentation for the Node class and tree functions in binary_tree.py.
 
 .. note::
 
     For a demonstration of binary_tree, run "binary_tree/tree.py".
-
-.. module:: binary_tree
 
 ==============
 Node interface

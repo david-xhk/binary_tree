@@ -14,7 +14,6 @@ Contents
     readme
     docs
 
-
 .. image:: https://img.shields.io/pypi/v/binary_tree.py.svg
     :target: https://pypi.python.org/pypi/binary_tree.py
 

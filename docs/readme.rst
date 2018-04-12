@@ -2,8 +2,7 @@
 About
 *****
 
-binary_tree.py provides a ``Node`` object and some useful tools like constructors and tree traversals for a binary tree data structure.
-
+binary_tree.py provides a :class:`~binary_tree.Node` object and some useful tools like constructors and tree traversals for a binary tree data structure.
 
 ========
 Features
@@ -32,7 +31,6 @@ Features
   * Is symmetrical
   * Has a certain path sum
 
-
 =====
 Usage
 =====
@@ -54,33 +52,39 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 -------------
 
-Pass a value into :class:`~binary_tree.Node` to create an instance. ::
+To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to be instances of :class:`~binary_tree.Node`. They can be set on initialization. ::
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute, which are expected to be instances of :class:`~binary_tree.Node`. They can also be set on initialization. ::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure is tedious. A more preferable way of generating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+However, manually setting up a binary tree structure may be tedious. A more preferable way of creating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
-Take note that this method will generate a binary tree structure in `level-order`.
+.. note::
+    
+    :func:`~binary_tree.Node.from_string` will generate the tree structure in `level-order`.
 
 Another way to construct a binary tree is from its in-order and pre-order traversals. You can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
 
-    inorder = "4,2,1,5,3,6"
-    preorder = "1,2,4,3,5,6"
-    root = Node.from_in_pre_orders(inorder, preorder)
+    in_order = "4,2,1,5,3,6"
+    pre_order = "1,2,4,3,5,6"
+    root = Node.from_in_pre_orders(in_order, pre_order)
 
 Alternatively, you can use in-order and post-order traversals with :func:`~binary_tree.Node.from_in_post_orders`. ::
 
-    inorder = "4,2,1,5,3,6"
-    postorder = "4,2,5,6,3,1"
-    root = Node.from_in_post_orders(inorder, postorder)
+    in_order = "4,2,1,5,3,6"
+    post_order = "4,2,5,6,3,1"
+    root = Node.from_in_post_orders(in_order, post_order)
+
+.. note::
+    
+    There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
 ---------------
 Tree processing
@@ -94,29 +98,33 @@ With a tree set up, there are several functions you can use such as :func:`~bina
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding each node along the way. There are four different methods to do so::
-
+You can also traverse down the tree, yielding each node along the way. Four different kinds of traversals are provided. ::
+    
+    print("This is a pre-order traversal.")
     for node in tree.traverse_pre_order(root):
-        print(node, "(pre-order traversal)")
+        print(node)
 
+    print("This is an in-order traversal.")
     for node in tree.traverse_in_order(root):
-        print(node, "(in-order traversal)")
+        print(node)
 
+    print("This is a post-order traversal.")
     for node in tree.traverse_post_order(root):
-        print(node, "(post-order traversal)")
+        print(node)
 
+    print("This is a level-order traversal")
     for level in tree.traverse_level_order(root):
         for node in level:
-            print(node, "(level-order traversal)")
+            print(node)
 
-A single dispatch function, :func:`~binary_tree.traverse`, is available for these traversals. ::
+A single dispatch function, :func:`~binary_tree.traverse`, is available for them. ::
     
     traversals = []
     for kind in ("pre", "in", "post", "level"):
         traversal = list(tree.traverse(root, kind))
         traversals.append(traversal)
 
-On top of traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This can be useful for functions like :func:`~binary_tree.has_path_sum`::
+On top of traversals, you can get the paths between the root node and each leaf nodes using :func:`~binary_tree.get_all_paths`. This can be useful for functions like :func:`~binary_tree.has_path_sum`. ::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
@@ -140,7 +148,6 @@ Finally, there is :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_n
     if tree.is_node(node.left):
         print(str(node) + "has left child!")
 
-
 =======
 Credits
 =======
@@ -151,3 +158,4 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
