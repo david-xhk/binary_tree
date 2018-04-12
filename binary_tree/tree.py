@@ -5,23 +5,26 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 1555 +0800
+Last updated on 12/04/2018 1633 +0800
 """
 
 from __future__ import print_function
 
 class Node:
-    def __init__(self, value, left=None, right=None):
-        """Initialize a new instance of ``Node``.
+    """Node implementation for a binary tree structure.
 
-        Args:
-            value: The node value.
-            left (``Node``, optional): The left child node.
-            right (``Node``, optional): The right child node.
-        """
+    Attributes:
+        value: The node value.
+        left (``Node``, optional): The left child node, if present.
+        right (``Node``, optional): The right child node, if present.
+    """
+
+    def __init__(self, value, left=None, right=None):
         self.value = value
         self.left = left
+        
         self.right = right
+        
 
     def __str__(self):
         return "Node(" + str(self.value) + ")"

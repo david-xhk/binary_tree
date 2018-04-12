@@ -9,8 +9,6 @@ To look at a demonstration, run "./tree.py" in your terminal.
 .. currentmodule:: binary_tree
 
 .. autoclass:: Node
-    
-    .. automethod:: __init__
 
     .. automethod:: from_string
 
