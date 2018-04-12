@@ -2,7 +2,7 @@
 About
 *****
 
-:ref:`binary_tree <Imports>` provides a :ref:`Node <Imports>` object and some useful tools like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
+binary_tree.py provides a ``Node`` object and some useful tools like constructors and tree traversals for a binary tree data structure.
 
 
 ========
@@ -11,26 +11,26 @@ Features
 
 * Construct a binary tree using 
 
-  * :func:`String <binary_tree.Node.from_string>`
-  * :func:`In-order and pre-order traversal <binary_tree.Node.from_in_pre_orders>`
-  * :func:`In-order and post-order traversal <binary_tree.Node.from_in_post_orders>`
+  * String
+  * In-order and pre-order traversal
+  * In-order and post-order traversal
 
 * Traverse a binary tree by 
     
-  * :func:`Pre-order <binary_tree.traverse_pre_order>`
-  * :func:`In-order <binary_tree.traverse_in_order>`
-  * :func:`Post-order <binary_tree.traverse_post_order>`
-  * :func:`Level-order <binary_tree.traverse_level_order>`
+  * Pre-order
+  * In-order
+  * Post-order
+  * Level-order
 
 * Get from a binary tree
 
-  * :func:`All root-to-leaf paths <binary_tree.get_all_paths>`
-  * :func:`The maximum depth <binary_tree.get_max_depth>`
+  * All root-to-leaf paths
+  * The maximum depth
 
 * Check if a binary tree
    
-  * :func:`Is symmetrical <binary_tree.is_symmetrical>`
-  * :func:`Has a certain path sum <binary_tree.has_path_sum>`
+  * Is symmetrical
+  * Has a certain path sum
 
 
 =====
@@ -54,29 +54,29 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 -------------
 
-To create a :class:`~binary_tree.Node` object, you can simply do::
+Pass a value into :class:`~binary_tree.Node` to create an instance. ::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to be instances of :class:`~binary_tree.Node`. They can be set on initialization like so::
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute which are expected to be instances of :class:`~binary_tree.Node`. They can be set on initialization. ::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may get very tedious. The preferable way of generating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+However, manually setting up a binary tree structure is tedious. A more preferable way of generating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
 Take note that this method will generate a binary tree structure in `level-order`.
 
-Another way to construct a binary tree is through retrosynthesis from its in-order and pre-order traversals. If you happen to have only this information, you can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
+Another way to construct a binary tree is from its in-order and pre-order traversals. You can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
 
     inorder = "4,2,1,5,3,6"
     preorder = "1,2,4,3,5,6"
     root = Node.from_in_pre_orders(inorder, preorder)
 
-Similarly, you can use in-order and post-order traversals with :func:`~binary_tree.Node.from_in_post_orders`. ::
+Alternatively, you can use in-order and post-order traversals with :func:`~binary_tree.Node.from_in_post_orders`. ::
 
     inorder = "4,2,1,5,3,6"
     postorder = "4,2,5,6,3,1"
@@ -86,7 +86,7 @@ Similarly, you can use in-order and post-order traversals with :func:`~binary_tr
 Tree processing
 ---------------
 
-With a tree set up, there are several functions available such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
+With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
 
     if tree.has_path_sum(root, 10):
         print(str(root) + "has path with sum 10!")
@@ -94,7 +94,7 @@ With a tree set up, there are several functions available such as :func:`~binary
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding the respective node at each step on the way. There are four different methods to do so::
+You can also traverse down the tree, yielding each node along the way. There are four different methods to do so::
 
     for node in tree.traverse_pre_order(root):
         print(node, "(pre-order traversal)")
@@ -116,7 +116,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for thes
         traversal = list(tree.traverse(root, kind))
         traversals.append(traversal)
 
-On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This might be useful for doing tests like :func:`~binary_tree.has_path_sum`::
+On top of traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This can be useful for functions like :func:`~binary_tree.has_path_sum`::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
@@ -132,7 +132,7 @@ Also, you can use :func:`~binary_tree.get_max_depth` to get the total number of 
     
     depth = tree.get_max_depth(root)
 
-Finally, there are tests for nodes too, such as :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might come in handy when writing your own tree processors. ::
+Finally, there is :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might be useful when writing your own tree functions. ::
 
     if tree.is_leaf_node(node):
         print(str(node) + "is a leaf node!")
