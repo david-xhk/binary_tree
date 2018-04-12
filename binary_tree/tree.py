@@ -37,7 +37,7 @@ class Node:
             tree_string (str): A flattened, level-order binary tree traversal. The node values should be separated by commas.
         
         Returns:
-            A newly instantiated Node representing `tree_string`. If `tree_string` does not contain any node values, returns ``None``.
+            A newly instantiated Node representing `tree_string`. If `tree_string` has no root value, returns ``None``.
         """
         return _from_string(cls, tree_string)
 
@@ -78,114 +78,6 @@ class Node:
             There cannot be any duplicates in `in_order` and `post_order`.
         """
         return _from_orders(cls, "in-post", in_order, post_order)
-
-# Node constructors.
-
-def _from_string(cls, tree_string):
-    """Instantiate each parent in the level, and then each of their left and right children."""
-    for char in _ignore:
-        tree_string = tree_string.replace(char, "")
-    values = iter(tree_string.split(","))
-    try:
-        value = next(values)
-    except StopIteration:  # tree_string has no values.
-        return None
-    try:
-        value = int(value)
-    except ValueError:  # value is not a number.
-        pass
-    root = cls(value)
-    level = [root]
-    while level:
-        next_level = []
-        for node in level:
-            for side in _sides:
-                try:
-                    value = next(values)
-                except StopIteration:  # values has been exhausted.
-                    return root
-                else:
-                    if value in _null:  # Not a node.
-                        continue
-                    try:
-                        value = int(value)
-                    except ValueError:  # value is not a number.
-                        pass
-                    child = cls(value)
-                    setattr(node, side, child)
-                    next_level.append(child)
-        level = next_level
-    else:  # next_level is an empty list, so subsequent node values are lost.
-        return root
-
-def _from_orders(cls, kind, *orders):
-    """Instantiate the parent, the left child, and then the right child."""
-    if not all(orders):
-        return None
-    node = cls(orders[1][-1*_kinds_dict[kind]])
-    for side in _sides:
-        child = _from_orders(cls, kind, *_slice_orders(kind, side, *orders))
-        setattr(node, side, child)
-    return node
-
-# Constructor helper objects
-
-_ignore = " []\n'\""
-
-_null = ("", "null")
-
-_slices = (
-    ":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
-    "1:len(orders[0])+1",                 #  in-pre,  left, 1
-    "orders[0].index(orders[1][0])+1:",   #  in-pre, right, 0
-    "-len(orders[0]):",                   #  in-pre, right, 1
-    ":orders[0].index(orders[1][-1])",    # in-post,  left, 0
-    ":len(orders[0])",                    # in-post,  left, 1
-    "orders[0].index(orders[1][-1])+1:",  # in-post, right, 0
-    "-len(orders[0])-1:-1"                # in-post, right, 1
-    )
-
-_kinds = ("in-pre", "in-post")
-_kinds_dict = dict(enumerate(_kinds))
-
-_sides = ("left", "right")
-_sides_dict = dict(enumerate(_sides))
-
-def _slice_orders(kind, side, *orders):
-    """Slice orders based on which order and what side is provided.
-
-    Args:
-        kind (str): Either "in-pre" or "in-post".
-        side (str): Either "left" or "right".
-        *orders (list[int, ...]): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
-            where `in_order` and `pre_order` or `post_order` are lists of ints.
-    
-    Returns:
-        list[list, list]: Sliced copies of the orders provided.
-    
-    Raises:
-        KeyError: If `kind` or `side` is invalid.
-        IndexError: If the orders provided do not constitute a binary tree or contain any duplicates.
-    """
-    orders = list(orders)
-    for index in (0, 1):
-        slice_index = _get_binary_index(_kinds_dict[kind], _sides_dict[side], index)
-        exec("orders[index] = orders[index][" + _slices[slice_index] + "]")
-    return orders
-
-def _get_binary_index(*bools):
-    """Transform a succession of boolean numbers into a decimal integer.
-
-    Args:
-        *bools (int): A succession of boolean numbers.
-    
-    Returns:
-        int: A decimal integer.
-
-    Raises:
-        ValueError: If any argument in `bools` is not a boolean number.
-    """
-    return int("".join(str(int(num)) for num in bools), 2)
 
 # Tree traversal generators.
 
@@ -278,13 +170,6 @@ def traverse_level_order(node):
                 next_level.append(getattr(node, side))
         yield tuple(nodes)
         level = next_level
-
-_traversals = {
-    "pre": traverse_pre_order, 
-    "in": traverse_in_order, 
-    "post": traverse_post_order, 
-    "level": traverse_level_order
-    }
 
 def traverse(node, kind):
     """Dispatch the requested kind of traversal.
@@ -410,25 +295,125 @@ def has_path_sum(node, value):
     else:
         return False
 
-if __name__ == "__main__":
-    from time import sleep
+# Private methods and attributes
 
-    def print_in(*args):
-        print(">>>", *args)
+# Node constructors.
 
-    def print_out(*args, **kwargs):
-        if not any(isinstance(arg, (list, tuple)) for arg in args):
-            print(*args, **kwargs)
-        else:
-            for arg in args:
-                if not any(isinstance(arg, (list, tuple)) for arg in arg):
-                    print(*map(str, arg), sep=", ")
+def _from_string(cls, tree_string):
+    """Instantiate each parent in the level, and then each of their left and right children."""
+    for char in _ignore:
+        tree_string = tree_string.replace(char, "")
+    values = iter(tree_string.split(","))
+    value = next(values)
+    if value == "":  # Empty root value.
+        return None
+    try:
+        value = int(value)
+    except ValueError:  # value is not a number.
+        pass
+    root = cls(value)
+    level = [root]
+    while level:
+        next_level = []
+        for node in level:
+            for side in _sides:
+                try:
+                    value = next(values)
+                except StopIteration:  # values has been exhausted.
+                    return root
                 else:
-                    print_out(*arg)
+                    if value in _null:  # Not a node.
+                        continue
+                    try:
+                        value = int(value)
+                    except ValueError:  # value is not a number.
+                        pass
+                    child = cls(value)
+                    setattr(node, side, child)
+                    next_level.append(child)
+        level = next_level
+    else:  # next_level is an empty list, so subsequent node values are lost.
+        return root
 
-    def print_dashes(width):
-        print("".join("-" for i in range(width)))
+def _from_orders(cls, kind, *orders):
+    """Instantiate the parent, the left child, and then the right child."""
+    if not all(orders):
+        return None
+    node = cls(orders[1][-1*_kinds_dict[kind]])
+    for side in _sides:
+        child = _from_orders(cls, kind, *_slice_orders(kind, side, *orders))
+        setattr(node, side, child)
+    return node
 
+# Helpers for _from_orders
+
+def _slice_orders(kind, side, *orders):
+    """Slice orders based on which order and what side is provided.
+
+    Args:
+        kind (str): Either "in-pre" or "in-post".
+        side (str): Either "left" or "right".
+        *orders (list[int, ...]): Either (`in_order`, `pre_order`) or (`in_order`, `post_order`),
+            where `in_order` and `pre_order` or `post_order` are lists of ints.
+    
+    Returns:
+        list[list, list]: Sliced copies of the orders provided.
+    
+    Raises:
+        KeyError: If `kind` or `side` is invalid.
+        IndexError: If the orders provided do not constitute a binary tree or contain any duplicates.
+    """
+    orders = list(orders)
+    for index in (0, 1):
+        slice_index = _get_binary_index(_kinds_dict[kind], _sides_dict[side], index)
+        exec("orders[index] = orders[index][" + _slices[slice_index] + "]")
+    return orders
+
+def _get_binary_index(*bools):
+    """Transform a succession of boolean numbers into a decimal integer.
+
+    Args:
+        *bools (int): A succession of boolean numbers.
+    
+    Returns:
+        int: A decimal integer.
+
+    Raises:
+        ValueError: If any argument in `bools` is not a boolean number.
+    """
+    return int("".join(str(int(num)) for num in bools), 2)
+
+# Singleton objects
+
+_ignore = " []\n'\""
+
+_null = ("", "null")
+
+_slices = (
+    ":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
+    "1:len(orders[0])+1",                 #  in-pre,  left, 1
+    "orders[0].index(orders[1][0])+1:",   #  in-pre, right, 0
+    "-len(orders[0]):",                   #  in-pre, right, 1
+    ":orders[0].index(orders[1][-1])",    # in-post,  left, 0
+    ":len(orders[0])",                    # in-post,  left, 1
+    "orders[0].index(orders[1][-1])+1:",  # in-post, right, 0
+    "-len(orders[0])-1:-1"                # in-post, right, 1
+    )
+
+_kinds = ("in-pre", "in-post")
+_kinds_dict = dict((kind, num) for num, kind in enumerate(_kinds))
+
+_sides = ("left", "right")
+_sides_dict = dict((side, num) for num, side in enumerate(_sides))
+
+_traversals = {
+    "pre": traverse_pre_order, 
+    "in": traverse_in_order, 
+    "post": traverse_post_order, 
+    "level": traverse_level_order
+    }
+
+if __name__ == "__main__":
     commands = [
         "tree_string",
         "repr(Node.from_string(tree_string))",
@@ -448,30 +433,46 @@ if __name__ == "__main__":
     def print_commands():
         width = max(map(len, commands)) + 4
         print_dashes(width)
-        print("Methods:")
+        print("Commands:")
         print("\n".join("{:2}: {}".format(index, command) for index, command in enumerate(commands)))
         print_dashes(width)
 
     help_text = \
-"""The binary tree can consist of all numbers or all alphabets.
+"""The binary tree should consist of numbers.
 
 Node values should be separated by commas.
 
-Absent nodes can be indicated with 'null' or an immediate comma.
+Indicate absent nodes with 'null' or an immediate comma.
 For example, "1,2,,3,4" is equivalent to "1,2,null,3,4".
 
 The binary tree will be constructed in level order."""
-
+    
     def print_help():
         width = max(map(len, help_text.splitlines()))
         print_dashes(width)
         print("Help:")
         print(help_text)
         print_dashes(width)
+    
+    def print_dashes(width):
+        print("".join("-" for i in range(width)))
+
+    def print_in(*args):
+        print(">>>", *args)
+
+    def print_out(*args, **kwargs):
+        if not any(isinstance(arg, (list, tuple)) for arg in args):
+            print(*args, **kwargs)
+        else:
+            for arg in args:
+                if not any(isinstance(arg, (list, tuple)) for arg in arg):
+                    print(*map(str, arg), sep=", ")
+                else:
+                    print_out(*arg)
 
     def main():
         while True:
-            tree_string = str(input("Enter a binary tree, 'h' for help, or 'q' to quit:\n"))
+            tree_string = input("Enter a binary tree, 'h' for help, or 'q' to quit:\n")
             if tree_string == "q":
                 return
             if tree_string == "h":
@@ -479,18 +480,18 @@ The binary tree will be constructed in level order."""
                 continue
             root = Node.from_string(tree_string)
             if root is None:
-                print("Empty string. Please try again.")
+                print("Missing root value. Please try again.")
                 continue
-            pre_order = list(traverse_pre_order(root))
-            in_order = list(traverse_in_order(root))
-            post_order = list(traverse_post_order(root))
+            pre_order = [node.value for node in traverse_pre_order(root)]
+            in_order = [node.value for node in traverse_in_order(root)]
+            post_order = [node.value for node in traverse_post_order(root)]
             print_commands()
             while True:
                 choice = slice(None)
-                response = str(input(\
+                response = input(\
 """Type 'r' to reset the tree, or 'q' to quit.
-To view the methods again, type 'm'.
-Select a method, or 'a' for all: """))
+To view the commands again, type 'c'.
+Select a command, or 'a' for all: """)
                 if response == "q":
                     return
                 elif response == "r":
@@ -498,14 +499,20 @@ Select a method, or 'a' for all: """))
                 elif response in map(str, range(len(commands))):
                     choice = slice(int(response), int(response)+1)
                 elif response != "a":
-                    if response == "m": 
+                    if response == "c": 
                         print_commands()
                     else:
-                        print("Invalid index. Please try again.")
+                        print("Invalid index. Please try again.\n")
                     continue
                 for command in commands[choice]:
                     print_in(command)
                     exec("print_out(" + command + ")")
+                    print()
+
+    # For backwards compatibility
+    import sys
+    if sys.version_info < (3,3):
+        input = raw_input
     main()
     print("Goodbye!")
 

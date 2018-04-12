@@ -1,4 +1,7 @@
-"""Tools for a binary tree data structure."""
+"""Tools for a binary tree data structure.
+
+For a demonstration, run binary_tree/tree.py.
+"""
 
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
