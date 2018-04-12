@@ -68,7 +68,7 @@ However, manually setting up a binary tree structure may be tedious. A more pref
 
 .. note::
     
-    Node.from_string() will generate the tree structure in *level-order*.
+    Node.from_string() will generate the tree structure in **level-order**.
 
 Another way to construct a binary tree is from its in-order and pre-order traversals. You can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
 
