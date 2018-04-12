@@ -4,6 +4,10 @@ Documentation
 
 This page provides a reference for both the :ref:`Node <Node interface>` object and the :ref:`tree functions <Tree functions>` in binary_tree.py.
 
+.. note::
+
+    For a demonstration of binary_tree, run "binary_tree/tree.py".
+
 ==============
 Node interface
 ==============
@@ -41,10 +45,6 @@ Properties
 ==============
 Tree functions
 ==============
-
-.. note::
-
-    For a demonstration of binary_tree, run "binary_tree/tree.py".
 
 ----------
 Traversals
