@@ -8,6 +8,7 @@ This page provides a reference for both the :ref:`Node <Node interface>` object 
 
     For a demonstration of binary_tree, run "binary_tree/tree.py".
 
+
 ==============
 Node interface
 ==============
@@ -40,7 +41,6 @@ Properties
 
 .. autofunction:: is_leaf_node
 
----------------------------------------------------------------------------------
 
 ==============
 Tree functions
