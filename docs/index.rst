@@ -19,7 +19,6 @@ Indexes
 =======
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
 .. image:: https://img.shields.io/pypi/v/binary_tree.svg

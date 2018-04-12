@@ -1,4 +1,4 @@
-"""Binary tree implementation.
+"""Tools for a binary tree data structure.
 
 Note:
     For a demonstration, run "binary_tree/tree.py".
@@ -11,9 +11,17 @@ from .tree import *
 del tree
 
 __all__ = [
-    "traverse_pre_order", "traverse_in_order", "traverse_post_order", "traverse_level_order", "traverse"
-    "get_max_depth", "get_all_paths",
-    "is_node", "is_leaf_node", "is_symmetrical", "has_path_sum",
     "Node",
+    "traverse_pre_order", 
+    "traverse_in_order", 
+    "traverse_post_order", 
+    "traverse_level_order", 
+    "traverse"
+    "get_max_depth", 
+    "get_all_paths",
+    "is_node", 
+    "is_leaf_node", 
+    "is_symmetrical", 
+    "has_path_sum",
     ]
 
