@@ -1,7 +1,7 @@
 
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 from .tree import *
 del tree
