@@ -2,7 +2,7 @@
 binary_tree
 ***********
 
-:mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful functions like :ref:`constructors <Node creation>` and :ref:`tree traversals <Tree processing>` for a binary tree data structure.
+:ref:`binary_tree` provides a :ref:`Node` object and some useful functions like :ref:`constructors` and :ref:`tree traversals <traversals>` for a binary tree data structure.
 
 ========
 Features
@@ -39,6 +39,8 @@ Usage
 Imports
 -------
 
+.. _binary_tree:
+
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
     import binary_tree as tree
@@ -51,6 +53,8 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 -------------
 
+.. _Node:
+
 To create a :class:`~binary_tree.Node` object, you can simply do::
     
     node = Node(1)
@@ -60,7 +64,9 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may get very tedious. The preferable way of initiating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+.. _constructors:
+
+However, manually setting up a binary tree structure may get very tedious. The preferable way of generating a binary tree structure is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
@@ -91,7 +97,9 @@ With a tree set up, there are several functions available such as :func:`~binary
     if tree.is_symmetric(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding the respective node with each step of the way. There are four different methods to do so::
+.. _traversals:
+
+You can also traverse down the tree, yielding the respective node at each step on the way. There are four different methods to do so::
 
     for node in tree.traverse_pre_order(root):
         print(node, "(pre-order traversal)")
@@ -106,11 +114,12 @@ You can also traverse down the tree, yielding the respective node with each step
         for node in level:
             print(node, "(level-order traversal)")
 
-A single dispatch function, :func:`traverse <binary_tree.traverse>`, is available for these traversals. ::
+A single dispatch function, :func:`~binary_tree.traverse`, is available for these traversals. ::
     
     traversals = []
     for kind in ("pre", "in", "post", "level"):
-        traversals.append(list(tree.traverse(root, kind)))
+        traversal = list(tree.traverse(root, kind))
+        traversals.append(traversal)
 
 On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
     
@@ -128,7 +137,7 @@ You can also call :func:`~binary_tree.get_max_depth` to get the total number of 
     
     depth = tree.get_max_depth(root)
 
-Finally, there are :func:`tests <binary_tree.is_node>` for nodes too, which might come in handy for the above-mentioned processes. ::
+Finally, there are tests for nodes too such as :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might come in handy for the above-mentioned processes. ::
 
     if tree.is_leaf_node(node):
         print(str(node) + "is a leaf node!")
