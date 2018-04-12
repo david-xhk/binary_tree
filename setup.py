@@ -40,7 +40,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/han-keong/binary_tree',
+    url='https://github.com/han-keong/binary_tree.py',
     version='0.0.3',
     zip_safe=False,
 )
