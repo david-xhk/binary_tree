@@ -81,11 +81,6 @@ class Node:
         """
         return _from_orders(cls, "in-post", in_order, post_order)
 
-    """
-    Note:
-        There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
-    """
-
 # Node constructors.
 
 def _from_string(cls, tree_string):

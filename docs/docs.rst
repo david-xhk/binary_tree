@@ -16,29 +16,31 @@ To look at a demonstration, run "./tree.py" in your terminal.
 
     .. automethod:: from_in_post_orders
 
-.. automodule:: binary_tree
-    
-    .. autofunction:: traverse_pre_order
+    .. note::
 
-    .. autofunction:: traverse_in_order
+        There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
+ 
+.. autofunction:: traverse_pre_order
 
-    .. autofunction:: traverse_post_order
+.. autofunction:: traverse_in_order
 
-    .. autofunction:: traverse_level_order
+.. autofunction:: traverse_post_order
 
-    .. autofunction:: traverse
+.. autofunction:: traverse_level_order
 
-    .. autofunction:: get_max_depth
+.. autofunction:: traverse
 
-    .. autofunction:: get_all_paths
+.. autofunction:: get_max_depth
 
-    .. autofunction:: is_node
+.. autofunction:: get_all_paths
 
-    .. autofunction:: is_leaf_node
+.. autofunction:: is_node
 
-    .. autofunction:: is_symmetrical
+.. autofunction:: is_leaf_node
 
-    .. autofunction:: has_path_sum
+.. autofunction:: is_symmetrical
+
+.. autofunction:: has_path_sum
 
 
 
