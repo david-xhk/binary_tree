@@ -126,7 +126,7 @@ On top of doing tree traversals, you can get the paths between the root node and
         else:
             return False
 
-You can also call :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
+Also, you can use :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
     
     depth = tree.get_max_depth(root)
 
