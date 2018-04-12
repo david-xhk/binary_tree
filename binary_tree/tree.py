@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 0745 +0800
+Last updated on 12/04/2018 1502 +0800
 """
 
 from __future__ import print_function
@@ -367,7 +367,7 @@ def is_leaf_node(node):
     """
     return node.left is node.right is None
 
-def is_symmetric(node):
+def is_symmetrical(node):
     """Check for symmetry in a binary tree.
     
     Args:
@@ -440,7 +440,7 @@ if __name__ == "__main__":
         "list(traverse_level_order(root))",
         "list(traverse(root, 'level'))",
         "get_max_depth(root)",
-        "is_symmetric(root)",
+        "is_symmetrical(root)",
         "list(get_all_paths(root))",
         "has_path_sum(root, 22)",
         "repr(Node.from_in_pre_orders(in_order, pre_order))",

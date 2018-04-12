@@ -2,7 +2,7 @@
 binary_tree
 ***********
 
-:ref:`binary_tree` provides a :ref:`Node` object and some useful functions like :ref:`constructors` and :ref:`tree traversals <traversals>` for a binary tree data structure.
+:ref:`binary_tree <tree>` provides a :ref:`Node <node>` object and some useful functions like :ref:`constructors <constructors>` and :ref:`tree traversals <traversals>` for a binary tree data structure.
 
 ========
 Features
@@ -10,26 +10,25 @@ Features
 
 1. Construct a binary tree using 
 
-   * String
-   * In-order and pre-order traversal
-   * In-order and post-order traversal
+   * :func:`String <binary_tree.Node.from_string>`
+   * :func:`In-order and pre-order traversal <binary_tree.Node.from_in_pre_orders>`
+   * :func:`In-order and post-order traversal <binary_tree.Node.from_in_post_orders>`
 
 2. Traverse a binary tree by 
-
-   * Pre-order
-   * In-order
-   * Post-order
-   * Level-order
+    
+   * :func:`Pre-order <binary_tree.traverse_pre_order>`
+   * :func:`In-order <binary_tree.traverse_in_order>`
+   * :func:`Post-order <binary_tree.traverse_post_order>`
+   * :func:`Level-order <binary_tree.traverse_level_order>`
 
 3. Get from a binary tree
 
-   * All root-to-leaf paths
-   * The maximum depth
+   * :func:`All root-to-leaf paths <binary_tree.get_all_paths>`
+   * :func:`The maximum depth <binary_tree.get_max_depth>`
 
 4. Check if a binary tree
-
-   * Is symmetrical
-   * Has a certain path sum
+   * :func:`Is symmetrical <binary_tree.is_symmetrical>`
+   * :func:`Has a certain path sum <binary_tree.has_path_sum>`
 
 =====
 Usage
@@ -39,7 +38,7 @@ Usage
 Imports
 -------
 
-.. _binary_tree:
+.. _tree:
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
@@ -53,7 +52,7 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also do 
 Node creation
 -------------
 
-.. _Node:
+.. _node:
 
 To create a :class:`~binary_tree.Node` object, you can simply do::
     
@@ -71,7 +70,7 @@ However, manually setting up a binary tree structure may get very tedious. The p
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
-Take note that this method will generate a binary tree structure in level-order.
+Take note that this method will generate a binary tree structure in `level-order`.
 
 Another way to construct a binary tree is through retrosynthesis from its in-order and pre-order traversals. If you happen to have only this information, you can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
 
@@ -89,12 +88,12 @@ Similarly, you can use in-order and post-order traversals with :func:`~binary_tr
 Tree processing
 ---------------
 
-With a tree set up, there are several functions available such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetric` to analyse the nature of the tree. ::
+With a tree set up, there are several functions available such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
 
     if tree.has_path_sum(root, 10):
         print(str(root) + "has path with sum 10!")
 
-    if tree.is_symmetric(root):
+    if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
 .. _traversals:
@@ -121,7 +120,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for thes
         traversal = list(tree.traverse(root, kind))
         traversals.append(traversal)
 
-On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This might be useful for doing membership tests such as::
+On top of doing tree traversals, you can get the paths between the root node and all the leaf nodes of the binary tree using :func:`~binary_tree.get_all_paths`. This might be useful for doing tests like :func:`~binary_tree.has_path_sum`::
     
     def has_path_sum(node, value):
         for path in tree.get_all_paths(node):
@@ -137,7 +136,7 @@ You can also call :func:`~binary_tree.get_max_depth` to get the total number of 
     
     depth = tree.get_max_depth(root)
 
-Finally, there are tests for nodes too such as :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might come in handy for the above-mentioned processes. ::
+Finally, there are tests for nodes too, such as :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might come in handy when writing your own tree processors. ::
 
     if tree.is_leaf_node(node):
         print(str(node) + "is a leaf node!")
