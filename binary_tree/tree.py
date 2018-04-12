@@ -5,7 +5,7 @@ For a demonstration, run "./tree.py tree_string".
 
 Done by Han Keong
 Created on 10/04/2018 2251 +0800
-Last updated on 12/04/2018 1513 +0800
+Last updated on 12/04/2018 1527 +0800
 """
 
 from __future__ import print_function
@@ -363,9 +363,9 @@ def is_leaf_node(node):
         node (``Node``): Any node.
 
     Return:
-        ``True`` if `node` has no children, ``False`` otherwise.
+        ``True`` if `node` has no children nodes, ``False`` otherwise.
     """
-    return node.left is node.right is None
+    return not is_node(node.left) and not is_node(node.right)
 
 def is_symmetrical(node):
     """Check for symmetry in a binary tree.
