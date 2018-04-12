@@ -2,45 +2,50 @@
 Documentation
 *************
 
-To look at a demonstration, run "./tree.py" in your terminal.
+===========
+binary_tree
+===========
 
-------------------------------------------------------------------------------
+To look at a demonstration, run "binary_tree/tree.py" in your terminal.
 
-.. currentmodule:: binary_tree
 
-.. autoclass:: Node
+.. module:: binary_tree::
 
-    .. automethod:: from_string
+    .. autofunction:: traverse_pre_order
 
-    .. automethod:: from_in_pre_orders
+    .. autofunction:: traverse_in_order
 
-    .. automethod:: from_in_post_orders
+    .. autofunction:: traverse_post_order
 
-    .. note::
+    .. autofunction:: traverse_level_order
 
-        There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
+    .. autofunction:: traverse
+
+    .. autofunction:: get_max_depth
+
+    .. autofunction:: get_all_paths
+
+    .. autofunction:: is_node
+
+    .. autofunction:: is_leaf_node
+
+    .. autofunction:: is_symmetrical
+
+    .. autofunction:: has_path_sum
+
+    .. autoclass:: Node
+
+        .. automethod:: from_string
+
+        .. automethod:: from_in_pre_orders
+
+        .. automethod:: from_in_post_orders
+
+        .. note::
+
+            There cannot be any duplicates in `in_order` and `pre_order` or `post_order`.
  
-.. autofunction:: traverse_pre_order
-
-.. autofunction:: traverse_in_order
-
-.. autofunction:: traverse_post_order
-
-.. autofunction:: traverse_level_order
-
-.. autofunction:: traverse
-
-.. autofunction:: get_max_depth
-
-.. autofunction:: get_all_paths
-
-.. autofunction:: is_node
-
-.. autofunction:: is_leaf_node
-
-.. autofunction:: is_symmetrical
-
-.. autofunction:: has_path_sum
+    
 
 
 
