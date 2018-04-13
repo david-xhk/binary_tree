@@ -105,7 +105,7 @@ With a tree set up, there are several functions you can use such as :func:`~bina
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding each node along the way. Four different kinds of traversals are provided. ::
+You can also traverse down the tree, yielding each node along the way. There are four different kinds of traversals provided: :ref:`pre-order <binary_tree.traverse_pre_order>`, :ref:`in-order <binary_tree.traverse_in_order>`, :ref:`post-order <binary_tree.traverse_post_order>`, and :ref:`level-order <binary_tree.traverse_level_order>`. ::
 
     print("This is a pre-order traversal.")
     for node in tree.traverse_pre_order(root):
