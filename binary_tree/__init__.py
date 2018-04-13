@@ -1,6 +1,6 @@
-"""binary_tree module.
+""":mod:`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. 
 
-:mod:`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. For example::
+For example::
 
     import binary_tree as tree
 
