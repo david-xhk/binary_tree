@@ -8,6 +8,8 @@ Documentation
 
 .. automodule:: binary_tree
     :members:
+    :member-order:
     :imported-members: True
+
 
 
