@@ -14,6 +14,11 @@ Features
   * In-order and pre-order traversal
   * In-order and post-order traversal
 
+* Check if a binary tree
+
+  * Has a certain path sum
+  * Is symmetrical
+
 * Traverse a binary tree by 
     
   * Pre-order
@@ -25,11 +30,6 @@ Features
 
   * All root-to-leaf paths
   * The maximum depth
-
-* Check if a binary tree
-   
-  * Is symmetrical
-  * Has a certain path sum
 
 =====
 Usage
@@ -107,6 +107,7 @@ With a tree set up, there are several functions you can use such as :func:`~bina
         print(str(root) + "is symmetrical!")
 
 You can also traverse down the tree, yielding each node along the way. Four different kinds of traversals are provided. ::
+    :emphasize-lines: 2,6,10,14
     
     print("This is a pre-order traversal.")
     for node in tree.traverse_pre_order(root):

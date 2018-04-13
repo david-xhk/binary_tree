@@ -1,4 +1,4 @@
-"""`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. 
+"""binary_tree provides a Node object and useful tools for processing a binary tree data structure. 
 
 For example::
 
