@@ -184,6 +184,7 @@ class BinaryTreeDemo(Demo):
         "For example, \"1,2,,3,4\" is equivalent to \"1,2,null,3,4\".",
         "The binary tree will be constructed in level order."])
 
+
 if __name__ == "__main__":
     demo = Demo()
     demo.run()

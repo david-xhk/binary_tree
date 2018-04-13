@@ -174,6 +174,7 @@ def is_leaf_node(node):
     else:
         return is_node(node)
 
+
 if __name__ == "__main__":
     from .demo import BinaryTreeDemo, DemoRestart
     from .tree import traverse_pre_order, traverse_in_order, traverse_post_order

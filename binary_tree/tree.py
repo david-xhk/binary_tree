@@ -3,6 +3,51 @@
 
 from .node import is_node
 
+def has_path_sum(node, value):
+    """Determine if a binary tree contains a root-to-leaf path that adds up to `value`.
+    
+    Args:
+        node (Node): A binary tree root.
+        value: The value to check for.
+
+    Returns:
+        ``True`` if a path that adds up to `value` exists, ``False`` otherwise.
+    """
+    for path in get_all_paths(node):
+        total = None
+        for node in path:
+            if total is None:
+                total = node.value
+            else:
+                total += node.value
+        if total == value:
+            return True
+    else:
+        return False
+
+def is_symmetrical(node):
+    """Check for symmetry in a binary tree.
+    
+    Args:
+        node (Node): A binary tree root.
+
+    Return:
+        ``True`` if the binary tree is symmetrical, ``False`` otherwise.
+    """
+    level = [node]
+    while any(level):
+        values = []
+        next_level = []
+        for node in level:
+            values.append(getattr(node, "value", None))
+            for side in ["left", "right"]:
+                next_level.append(getattr(node, side, None))
+        if values != values[::-1]:
+            return False
+        level = next_level
+    else:
+        return True
+
 def traverse_pre_order(node):
     """Visit the parent, the left child, and then the right child.
     
@@ -109,17 +154,6 @@ def traverse(kind, node):
     traversal = globals()["traverse_{kind}_order".format(kind=kind)]
     return traversal(node)
 
-def get_max_depth(node):
-    """Calculate the maximum depth of a binary tree.
-    
-    Args:
-        node (Node): A binary tree root.
-
-    Return:
-        int: The total number of levels of the binary tree.
-    """
-    return sum(1 for level in traverse_level_order(node))
-
 def get_all_paths(node):
     """Find every root-to-leaf path in a binary tree.
     
@@ -147,50 +181,16 @@ def get_all_paths(node):
         else: 
             return
 
-def is_symmetrical(node):
-    """Check for symmetry in a binary tree.
+def get_max_depth(node):
+    """Calculate the maximum depth of a binary tree.
     
     Args:
         node (Node): A binary tree root.
 
     Return:
-        ``True`` if the binary tree is symmetrical, ``False`` otherwise.
+        int: The total number of levels of the binary tree.
     """
-    level = [node]
-    while any(level):
-        values = []
-        next_level = []
-        for node in level:
-            values.append(getattr(node, "value", None))
-            for side in ["left", "right"]:
-                next_level.append(getattr(node, side, None))
-        if values != values[::-1]:
-            return False
-        level = next_level
-    else:
-        return True
-
-def has_path_sum(node, value):
-    """Determine if a binary tree contains a root-to-leaf path that adds up to `value`.
-    
-    Args:
-        node (Node): A binary tree root.
-        value: The value to check for.
-
-    Returns:
-        ``True`` if a path that adds up to `value` exists, ``False`` otherwise.
-    """
-    for path in get_all_paths(node):
-        total = None
-        for node in path:
-            if total is None:
-                total = node.value
-            else:
-                total += node.value
-        if total == value:
-            return True
-    else:
-        return False
+    return sum(1 for level in traverse_level_order(node))
 
 
 if __name__ == "__main__":
