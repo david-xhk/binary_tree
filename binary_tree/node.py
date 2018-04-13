@@ -48,10 +48,11 @@ class Node:
         Instantiates the left child, and then the right child for every node in each level (level-order).
         
         Args:
-            tree_string (str): A flattened, level-order binary tree traversal. The node values should be separated by commas.
+            tree_string (str): A level-order binary tree traversal, separated by commas.
         
         Returns:
-            A newly instantiated Node representing `tree_string`. If `tree_string` has no root value, returns ``None``.
+            A newly instantiated Node representing `tree_string`.
+            If `tree_string` has no root value, returns ``None``.
         """
         for char in " []\n'\"":
             tree_string = tree_string.replace(char, "")
@@ -99,10 +100,11 @@ class Node:
             other_order (list[int, ...]): Either the tree's pre-order or post-order traversal
 
         Returns:
-            A newly instantiated Node entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
+            A newly instantiated Node entailing `in_order` and `other_order`.
+            If either arguments are empty, returns ``None``.
 
         Raises:
-            ValueError: If `in_order` and `other_order` do not constitute a binary tree or contain any duplicates.
+            ValueError: If `in_order` and `other_order` do not correspond or contain duplicates.
 
         Warning:
             There cannot be any duplicates in `in_order` and `other_order`.

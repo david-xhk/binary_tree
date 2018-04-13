@@ -1,4 +1,4 @@
-""":mod:`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. 
+"""`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. 
 
 For example::
 
@@ -8,7 +8,7 @@ For example::
     
     in_order = [node.value for node in tree.traverse("in", node)]
     pre_order = [node.value for node in tree.traverse("pre", node)]
-    node2 = Node.from_orders("in-pre", in_order, pre_order)
+    node2 = tree.Node.from_orders("in-pre", in_order, pre_order)
 
 >>> node == node2
 True
