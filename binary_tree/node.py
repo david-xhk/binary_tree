@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains the interface for the Node class.
 
-Note:
+.. note::
     For a demonstration of the Node class and the functions in this module, run 'binary_tree/node.py' in your terminal.
 """
 

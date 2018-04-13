@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains the Demo class.
 
-Note:
+.. note::
     For a demonstration of the Demo class, run 'binary_tree/demo.py' in your terminal.
 """
 
