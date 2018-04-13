@@ -1,15 +1,14 @@
-
-.. module:: binary_tree
-
 *************
 Documentation
 *************
 
 This page displays the documentation for the Node class and tree functions in binary_tree.py.
 
-.. note::
+===========
+binary_tree
+===========
 
-    For a demonstration of binary_tree, run "binary_tree/tree.py".
+.. automodule:: binary_tree
 
 ==============
 Node interface
@@ -19,9 +18,7 @@ Node interface
 
     .. automethod:: from_string
 
-    .. automethod:: from_in_pre_orders
-
-    .. automethod:: from_in_post_orders
+    .. automethod:: from_orders
 
 .. autofunction:: is_node
 

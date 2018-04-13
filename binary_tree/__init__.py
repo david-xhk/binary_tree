@@ -1,4 +1,4 @@
-"""Tools for a binary tree data structure.
+"""binary_tree provides a Node object and useful tools for processing a binary tree data structure
 
 Node:
     You can run "binary_tree/node.py" in your terminal or "binary_tree/tree.py"
