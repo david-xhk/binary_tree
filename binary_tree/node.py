@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains the interface for the Node class.
 
-.. note::
+Note:
     For a demonstration of the Node class and the functions in this module, run 'binary_tree/node.py' in your terminal.
 """
 
@@ -100,7 +100,7 @@ class Node:
         Args:
             kind (str): Either "in-pre" or "in-post".
             in_order (list[int, ...]): The in-order traversal of a binary tree
-            other_order (list[int, ...]): Either the pre-order traversal or the post-order traversal of the binary tree
+            other_order (list[int, ...]): Either the tree's pre-order or post-order traversal
 
         Returns:
             A newly instantiated Node entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
@@ -108,7 +108,7 @@ class Node:
         Raises:
             ValueError: If `in_order` and `other_order` do not constitute a binary tree or contain any duplicates.
 
-        Note:
+        Warning:
             There cannot be any duplicates in `in_order` and `other_order`.
         """
         kinds = ["in-pre", "in-post"]

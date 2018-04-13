@@ -1,11 +1,6 @@
 """binary_tree provides a Node object and useful tools for processing a binary tree data structure
 
--------
-Example
--------
-
-.. code-block:: python
-
+Example:
     import binary_tree as tree
 
     node = tree.Node.from_string("1,2,,3,4,,5")
@@ -16,7 +11,6 @@ Example
     
 >>> node == node2
 True
-
 """
 
 __author__ = 'Han Keong'
