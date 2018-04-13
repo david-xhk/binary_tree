@@ -2,7 +2,7 @@
 About
 *****
 
-binary_tree.py provides a :class:`~binary_tree.Node` object and some useful tools like constructors and tree traversals for a binary tree data structure.
+binary_tree.py provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.
 
 ========
 Features
@@ -44,7 +44,7 @@ To use the functions provided by :mod:`binary_tree`, you can do the following im
     import binary_tree as tree
 
 
-If you would like to use :class:`~binary_tree.Node` on its own, you may also do this::
+If you would like to use :class:`~binary_tree.Node` on its own, you may also write::
     
     from binary_tree import Node
 
@@ -70,21 +70,29 @@ However, manually setting up a binary tree structure may be tedious. A more pref
     
     Node.from_string() will generate the tree structure in **level-order**.
 
-Another way to construct a binary tree is from its in-order and pre-order traversals. You can regenerate the original tree structure using :func:`~binary_tree.Node.from_in_pre_orders`. ::
+Another way to construct a binary tree is from its in-order and pre-order traversal. :func:`~binary_tree.Node.from_orders` will regenerate the original tree structure. ::
 
     in_order = "4,2,1,5,3,6"
     pre_order = "1,2,4,3,5,6"
-    root = Node.from_in_pre_orders(in_order, pre_order)
+    root = Node.from_orders("in-pre", in_order, pre_order)
 
-Alternatively, you can use in-order and post-order traversals with :func:`~binary_tree.Node.from_in_post_orders`. ::
+Alternatively, the in-order and post-order traversal can be used. ::
 
     in_order = "4,2,1,5,3,6"
     post_order = "4,2,5,6,3,1"
-    root = Node.from_in_post_orders(in_order, post_order)
+    root = Node.from_orders("in-post", in_order, post_order)
 
 .. note::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
+
+When you need to check :class:`~binary_tree.Node` instances, you can use :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`. ::
+
+    if tree.is_leaf_node(node):
+        print(str(node) + "is a leaf node!")
+
+    if tree.is_node(node.left):
+        print(str(node) + "has left child!")
 
 ---------------
 Tree processing
@@ -136,17 +144,9 @@ On top of traversals, you can get the paths between the root node and each leaf 
         else:
             return False
 
-Also, you can use :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
+Lastly, you can use :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
     
     depth = tree.get_max_depth(root)
-
-Finally, there is :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`, which might be useful when writing your own tree functions. ::
-
-    if tree.is_leaf_node(node):
-        print(str(node) + "is a leaf node!")
-
-    if tree.is_node(node.left):
-        print(str(node) + "has left child!")
 
 =======
 Credits
