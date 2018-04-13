@@ -97,12 +97,12 @@ def traverse_level_order(node):
         yield tuple(nodes)
         level = next_level
 
-def traverse(node, kind):
+def traverse(kind, node):
     """Dispatch the requested kind of traversal.
     
     Args:
-        node (Node): A binary tree root.
         kind (str): "pre" or "in" or "post" or "level".
+        node (Node): A binary tree root.
 
     Returns:
         The requested traversal generator iterator.
@@ -208,7 +208,7 @@ if __name__ == "__main__":
             "list(traverse_in_order(root))",
             "list(traverse_post_order(root))",
             "list(traverse_level_order(root))",
-            "list(traverse(root, 'level'))",
+            "list(traverse(\"level\", root))",
             "get_max_depth(root)",
             "is_symmetrical(root)",
             "list(get_all_paths(root))",
