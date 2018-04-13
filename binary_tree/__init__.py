@@ -2,13 +2,13 @@
 
 For example::
 
-    import binary_tree as tree
+    from binary_tree import Node, traverse
 
-    node = tree.Node.from_string("1,2,,3,4,,5")
+    node = Node.from_string("1,2,,3,4,,5")
     
-    in_order = [node.value for node in tree.traverse("in", node)]
-    pre_order = [node.value for node in tree.traverse("pre", node)]
-    node2 = tree.Node.from_orders("in-pre", in_order, pre_order)
+    in_order = [node.value for node in traverse("in", node)]
+    pre_order = [node.value for node in traverse("pre", node)]
+    node2 = Node.from_orders("in-pre", in_order, pre_order)
 
 >>> node == node2
 True
