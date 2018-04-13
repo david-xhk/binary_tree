@@ -1,6 +1,6 @@
-"""binary_tree provides a Node object and useful tools for processing a binary tree data structure
+"""binary_tree module.
 
-An example::
+:mod:`binary_tree` provides a Node object and useful tools for processing a binary tree data structure. For example::
 
     import binary_tree as tree
 
@@ -13,14 +13,13 @@ An example::
 >>> node == node2
 True
 
-Note:
-    For a demonstration of the Node class, you can run this in your terminal::
+For a more detailed demonstration of the Node class, you can run this in your terminal::
 
-        $ binary_tree/node.py
-    
-    Also, to see another demonstration of the tree functions in this module, run::
+    $ binary_tree/node.py
 
-        $ binary_tree/tree.py
+Also, to see another demonstration of the tree functions provided in this module, run::
+
+    $ binary_tree/tree.py
 """
 
 __author__ = 'Han Keong'
