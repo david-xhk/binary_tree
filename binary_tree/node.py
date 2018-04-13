@@ -33,10 +33,17 @@ class Node:
 
     def __eq__(self, other):
         for attr in self.__slots__:
-            if not hasattr(other, attr) or getattr(self, attr) != getattr(other, attr):
+            if getattr(self, attr) != getattr(other, attr):
                 return False
         else:
             return True
+
+    def __ne__(self, other):
+        for attr in self.__slots__:
+            if getattr(self, attr) != getattr(other, attr):
+                return True
+        else:
+            return False
 
     @classmethod
     def from_string(cls, tree_string):
@@ -130,7 +137,7 @@ class Node:
                     slice_index = int(str(kind_index) + str(side_index) + str(order_index), 2)
                     code = "orders[{index}] = orders[{index}][{slice}]".format(
                         index=order_index, slice=slices[slice_index])
-                    exec(code)  # Slice in_order/other_order based on the kind and side
+                    exec(code, globals(), locals())  # Slice in_order/other_order based on the kind and side
                 child = make_node(*orders)
                 setattr(node, side, child)
             return node

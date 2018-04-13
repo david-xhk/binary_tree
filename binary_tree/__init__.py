@@ -4,6 +4,17 @@ Node:
     You can run "binary_tree/node.py" in your terminal or "binary_tree/tree.py"
     to look at a demonstration of the Node class or the tree functions provided
     in this module.
+
+Example:
+    import binary_tree as tree
+
+    node = tree.Node.from_string("1,2,,3,4,,5")
+    
+    in_order = [node.value for node in tree.traverse("in", s)]
+    pre_order = [node.value for node in tree.traverse("pre", s)]
+    node2 = Node.from_orders("in-pre", in_order, pre_order)
+    
+    print(node == node2)
 """
 
 __author__ = 'Han Keong'
