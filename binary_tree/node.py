@@ -137,7 +137,8 @@ class Node:
                     slice_index = int(str(kind_index) + str(side_index) + str(order_index), 2)
                     code = "orders[{index}] = orders[{index}][{slice}]".format(
                         index=order_index, slice=slices[slice_index])
-                    exec(code, globals(), locals())  # Slice in_order/other_order based on the kind and side
+                    # Slice in_order/other_order based on the kind and side
+                    exec(code, globals(), locals())
                 child = make_node(*orders)
                 setattr(node, side, child)
             return node
