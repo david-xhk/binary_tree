@@ -4,24 +4,24 @@ Documentation
 
 This page displays the documentation for the Node class and tree functions in binary_tree.py.
 
+.. currentmodule:: binary_tree
+
 ===========
 binary_tree
 ===========
 
 .. automodule:: binary_tree
 
-==============
-Node interface
-==============
+====
+node
+====
 
-.. currentmodule:: binary_tree
-
-.. automodule:: node
+.. automodule:: binary_tree.node
     :members:
 
-==============
-Tree functions
-==============
+====
+tree
+====
 
-.. automodule:: tree
+.. automodule:: binary_tree.tree
     :members:

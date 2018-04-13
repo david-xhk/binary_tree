@@ -1,21 +1,17 @@
 """binary_tree provides a Node object and useful tools for processing a binary tree data structure
 
-.. note:
-    You can run "binary_tree/node.py" in your terminal or "binary_tree/tree.py"
-    to look at a demonstration of the Node class or the tree functions provided
-    in this module.
-
 -------
 Example
 -------
+
 .. code-block:: python
 
     import binary_tree as tree
 
     node = tree.Node.from_string("1,2,,3,4,,5")
     
-    in_order = [node.value for node in tree.traverse("in", s)]
-    pre_order = [node.value for node in tree.traverse("pre", s)]
+    in_order = [node.value for node in tree.traverse("in", node)]
+    pre_order = [node.value for node in tree.traverse("pre", node)]
     node2 = Node.from_orders("in-pre", in_order, pre_order)
     
 >>> node == node2
