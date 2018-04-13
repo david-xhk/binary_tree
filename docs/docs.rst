@@ -2,9 +2,9 @@
 Documentation
 *************
 
-===========================
-`module` :mod:`binary_tree`
-===========================
+=========================
+:mod:`binary_tree` module
+=========================
 
 .. automodule:: binary_tree
     :members:
