@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains functions for binary trees.
 
-Note:
+.. note::
     For a demonstration of the functions in this module, run 'binary_tree/tree.py' in your terminal.
 """
 

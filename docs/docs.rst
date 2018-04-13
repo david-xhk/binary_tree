@@ -9,5 +9,19 @@ binary_tree
 ===========
 
 .. automodule:: binary_tree
+
+==============
+Node interface
+==============
+
+.. currentmodule:: binary_tree
+
+.. automodule:: node
     :members:
 
+==============
+Tree functions
+==============
+
+.. automodule:: tree
+    :members:
