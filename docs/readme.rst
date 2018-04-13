@@ -39,18 +39,11 @@ Usage
 Imports
 -------
 
-To use the functions provided by :mod:`binary_tree`, you can do the following import:
-
-.. code-block:: python
-    :emphasize-lines: 1
+To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
     import binary_tree as tree
 
-
-If you would like to use :class:`~binary_tree.Node` on its own, you may also write:
-
-.. code-block:: python
-    :emphasize-lines: 1
+If you would like to use :class:`~binary_tree.Node` on its own, you may also write::
     
     from binary_tree import Node
 
@@ -58,25 +51,16 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
 Node creation
 -------------
 
-To create an instance, pass a value into :class:`~binary_tree.Node`.
-
-.. code-block:: python
-    :emphasize-lines: 1
+To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute, which are expected to be instances of :class:`~binary_tree.Node`. They can also be set on initialization.
-
-.. code-block:: python
-    :emphasize-lines: 2
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute, which are expected to be instances of :class:`~binary_tree.Node`. They can also be set on initialization. ::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may be tedious. A more preferable way of creating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor.
-
-.. code-block:: python
-    :emphasize-lines: 2
+However, manually setting up a binary tree structure may be tedious. A more preferable way of creating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
@@ -85,19 +69,13 @@ However, manually setting up a binary tree structure may be tedious. A more pref
     
     Node.from_string() will generate the tree structure in **level-order**.
 
-Another way to construct a binary tree is from its in-order and pre-order traversal. By using :func:`~binary_tree.Node.from_orders`, you can obtain the original tree structure.
-
-.. code-block:: python
-    :emphasize-lines: 3
+Another way to construct a binary tree is from its in-order and pre-order traversal. By using :func:`~binary_tree.Node.from_orders`, you can obtain the original tree structure. ::
 
     in_order = "4,2,1,5,3,6"
     pre_order = "1,2,4,3,5,6"
     root = Node.from_orders("in-pre", in_order, pre_order)
 
-Alternatively, you can use an in-order and a post-order traversal.
-
-.. code-block:: python
-    :emphasize-lines: 3
+Alternatively, you can use an in-order and a post-order traversal. ::
 
     in_order = "4,2,1,5,3,6"
     post_order = "4,2,5,6,3,1"
@@ -107,10 +85,7 @@ Alternatively, you can use an in-order and a post-order traversal.
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
-When you need to check :class:`~binary_tree.Node` instances, you can use :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`.
-
-.. code-block:: python
-    :emphasize-lines: 1,4
+When you need to check :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`. ::
 
     if tree.is_node(parent_node.left):
         print(str(parent_node) + "has left child!")
@@ -122,10 +97,7 @@ When you need to check :class:`~binary_tree.Node` instances, you can use :func:`
 Tree processing
 ---------------
 
-With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree.
-
-.. code-block:: python
-    :emphasize-lines: 1,4
+With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
 
     if tree.has_path_sum(root, 10):
         print(str(root) + "has path with sum 10!")
@@ -133,10 +105,7 @@ With a tree set up, there are several functions you can use such as :func:`~bina
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding each node along the way. Four different kinds of traversals are provided.
-
-.. code-block:: python
-    :emphasize-lines: 2,6,10,14
+You can also traverse down the tree, yielding each node along the way. Four different kinds of traversals are provided. ::
 
     print("This is a pre-order traversal.")
     for node in tree.traverse_pre_order(root):
@@ -155,10 +124,7 @@ You can also traverse down the tree, yielding each node along the way. Four diff
         for node in level:
             print(node)
 
-A single dispatch function, :func:`~binary_tree.traverse`, is also available.
-
-.. code-block:: python
-    :emphasize-lines: 3
+A single dispatch function, :func:`~binary_tree.traverse`, is also available. ::
     
     traversals = []
     for kind in ("pre", "in", "post", "level"):
@@ -180,10 +146,7 @@ On top of traversals, you can get the paths between the root node and each leaf 
         else:
             return False
 
-Lastly, you can use :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree.
-
-.. code-block:: python
-    :emphasize-lines: 1
+Lastly, you can use :func:`~binary_tree.get_max_depth` to get the total number of levels in the tree. ::
     
     depth = tree.get_max_depth(root)
 
