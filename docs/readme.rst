@@ -125,7 +125,7 @@ You can also traverse down the tree, yielding each node along the way. Four diff
         for node in level:
             print(node)
 
-A single dispatch function, :func:`~binary_tree.traverse`, is available for them. ::
+A single dispatch function, :func:`~binary_tree.traverse`, is also available. ::
     
     traversals = []
     for kind in ("pre", "in", "post", "level"):
