@@ -2,8 +2,7 @@
 """This module contains the Demo class.
 
 Note:
-    For a demonstration of the Demo class, run 'binary_tree/demo.py' in your 
-    terminal.
+    For a demonstration of the Demo class, run 'demo/demo.py' in your terminal.
 """
 
 # For backwards compatibility
