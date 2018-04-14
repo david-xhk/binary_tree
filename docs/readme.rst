@@ -95,7 +95,7 @@ Alternatively, you can use the in-order and post-order traversal. ::
     post_order = "4,2,5,6,3,1"
     root = Node.from_orders("in-post", in_order, post_order)
 
-.. note::
+.. warning::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
