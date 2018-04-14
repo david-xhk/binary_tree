@@ -47,9 +47,13 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
     
     from binary_tree import Node
 
-------------------------
-Creating a Node instance
-------------------------
+--------------
+Node instances
+--------------
+
+^^^^^^^^^^^^^^^^^^^^
+Instantiating a node
+^^^^^^^^^^^^^^^^^^^^
 
 To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
@@ -59,6 +63,10 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
+
+^^^^^^^^^^^^^^^
+Checking a node
+^^^^^^^^^^^^^^^
 
 When you need to test for :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node`. ::
 
@@ -70,9 +78,9 @@ You can also use :func:`~binary_tree.is_leaf` to check for leaf nodes. ::
     if tree.is_leaf(parent_node.right):
         print(str(parent_node.right) + "is a leaf node!")
 
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 Setting up a binary tree 
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 To generate a binary tree, you can pass in a string of values to the :meth:`~binary_tree.Node.from_string` constructor. ::
 
