@@ -107,7 +107,7 @@ Alternatively, you can use the in-order and post-order traversal. ::
 Processing a binary tree
 -----------------
 
-With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
+With a tree set up, :func:`~binary_tree.has_path_sum` and :func:`~binary_tree.is_symmetrical` can be used to analyse the nature of the tree. ::
 
     if tree.has_path_sum(root, 10):
         print(str(root) + "has path with sum 10!")
@@ -115,7 +115,7 @@ With a tree set up, there are several functions you can use such as :func:`~bina
     if tree.is_symmetrical(root):
         print(str(root) + "is symmetrical!")
 
-You can also traverse down the tree, yielding each node along the way. There are four different kinds of traversals provided: :func:`pre-order <binary_tree.traverse_pre_order>`, :func:`in-order <binary_tree.traverse_in_order>`, :func:`post-order <binary_tree.traverse_post_order>`, and :func:`level-order <binary_tree.traverse_level_order>`. ::
+You can also traverse down the tree, yielding each node along the way. There are four different kinds provided: :func:`pre-order <binary_tree.traverse_pre_order>`, :func:`in-order <binary_tree.traverse_in_order>`, :func:`post-order <binary_tree.traverse_post_order>`, and :func:`level-order <binary_tree.traverse_level_order>`. ::
 
     print("This is a pre-order traversal.")
     for node in tree.traverse_pre_order(root):
