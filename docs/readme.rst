@@ -60,7 +60,17 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-However, manually setting up a binary tree structure may be tedious. A more preferable way of creating one is to pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+Instances have :func:`~binary_tree.Node.is_leaf` to check if they are leaf nodes. ::
+
+    if parent_node.right.is_leaf():
+        print(str(parent_node.right) + "is a leaf node!")
+
+When you need to test for :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node`. ::
+
+    if tree.is_node(parent_node.left):
+        print(str(parent_node) + "has left child!")
+
+Instead of manually setting up a binary tree, you can pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
@@ -84,14 +94,6 @@ Alternatively, you can use an in-order and a post-order traversal. ::
 .. note::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
-
-When you need to check :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node` and :func:`~binary_tree.is_leaf_node`. ::
-
-    if tree.is_node(parent_node.left):
-        print(str(parent_node) + "has left child!")
-
-    if tree.is_leaf_node(parent_node.right):
-        print(str(parent_node.right) + "is a leaf node!")
 
 ---------------
 Tree processing

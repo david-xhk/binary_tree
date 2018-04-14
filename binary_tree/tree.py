@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """This module contains functions for binary trees."""
 
-from .node import is_node
+# To allow absolute imports
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+
+from binary_tree.node import is_node
 
 def has_path_sum(node, value):
     """Determine if a binary tree contains a root-to-leaf path that adds up to `value`.
@@ -194,8 +198,8 @@ def get_max_depth(node):
 
 
 if __name__ == "__main__":
-    from .node import Node
-    from .demo import BinaryTreeDemo, DemoRestart
+    from binary_tree.node import Node
+    from binary_tree.demo import BinaryTreeDemo, DemoRestart
 
     class TreeDemo(BinaryTreeDemo):
         commands = [

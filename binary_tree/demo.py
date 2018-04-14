@@ -70,7 +70,7 @@ class Demo:
                         commands = self.get_commands()  # See lines 98-113
                         self.execute_commands(commands, *context)  # See lines 115-124
                 except KeyboardInterrupt as exc:
-                    print()  # Start on a new line
+                    print()  # Advance to the next line
                     raise DemoExit from exc
             except DemoException as exc:
                 print(exc.text)

@@ -1,4 +1,4 @@
-"""binary_tree provides a Node object and useful tools for processing a binary tree data structure. 
+"""This package provides a Node object and useful tools for processing a binary tree data structure. 
 
 For example::
 
@@ -35,7 +35,6 @@ del tree
 __all__ = [
     "Node",
     "is_node",
-    "is_leaf_node",
     "has_path_sum",
     "is_symmetrical",
     "traverse_pre_order",

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """This module contains the interface for the Node class."""
 
-class Node:
+class Node(object):
     """The basic unit of a binary tree structure.
 
     Attributes:
@@ -15,31 +15,52 @@ class Node:
         self.value = value
         self.left = left
         self.right = right
-    
+
     def __str__(self):
         return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
         args = [str(self.value)]
-        if not is_leaf_node(self):
+        if not self.is_leaf():
             args.append(repr(self.left))
             if is_node(self.right):
                 args.append(repr(self.right))
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
-        for attr in self.__slots__:
-            if getattr(self, attr) != getattr(other, attr):
+        try:
+            for attr in self.__slots__:
+                if getattr(self, attr) != getattr(other, attr):
+                    return False
+            else:
+                return True
+        except AttributeError:
+            return NotImplemented
+
+    def __ne__(self, other):
+        try:
+            for attr in self.__slots__:
+                if getattr(self, attr, None) != getattr(other, attr, None):
+                    return True
+            else:
+                return False
+        except AttributeError:
+            return NotImplemented
+
+    def is_leaf(self):
+        """Check if `node` is a leaf node.
+
+        Args:
+            node (Node): Any node.
+
+        Return:
+            ``True`` if `node` has no children nodes, ``False`` otherwise.
+        """
+        for side in self.__slots__[1:]:
+            if getattr(self, side):
                 return False
         else:
             return True
-
-    def __ne__(self, other):
-        for attr in self.__slots__:
-            if getattr(self, attr) != getattr(other, attr):
-                return True
-        else:
-            return False
 
     @classmethod
     def from_string(cls, tree_string):
@@ -69,7 +90,7 @@ class Node:
         while level:
             next_level = []
             for node in level:
-                for side in cls.__slots__[1:]:
+                for side in ["left", "right"]:
                     try:
                         value = next(values)
                     except StopIteration:  # values has been exhausted.
@@ -105,13 +126,14 @@ class Node:
 
         Raises:
             ValueError: If `in_order` and `other_order` do not correspond or contain duplicates.
+            KeyError: If `kind` is not one of the accepted keys.
 
         Warning:
             There cannot be any duplicates in `in_order` and `other_order`.
         """
         kinds = ["in-pre", "in-post"]
         if kind not in kinds:
-            raise KeyError("Invalid argument for kind. Expected 'in-pre' or 'in-post'")
+            raise KeyError("Invalid argument for kind. Expected \"in-pre\" or \"in-post\"")
         kind_index = kinds.index(kind)
         slices = [":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
                   "1:len(orders[0])+1",                 #  in-pre,  left, 1
@@ -159,25 +181,14 @@ def is_node(obj):
     else:
         return True
 
-def is_leaf_node(node):
-    """Check if `node` is a leaf node.
-
-    Args:
-        node (Node): Any node.
-
-    Return:
-        ``True`` if `node` has no children nodes, ``False`` otherwise.
-    """
-    for side in ["left", "right"]:
-        if getattr(node, side, None) is not None:
-            return False
-    else:
-        return is_node(node)
-
 
 if __name__ == "__main__":
-    from .demo import BinaryTreeDemo, DemoRestart
-    from .tree import traverse_pre_order, traverse_in_order, traverse_post_order
+    # To allow absolute imports
+    import sys, os
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+
+    from binary_tree.demo import BinaryTreeDemo, DemoRestart
+    from binary_tree.tree import traverse_pre_order, traverse_in_order, traverse_post_order
 
     class NodeDemo(BinaryTreeDemo):
         commands = [
@@ -185,10 +196,9 @@ if __name__ == "__main__":
             "Node.from_string(tree_string)",
             "str(root), repr(root)",
             "root.value, type(root.value)",
-            "root.left, root.right",
-            "is_node(root.left), is_node(root.right)",
-            "root.left == root.left, root.left != root.right",
-            "is_leaf_node(root.left), is_leaf_node(root.right)",
+            "root.left, is_node(root.left)",
+            "root.left == root.right",
+            "root.left.is_leaf()",
             "in_order, pre_order",
             "repr(Node.from_orders(\"in-pre\", in_order, pre_order))",
             "in_order, post_order",
