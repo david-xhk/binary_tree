@@ -55,7 +55,7 @@ To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
     node = Node(1)
 
-Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute, which are expected to be instances of :class:`~binary_tree.Node`. They can also be set on initialization. ::
+Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right` attribute, which are expected to be instances of :class:`~binary_tree.Node`. They can be set on initialization. ::
 
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
