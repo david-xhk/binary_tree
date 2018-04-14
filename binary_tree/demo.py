@@ -66,7 +66,7 @@ class Demo:
         while True:
             try:
                 try:
-82-96
+                    context = self.get_context()  # 82-96
                     self.print_commands()
                     while True:
                         commands = self.get_commands()  # 98-113

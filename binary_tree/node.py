@@ -196,9 +196,9 @@ if __name__ == "__main__":
         os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 
     from binary_tree.demo import BinaryTreeDemo, DemoRestart
-    from binary_tree.tree import traverse_pre_order, 
-                                 traverse_in_order, 
-                                 traverse_post_order
+    from binary_tree.tree import (traverse_pre_order, 
+                                  traverse_in_order, 
+                                  traverse_post_order)
 
     class NodeDemo(BinaryTreeDemo):
         commands = [
