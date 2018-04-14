@@ -47,18 +47,6 @@ class Node(object):
         except AttributeError:
             return NotImplemented
 
-    def is_leaf(self):
-        """Check if `self` is a leaf node.
-
-        Return:
-            ``True`` if `self` has no children nodes, ``False`` otherwise.
-        """
-        for side in self.__slots__[1:]:
-            if getattr(self, side):
-                return False
-        else:
-            return True
-
     @classmethod
     def from_string(cls, tree_string):
         """Generate a binary tree from a string.
@@ -188,6 +176,19 @@ def is_node(obj):
     else:
         return True
 
+def is_leaf(node):
+    """Check if `node` is a leaf node.
+
+    Return:
+        ``True`` if `node` has no children nodes, ``False`` otherwise, or
+        if `node` is not an instance of Node.
+    """
+    for side in Node.__slots__[1:]:
+        if getattr(node, side, NotImplemented):
+            return False
+    else:
+        return True
+
 
 if __name__ == "__main__":
     # To allow absolute imports
@@ -206,9 +207,8 @@ if __name__ == "__main__":
             "Node.from_string(tree_string)",
             "str(root), repr(root)",
             "root.value, type(root.value)",
-            "root.left, is_node(root.left)",
+            "root.left, is_node(root.left), is_leaf(root.left)",
             "root.left == root.right",
-            "root.left.is_leaf()",
             "in_order, pre_order",
             "repr(Node.from_orders(\"in-pre\", in_order, pre_order))",
             "in_order, post_order",

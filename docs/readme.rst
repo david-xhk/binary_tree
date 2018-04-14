@@ -65,9 +65,9 @@ When you need to test for :class:`~binary_tree.Node` instances, you can make use
     if tree.is_node(parent_node.left):
         print(str(parent_node) + "has left child!")
 
-These instances have :meth:`~binary_tree.Node.is_leaf` to check if they are leaf nodes. ::
+You can also use :func:`~binary_tree.is_leaf` to check for leaf nodes. ::
 
-    if parent_node.right.is_leaf():
+    if tree.is_leaf(parent_node.right):
         print(str(parent_node.right) + "is a leaf node!")
 
 ------------------------
