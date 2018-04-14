@@ -47,13 +47,9 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
     
     from binary_tree import Node
 
---------------
-Node instances
---------------
-
-^^^^^^^^^^^^^^^^^^^^
-Instantiating a node
-^^^^^^^^^^^^^^^^^^^^
+-------------
+Making a node 
+-------------
 
 To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
@@ -64,9 +60,9 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-^^^^^^^^^^^^^^^
+---------------
 Checking a node
-^^^^^^^^^^^^^^^
+---------------
 
 When you need to test for :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node`. ::
 
@@ -78,9 +74,9 @@ You can also use :func:`~binary_tree.is_leaf` to check for leaf nodes. ::
     if tree.is_leaf(parent_node.right):
         print(str(parent_node.right) + "is a leaf node!")
 
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 Setting up a binary tree 
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 To generate a binary tree, you can pass in a string of values to the :meth:`~binary_tree.Node.from_string` constructor. ::
 
@@ -108,7 +104,7 @@ Alternatively, you can use the in-order and post-order traversal. ::
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
 -----------------
-Processing a tree
+Processing a binary tree
 -----------------
 
 With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
