@@ -16,8 +16,7 @@ True
 For a demonstration of this module, you can run this in your terminal (for macOS)::
 
     $ git clone https://github.com/han-keong/binary_tree.git
-    $ cd binary_tree
-    $ demo/tree.py
+    $ binary_tree/demo/tree.py
 """
 
 __author__ = 'Han Keong'
