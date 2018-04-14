@@ -1,12 +1,6 @@
-#!/usr/bin/env python3
 """This module contains functions for binary trees."""
 
-# To allow absolute imports
-import sys, os
-sys.path.insert(0, 
-    os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
-
-from binary_tree.node import is_node
+from .node import is_node
 
 def has_path_sum(node, value):
     """Determine if a binary tree contains a root-to-leaf path that adds up
@@ -198,29 +192,3 @@ def get_max_depth(node):
     """
     return sum(1 for level in traverse_level_order(node))
 
-
-if __name__ == "__main__":
-    from binary_tree.node import Node
-    from binary_tree.demo import BinaryTreeDemo, DemoRestart
-
-    class TreeDemo(BinaryTreeDemo):
-        commands = [
-            "tree_string, repr(root)",
-            "list(traverse_pre_order(root))",
-            "list(traverse_in_order(root))",
-            "list(traverse_post_order(root))",
-            "list(traverse_level_order(root))",
-            "list(traverse(\"level\", root))",
-            "get_max_depth(root)",
-            "is_symmetrical(root)",
-            "list(get_all_paths(root))",
-            "has_path_sum(root, 12)"]
-
-        def setup_context(self, tree_string):
-            root = Node.from_string(tree_string)
-            if root is None:
-                raise DemoRestart("Missing root value. Please try again.")
-            return globals(), locals()
-
-    demo = TreeDemo()
-    demo.run()

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """This module contains the interface for the Node class."""
 
 class Node(object):
@@ -21,7 +20,7 @@ class Node(object):
 
     def __repr__(self):
         args = [str(self.value)]
-        if not self.is_leaf():
+        if not is_leaf(self):
             args.append(repr(self.left))
             if is_node(self.right):
                 args.append(repr(self.right))
@@ -40,7 +39,7 @@ class Node(object):
     def __ne__(self, other):
         try:
             for attr in self.__slots__:
-                if getattr(self, attr, None) != getattr(other, attr, None):
+                if getattr(self, attr) != getattr(other, attr):
                     return True
             else:
                 return False
@@ -83,7 +82,7 @@ class Node(object):
                     except StopIteration:  # values has been exhausted.
                         return root
                     else:
-                        if value in ("", "null"):  # Not a node.
+                        if value in ["", "null"]:  # Not a node.
                             continue
                         try:
                             value = int(value)
@@ -184,44 +183,8 @@ def is_leaf(node):
         if `node` is not an instance of Node.
     """
     for side in Node.__slots__[1:]:
-        if getattr(node, side, NotImplemented):
+        if getattr(node, side, 1):
             return False
     else:
         return True
 
-
-if __name__ == "__main__":
-    # To allow absolute imports
-    import sys, os
-    sys.path.insert(0, 
-        os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
-
-    from binary_tree.demo import BinaryTreeDemo, DemoRestart
-    from binary_tree.tree import (traverse_pre_order, 
-                                  traverse_in_order, 
-                                  traverse_post_order)
-
-    class NodeDemo(BinaryTreeDemo):
-        commands = [
-            "tree_string",
-            "Node.from_string(tree_string)",
-            "str(root), repr(root)",
-            "root.value, type(root.value)",
-            "root.left, is_node(root.left), is_leaf(root.left)",
-            "root.left == root.right",
-            "in_order, pre_order",
-            "repr(Node.from_orders(\"in-pre\", in_order, pre_order))",
-            "in_order, post_order",
-            "repr(Node.from_orders(\"in-post\", in_order, post_order))"]
-
-        def setup_context(self, tree_string):
-            root = Node.from_string(tree_string)
-            if root is None:
-                raise DemoRestart("Missing root value. Please try again.")
-            pre_order = [node.value for node in traverse_pre_order(root)]
-            in_order = [node.value for node in traverse_in_order(root)]
-            post_order = [node.value for node in traverse_post_order(root)]
-            return globals(), locals()
-
-    demo = NodeDemo()
-    demo.run()

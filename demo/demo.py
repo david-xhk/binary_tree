@@ -176,17 +176,8 @@ class Demo:
                         print_recur(*arg)
         print_recur(*args)
 
-class BinaryTreeDemo(Demo):
-    setup_text = "Enter a binary tree:\n"
-
-    help_text = "\n\n".join([
-        "The binary tree should consist of numbers.",
-        "Node values should be separated by commas.",
-        "Indicate absent nodes with 'null' or an immediate comma.\n"
-        "For example, \"1,2,,3,4\" is equivalent to \"1,2,null,3,4\".",
-        "The binary tree will be constructed in level order."])
-
 
 if __name__ == "__main__":
     demo = Demo()
     demo.run()
+
