@@ -35,9 +35,9 @@ Features
 Usage
 =====
 
---------------------------
-Importing from binary_tree
---------------------------
+---------
+Importing
+---------
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
