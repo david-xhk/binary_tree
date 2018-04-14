@@ -60,17 +60,17 @@ Nodes have a :attr:`~binary_tree.Node.left` and a :attr:`~binary_tree.Node.right
     another_node = Node(2)
     parent_node = Node(3, node, another_node)
 
-Instances have :func:`~binary_tree.Node.is_leaf` to check if they are leaf nodes. ::
-
-    if parent_node.right.is_leaf():
-        print(str(parent_node.right) + "is a leaf node!")
-
 When you need to test for :class:`~binary_tree.Node` instances, you can make use of :func:`~binary_tree.is_node`. ::
 
     if tree.is_node(parent_node.left):
         print(str(parent_node) + "has left child!")
 
-Instead of manually setting up a binary tree, you can pass in a string of values to the :func:`~binary_tree.Node.from_string` constructor. ::
+These instances have :meth:`~binary_tree.Node.is_leaf` to check if they are leaf nodes. ::
+
+    if parent_node.right.is_leaf():
+        print(str(parent_node.right) + "is a leaf node!")
+
+To set up a binary tree, you can pass in a string of values to the :meth:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
@@ -79,13 +79,13 @@ Instead of manually setting up a binary tree, you can pass in a string of values
     
     Node.from_string() will generate the tree structure in **level-order**.
 
-Another way to construct a binary tree is from its in-order and pre-order traversal. By using :func:`~binary_tree.Node.from_orders`, you can retrieve the original tree structure. ::
+Another way is by passing the in-order and pre-order traversal into :meth:`~binary_tree.Node.from_orders` to retrieve the original tree structure.  ::
 
     in_order = "4,2,1,5,3,6"
     pre_order = "1,2,4,3,5,6"
     root = Node.from_orders("in-pre", in_order, pre_order)
 
-Alternatively, you can use an in-order and a post-order traversal. ::
+Alternatively, you can use the in-order and post-order traversal. ::
 
     in_order = "4,2,1,5,3,6"
     post_order = "4,2,5,6,3,1"
