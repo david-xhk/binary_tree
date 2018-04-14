@@ -3,12 +3,14 @@
 
 # To allow absolute imports
 import sys, os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+sys.path.insert(0, 
+    os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 
 from binary_tree.node import is_node
 
 def has_path_sum(node, value):
-    """Determine if a binary tree contains a root-to-leaf path that adds up to `value`.
+    """Determine if a binary tree contains a root-to-leaf path that adds up
+    to `value`.
     
     Args:
         node (Node): A binary tree root.
@@ -121,7 +123,7 @@ def traverse_post_order(node):
             return
 
 def traverse_level_order(node):
-    """Visit each parent in the level, and then each of their left and right children.
+    """Visit each parent in the level, then their left and right children.
     
     Args:
         node (Node): A binary tree root.

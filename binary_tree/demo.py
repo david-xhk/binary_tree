@@ -2,7 +2,8 @@
 """This module contains the Demo class.
 
 Note:
-    For a demonstration of the Demo class, run 'binary_tree/demo.py' in your terminal.
+    For a demonstration of the Demo class, run 'binary_tree/demo.py' in your 
+    terminal.
 """
 
 # For backwards compatibility
@@ -57,18 +58,19 @@ class Demo:
             "Type 'h' for help, or 'q' to quit.\n" 
             + self.setup_text)
         self.selection_text = (
-            "Type 'r' to restart, or 'q' to quit.\nTo view the commands again, type 'c'.\n"
+            "Type 'r' to restart, or 'q' to quit.\n"
+            "To view the commands again, type 'c'.\n"
             + self.selection_text)
 
     def run(self):
         while True:
             try:
                 try:
-                    context = self.get_context()  # See lines 82-96
+82-96
                     self.print_commands()
                     while True:
-                        commands = self.get_commands()  # See lines 98-113
-                        self.execute_commands(commands, *context)  # See lines 115-124
+                        commands = self.get_commands()  # 98-113
+                        self.execute_commands(commands, *context)  # 115-124
                 except KeyboardInterrupt as exc:
                     print()  # Advance to the next line
                     raise DemoExit from exc

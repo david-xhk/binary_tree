@@ -63,10 +63,12 @@ class Node(object):
     def from_string(cls, tree_string):
         """Generate a binary tree from a string.
 
-        Instantiates the left child, and then the right child for every node in each level (level-order).
+        Instantiates the left child, and then the right child for every node 
+        in each level (level-order).
         
         Args:
-            tree_string (str): A level-order binary tree traversal, separated by commas.
+            tree_string (str): A level-order binary tree traversal, separated
+            by commas.
         
         Returns:
             A newly instantiated Node representing `tree_string`.
@@ -103,26 +105,30 @@ class Node(object):
                         setattr(node, side, child)
                         next_level.append(child)
             level = next_level
-        else:  # next_level is an empty list, so subsequent node values are lost.
+        else:  
+            # next_level is an empty list, so subsequent node values are lost.
             return root
 
     @classmethod
     def from_orders(cls, kind, in_order, other_order):
-        """Generate a binary tree from its in-order and pre/post-order traversals.
+        """Generate a binary tree from in-order and pre/post-order traversal.
 
-        Recursively instantiates the parent, its left child, and then its right child (pre-order).
+        Recursively instantiates the parent, its left child, and then its 
+        right child (pre-order).
         
         Args:
             kind (str): Either "in-pre" or "in-post".
             in_order (list[int, ...]): The in-order traversal of a binary tree
-            other_order (list[int, ...]): Either the tree's pre-order or post-order traversal
+            other_order (list[int, ...]): Either the tree's pre-order or 
+                post-order traversal
 
         Returns:
             A newly instantiated Node entailing `in_order` and `other_order`.
             If either arguments are empty, returns ``None``.
 
         Raises:
-            ValueError: If `in_order` and `other_order` do not correspond or contain duplicates.
+            ValueError: If `in_order` and `other_order` do not correspond or 
+                contain duplicates.
             KeyError: If `kind` is not one of the accepted keys.
 
         Warning:
@@ -130,7 +136,9 @@ class Node(object):
         """
         kinds = ["in-pre", "in-post"]
         if kind not in kinds:
-            raise KeyError("Invalid argument for kind. Expected \"in-pre\" or \"in-post\"")
+            raise KeyError(
+                "Invalid argument for kind. "
+                "Expected \"in-pre\" or \"in-post\"")
         kind_index = kinds.index(kind)
         slices = [":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
                   "1:len(orders[0])+1",                 #  in-pre,  left, 1
@@ -150,8 +158,10 @@ class Node(object):
                 # Make a list to store the sliced orders
                 orders = [in_order, other_order]
                 for order_index in range(len(orders)):
-                    # Convert kind_index, side_index, order_index into a decimal index
-                    slice_index = int(str(kind_index) + str(side_index) + str(order_index), 2)
+                    # Convert kind, side, and order_index into a decimal
+                    slice_index = int(str(kind_index) 
+                                      + str(side_index) 
+                                      + str(order_index), 2)
                     code = "orders[{index}] = orders[{index}][{slice}]".format(
                         index=order_index, slice=slices[slice_index])
                     # Slice in_order/other_order based on the kind and side
@@ -182,10 +192,13 @@ def is_node(obj):
 if __name__ == "__main__":
     # To allow absolute imports
     import sys, os
-    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
+    sys.path.insert(0, 
+        os.path.abspath(os.path.join(os.path.dirname(__file__),"..")))
 
     from binary_tree.demo import BinaryTreeDemo, DemoRestart
-    from binary_tree.tree import traverse_pre_order, traverse_in_order, traverse_post_order
+    from binary_tree.tree import traverse_pre_order, 
+                                 traverse_in_order, 
+                                 traverse_post_order
 
     class NodeDemo(BinaryTreeDemo):
         commands = [
