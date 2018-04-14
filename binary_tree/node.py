@@ -48,13 +48,10 @@ class Node(object):
             return NotImplemented
 
     def is_leaf(self):
-        """Check if `node` is a leaf node.
-
-        Args:
-            node (Node): Any node.
+        """Check if `self` is a leaf node.
 
         Return:
-            ``True`` if `node` has no children nodes, ``False`` otherwise.
+            ``True`` if `self` has no children nodes, ``False`` otherwise.
         """
         for side in self.__slots__[1:]:
             if getattr(self, side):
