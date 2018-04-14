@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# binary_tree.py documentation build configuration file, created by
+# binary_tree documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun  9 13:47:02 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'binary_tree.py'
+project = u'binary_tree'
 copyright = u"2018, Han Keong"
 author = u"Han Keong"
 
@@ -143,7 +143,7 @@ latex_elements = {
 # [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'binary_tree.tex',
-     u'binary_tree.py Documentation',
+     u'binary_tree Documentation',
      u'Han Keong', 'manual'),
 ]
 
@@ -154,7 +154,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (master_doc, 'binary_tree',
-     u'binary_tree.py Documentation',
+     u'binary_tree Documentation',
      [author], 1)
 ]
 
@@ -165,7 +165,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'binary_tree',
-     u'binary_tree.py Documentation',
+     u'binary_tree Documentation',
      author,
      'binary_tree',
      'One line description of project.',

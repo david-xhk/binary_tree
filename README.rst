@@ -2,7 +2,7 @@
 About
 *****
 
-binary_tree.py provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.
+binary_tree provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.
 
 ========
 Features
@@ -164,7 +164,7 @@ Lastly, you can use :func:`~binary_tree.get_max_depth` to get the total number o
 Credits
 =======
 
-binary_tree.py was written by Han Keong <hk997@live.com>.
+binary_tree was written by Han Keong <hk997@live.com>.
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 

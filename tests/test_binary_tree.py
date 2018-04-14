@@ -15,11 +15,7 @@ def node():
 def test_content(node):
     """Check the tree structure."""
     assert node.value == 1
-
-    left_node = node.left
-    assert left_node.value == 2
-    assert left_node.left is None
-    assert left_node.right.value == 4
-
+    assert node.left.value == 2
     assert node.right.value == 3
-
+    assert node.left.left is None
+    assert node.left.right.value == 4

@@ -41,7 +41,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/han-keong/binary_tree.py',
+    url='https://github.com/han-keong/binary_tree',
     version=re.search(r'__version__ = [\'"]([^\'"]*)[\'"]', open('binary_tree/__init__.py').read()).group(1),
     zip_safe=False,
 )
