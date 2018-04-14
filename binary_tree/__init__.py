@@ -13,7 +13,7 @@ For example::
 >>> node == node2
 True
 
-For a demonstration of binary_tree, you can run this in your terminal::
+For a demonstration of this module, you can run this in your terminal::
 
     $ demo/tree.py
 """
