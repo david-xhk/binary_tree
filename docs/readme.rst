@@ -103,9 +103,9 @@ Alternatively, you can use the in-order and post-order traversal. ::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
------------------
+------------------------
 Processing a binary tree
------------------
+------------------------
 
 With a tree set up, :func:`~binary_tree.has_path_sum` and :func:`~binary_tree.is_symmetrical` can be used to analyse the nature of the tree. ::
 

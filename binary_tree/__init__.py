@@ -24,7 +24,7 @@ Also, to see another demonstration of the tree functions provided in this module
 
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 from .node import *
 del node
@@ -35,6 +35,7 @@ del tree
 __all__ = [
     "Node",
     "is_node",
+    "is_leaf",
     "has_path_sum",
     "is_symmetrical",
     "traverse_pre_order",
