@@ -141,7 +141,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is also available. ::
         traversal = list(tree.traverse(root, kind))
         traversals.append(traversal)
 
-On top of traversals, you can get the paths between the root and each leaf node using :func:`~binary_tree.get_all_paths`. An example is in :func:`~binary_tree.has_path_sum`::
+On top of traversals, you can get the paths between the root and each leaf node using :func:`~binary_tree.get_all_paths`. An example is in :func:`~binary_tree.has_path_sum`:
 
 .. code-block:: python
     :emphasize-lines: 2
