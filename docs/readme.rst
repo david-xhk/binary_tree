@@ -35,9 +35,9 @@ Features
 Usage
 =====
 
--------
-Imports
--------
+--------------------------
+Importing from binary_tree
+--------------------------
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
@@ -47,9 +47,9 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
     
     from binary_tree import Node
 
--------------
-Node creation
--------------
+------------------------
+Creating a Node instance
+------------------------
 
 To create an instance, pass a value into :class:`~binary_tree.Node`. ::
     
@@ -70,14 +70,18 @@ These instances have :meth:`~binary_tree.Node.is_leaf` to check if they are leaf
     if parent_node.right.is_leaf():
         print(str(parent_node.right) + "is a leaf node!")
 
-To set up a binary tree, you can pass in a string of values to the :meth:`~binary_tree.Node.from_string` constructor. ::
+------------------------
+Setting up a binary tree 
+------------------------
+
+To generate a binary tree, you can pass in a string of values to the :meth:`~binary_tree.Node.from_string` constructor. ::
 
     tree_string = "1,2,3,4,,5,6"
     root = Node.from_string(tree_string)
 
 .. note::
     
-    Node.from_string() will generate the tree structure in **level-order**.
+    Node.from_string() will grow the tree structure in **level-order**.
 
 Another way is by passing the in-order and pre-order traversal into :meth:`~binary_tree.Node.from_orders` to retrieve the original tree structure.  ::
 
@@ -95,9 +99,9 @@ Alternatively, you can use the in-order and post-order traversal. ::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
----------------
-Tree processing
----------------
+-----------------
+Processing a tree
+-----------------
 
 With a tree set up, there are several functions you can use such as :func:`~binary_tree.has_path_sum` or :func:`~binary_tree.is_symmetrical` to analyse the nature of the tree. ::
 
