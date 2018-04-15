@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """This module contains functions for binary trees."""
 
 from .node import is_node

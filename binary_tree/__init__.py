@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """This package provides a Node object and useful tools for processing a binary tree data structure. 
 
 For example::
