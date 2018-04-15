@@ -89,14 +89,14 @@ To generate a binary tree, you can pass in a string of values to the :meth:`~bin
 
 Another way is by passing the in-order and pre-order traversal into :meth:`~binary_tree.Node.from_orders` to retrieve the original tree structure.  ::
 
-    in_order = "4,2,1,5,3,6"
-    pre_order = "1,2,4,3,5,6"
+    in_order = [4,2,1,5,3,6]
+    pre_order = [1,2,4,3,5,6]
     root = Node.from_orders("in-pre", in_order, pre_order)
 
 Alternatively, you can use the in-order and post-order traversal. ::
 
-    in_order = "4,2,1,5,3,6"
-    post_order = "4,2,5,6,3,1"
+    in_order = [4,2,1,5,3,6]
+    post_order = [4,2,5,6,3,1]
     root = Node.from_orders("in-post", in_order, post_order)
 
 .. note::
