@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """This module contains the interface for the Node class."""
 
 class Node(object):
@@ -121,41 +123,33 @@ class Node(object):
         Warning:
             There cannot be any duplicates in `in_order` and `other_order`.
         """
-        kinds = ["in-pre", "in-post"]
-        if kind not in kinds:
-            raise KeyError(
-                "Invalid argument for kind. "
-                "Expected \"in-pre\" or \"in-post\"")
-        kind_index = kinds.index(kind)
-        slices = [":orders[0].index(orders[1][0])",     #  in-pre,  left, 0
-                  "1:len(orders[0])+1",                 #  in-pre,  left, 1
-                  "orders[0].index(orders[1][0])+1:",   #  in-pre, right, 0
-                  "-len(orders[0]):",                   #  in-pre, right, 1
-                  ":orders[0].index(orders[1][-1])",    # in-post,  left, 0
-                  ":len(orders[0])",                    # in-post,  left, 1
-                  "orders[0].index(orders[1][-1])+1:",  # in-post, right, 0
-                  "-len(orders[0])-1:-1"]               # in-post, right, 1
-        sides = ["left", "right"]
-        def make_node(in_order, other_order):
-            if not in_order or not other_order:
-                return None
-            # Get the first element for in-pre, and last element for in-post
-            node = cls(other_order[-kind_index])
-            for side_index, side in enumerate(sides):
-                # Make a list to store the sliced orders
-                orders = [in_order, other_order]
-                for order_index in range(len(orders)):
-                    # Convert kind, side, and order_index into a decimal
-                    slice_index = int(str(kind_index) 
-                                      + str(side_index) 
-                                      + str(order_index), 2)
-                    code = "orders[{index}] = orders[{index}][{slice}]".format(
-                        index=order_index, slice=slices[slice_index])
-                    # Slice in_order/other_order based on the kind and side
-                    exec(code, globals(), locals())
-                child = make_node(*orders)
-                setattr(node, side, child)
-            return node
+        if kind == "in-pre":
+            def make_node(in_order, other_order):
+                if not in_order or not other_order:
+                    return None
+                node = cls(other_order[0])
+                in_slice = in_order[:in_order.index(other_order[0])]
+                other_slice = other_order[1:len(in_slice)+1]
+                node.left = make_node(in_slice, other_slice)
+                in_slice = in_order[in_order.index(other_order[0])+1:]
+                other_slice = other_order[-len(in_slice):]
+                node.right = make_node(in_slice, other_slice)
+                return node
+        elif kind == "in-post":
+            def make_node(in_order, other_order):
+                if not in_order or not other_order:
+                    return None
+                node = cls(other_order[-1])
+                in_slice = in_order[:in_order.index(other_order[-1])]
+                other_slice = other_order[:len(in_slice)]
+                node.left = make_node(in_slice, other_slice)
+                in_slice = in_order[in_order.index(other_order[-1])+1:]
+                other_slice = other_order[-len(in_slice)-1:-1]
+                node.right = make_node(in_slice, other_slice)
+                return node    
+        else:
+            raise KeyError("Invalid argument for kind. "
+                           "Expected \"in-pre\" or \"in-post\"")
         return make_node(in_order, other_order)
 
 def is_node(obj):
