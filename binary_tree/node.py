@@ -120,7 +120,7 @@ class Node(object):
                 contain duplicates.
             KeyError: If `kind` is not one of the accepted keys.
 
-        Warning:
+        Note:
             There cannot be any duplicates in `in_order` and `other_order`.
         """
         if kind == "in-pre":
