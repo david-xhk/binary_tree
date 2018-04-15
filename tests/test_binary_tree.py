@@ -14,13 +14,13 @@ def node_from_string():
 
 def test_node_from_string(node_from_string):
     """Check the tree structure."""
-    assert node.value == 1
-    assert node.left.value == 2
-    assert node.right.value == 3
-    assert node.left.left.value == 4
-    assert node.left.right is None
-    assert node.right.left.value == 5
-    assert node.right.right.value == 6
+    assert node_from_string.value == 1
+    assert node_from_string.left.value == 2
+    assert node_from_string.right.value == 3
+    assert node_from_string.left.left.value == 4
+    assert node_from_string.left.right is None
+    assert node_from_string.right.left.value == 5
+    assert node_from_string.right.right.value == 6
 
 @pytest.fixture
 def node_from_in_pre_orders():
@@ -31,13 +31,13 @@ def node_from_in_pre_orders():
 
 def test_node_from_in_pre_orders(node_from_in_pre_orders):
     """Check the tree structure."""
-    assert node.value == 1
-    assert node.left.value == 2
-    assert node.right.value == 3
-    assert node.left.left.value == 4
-    assert node.left.right is None
-    assert node.right.left.value == 5
-    assert node.right.right.value == 6
+    assert node_from_in_pre_orders.value == 1
+    assert node_from_in_pre_orders.left.value == 2
+    assert node_from_in_pre_orders.right.value == 3
+    assert node_from_in_pre_orders.left.left.value == 4
+    assert node_from_in_pre_orders.left.right is None
+    assert node_from_in_pre_orders.right.left.value == 5
+    assert node_from_in_pre_orders.right.right.value == 6
 
 @pytest.fixture
 def node_from_in_post_orders():
@@ -48,11 +48,11 @@ def node_from_in_post_orders():
 
 def test_node_from_in_post_orders(node_from_in_post_orders):
     """Check the tree structure."""
-    assert node.value == 1
-    assert node.left.value == 2
-    assert node.right.value == 3
-    assert node.left.left.value == 4
-    assert node.left.right is None
-    assert node.right.left.value == 5
-    assert node.right.right.value == 6
+    assert node_from_in_post_orders.value == 1
+    assert node_from_in_post_orders.left.value == 2
+    assert node_from_in_post_orders.right.value == 3
+    assert node_from_in_post_orders.left.left.value == 4
+    assert node_from_in_post_orders.left.right is None
+    assert node_from_in_post_orders.right.left.value == 5
+    assert node_from_in_post_orders.right.right.value == 6
 
