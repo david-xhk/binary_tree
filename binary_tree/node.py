@@ -127,7 +127,7 @@ class Node(object):
             def make_node(in_order, other_order):
                 if not in_order or not other_order:
                     return None
-                node = cls(other_order[-1])
+                node = cls(other_order[0])
                 in_slice = in_order[:in_order.index(other_order[0])]
                 other_slice = other_order[1:len(in_slice)+1]
                 node.left = make_node(in_slice, other_slice)
@@ -181,5 +181,4 @@ def is_leaf(node):
             return False
     else:
         return True
-
 

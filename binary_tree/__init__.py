@@ -23,7 +23,7 @@ For a demonstration of this module, you can run this in your terminal (for macOS
 
 __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
-__version__ = '0.0.6'
+__version__ = '0.0.7'
 
 from .node import *
 del node
