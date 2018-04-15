@@ -39,7 +39,7 @@ def node_from_in_pre_orders():
 
 def test_node_from_in_pre_orders(node_from_in_pre_orders):
     """Check the tree structure."""
-assert is_correct(node_from_in_pre_orders)
+    assert is_correct(node_from_in_pre_orders)
 
 @pytest.fixture
 def node_from_in_post_orders():
