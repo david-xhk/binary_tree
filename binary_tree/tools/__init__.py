@@ -6,5 +6,5 @@ from .parent_dir import insert_parent_dir
 from .ensure_type import ensure_type
 from .demo import Demo
 
-del code_demo
+del demo
 
