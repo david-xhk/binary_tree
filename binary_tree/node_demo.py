@@ -3,13 +3,7 @@
 
 """This module contains a demonstration for the Node interface."""
 
-# For py2.7 compatibility
-from __future__ import print_function
-import sys
-if sys.version_info < (3,3):
-    input = raw_input
-
-from tools import DemoRestart, Demo
+from tools import Demo
 from node import *
 
 class NodeDemo(Demo):
@@ -28,12 +22,12 @@ Reciprocative pointers will be set automatically. For example:
     foo.left = bar will also set bar.parent to foo.
     spam.prev = eggs will also set eggs.next to spam."""
 
-    setup_prompt = "Press 'enter' to continue. "
+    setup_prompt = "Select an option, or press 'enter' to continue.\n"
 
     setup_code = """\
-left = Node(2, left=Node(4))
-right = Node(3, left=Node(5), right=Node(6))
-node = Node(1, left=left, right=right)"""
+left_branch = Node(2, left=Node(4))
+right_branch = Node(3, left=Node(5), right=Node(6))
+node = Node(1, left=left_branch, right=right_branch)"""
 
     commands = [
         "str(node)",

@@ -4,7 +4,7 @@
 
 from .parent_dir import insert_parent_dir
 from .ensure_type import ensure_type
-from .demo import Demo, DemoRestart, DemoExit
+from .demo import Demo
 
-del demo
+del code_demo
 

@@ -3,7 +3,38 @@
 """This module contains functions for binary trees."""
 
 from .node import Node, is_node, is_leaf
+import functools
 
+def connect_nodes(root):
+    """Connect the nodes in each level down the tree.
+    
+    Args:
+        root (Node): The root node of a binary tree.
+    """
+    for level in traverse_level_order(root):
+        prev_node, next_node = None, None
+        for i in range(len(level)):
+            prev_node, level[i].prev, next_node, level[-i-1].next = (
+                level[i], prev_node, level[-i-1], next_node)
+
+def connected(func):
+    """Connect nodes after the root is returned.
+
+    Args:
+        func: A binary tree constructor.
+
+    Returns:
+        func: The root returned will be connected.
+    """
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        root = func(*args, **kwargs)
+        if root:
+            connect_nodes(root)
+        return root
+    return inner
+
+@connected
 def from_string(tree_string, cls=Node):
     """Generate a binary tree from a string.
 
@@ -53,6 +84,7 @@ def from_string(tree_string, cls=Node):
         # next_level is an empty list, so subsequent node values are lost.
         return root
 
+@connected
 def from_orders(kind, in_order, other_order, cls=Node):
     """Generate a binary tree from in-order and pre/post-order traversal.
 
@@ -241,18 +273,6 @@ def is_symmetrical(root):
         level = next_level
     else:
         return True
-
-def connect_nodes(root):
-    """Connect the nodes in each level down the tree.
-    
-    Args:
-        root (Node): The root node of a binary tree.
-    """
-    for level in traverse_level_order(root):
-        prev_node, next_node = None, None
-        for i in range(len(level)):
-            level[i].prev, prev_node = prev_node, level[i]
-            level[-i-1].next, next_node = next_node, level[-i-1]
 
 def get_max_depth(root):
     """Calculate the maximum depth of a binary tree.
