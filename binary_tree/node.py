@@ -9,13 +9,16 @@ class Node(object):
         value: The node value.
         left (Node, optional): The left child node, if present.
         right (Node, optional): The right child node, if present.
+        prev (Node, optional): The node on the adjacent left, if present.
+        next (Node, optional): The node on the adjacent right, if present.
+        parent (Node, optional): The parent node, if present.
     """
-    __slots__ = ["value", "left", "right"]
+    __slots__ = ["value", "_left", "_right", "_prev", "_next", "parent"]
 
-    def __init__(self, value, left=None, right=None):
-        self.value = value
-        self.left = left
-        self.right = right
+    def __init__(self, value, **nodes):
+        self.value = getattr(value, "value", value)
+        for attr in ["left", "right", "prev", "next", "parent"]:
+            setattr(self, attr, nodes.get(attr))
 
     def __str__(self):
         return "Node(" + str(self.value) + ")"
@@ -29,156 +32,118 @@ class Node(object):
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
-        try:
-            for attr in self.__slots__:
-                if getattr(self, attr) != getattr(other, attr):
-                    return False
-            else:
-                return True
-        except AttributeError:
-            return NotImplemented
+        return self.value == getattr(other, "value", other)
 
     def __ne__(self, other):
-        try:
-            for attr in self.__slots__:
-                if getattr(self, attr) != getattr(other, attr):
-                    return True
-            else:
-                return False
-        except AttributeError:
-            return NotImplemented
+        return self.value != getattr(other, "value", other)
 
-    @classmethod
-    def from_string(cls, tree_string):
-        """Generate a binary tree from a string.
-
-        Instantiates the left child, and then the right child for every node 
-        in each level (level-order).
-        
-        Args:
-            tree_string (str): A level-order binary tree traversal, separated
-            by commas.
-        
-        Returns:
-            A newly instantiated Node representing `tree_string`.
-            If `tree_string` has no root value, returns ``None``.
-        """
-        for char in " []\n'\"":
-            tree_string = tree_string.replace(char, "")
-        values = iter(tree_string.split(","))
-        value = next(values)
-        if value == "":  # Empty root value.
-            return None
-        try:
-            value = int(value)
-        except ValueError:  # value is not a number.
-            pass
-        root = cls(value)
-        level = [root]
+    def __iter__(self):
+        level = [self]
         while level:
             next_level = []
             for node in level:
+                yield node
                 for side in ["left", "right"]:
-                    try:
-                        value = next(values)
-                    except StopIteration:  # values has been exhausted.
-                        return root
-                    else:
-                        if value in ["", "null"]:  # Not a node.
-                            continue
-                        try:
-                            value = int(value)
-                        except ValueError:  # value is not a number.
-                            pass
-                        child = cls(value)
-                        setattr(node, side, child)
+                    child = getattr(node, side)
+                    if is_node(child):
                         next_level.append(child)
             level = next_level
-        else:  
-            # next_level is an empty list, so subsequent node values are lost.
-            return root
 
-    @classmethod
-    def from_orders(cls, kind, in_order, other_order):
-        """Generate a binary tree from in-order and pre/post-order traversal.
+    @property
+    def left(self):
+        return getattr(self, "_left", None)
 
-        Recursively instantiates the parent, its left child, and then its 
-        right child (pre-order).
-        
-        Args:
-            kind (str): Either "in-pre" or "in-post".
-            in_order (list[int, ...]): The in-order traversal of a binary tree
-            other_order (list[int, ...]): Either the tree's pre-order or 
-                post-order traversal
+    @left.setter
+    def left(self, other):
+        self._left = other
+        if is_node(other):
+            other.parent = self
 
-        Returns:
-            A newly instantiated Node entailing `in_order` and `other_order`.
-            If either arguments are empty, returns ``None``.
+    @property
+    def right(self):
+        return getattr(self, "_right", None)
 
-        Raises:
-            ValueError: If `in_order` and `other_order` do not correspond or 
-                contain duplicates.
-            KeyError: If `kind` is not one of the accepted keys.
+    @right.setter
+    def right(self, other):
+        self._right = other
+        if is_node(other):
+            other.parent = self
 
-        Note:
-            There cannot be any duplicates in `in_order` and `other_order`.
-        """
-        if kind == "in-pre":
-            def make_node(in_order, other_order):
-                if not in_order or not other_order:
-                    return None
-                node = cls(other_order[0])
-                in_slice = in_order[:in_order.index(other_order[0])]
-                other_slice = other_order[1:len(in_slice)+1]
-                node.left = make_node(in_slice, other_slice)
-                in_slice = in_order[in_order.index(other_order[0])+1:]
-                other_slice = other_order[-len(in_slice):]
-                node.right = make_node(in_slice, other_slice)
-                return node
-        elif kind == "in-post":
-            def make_node(in_order, other_order):
-                if not in_order or not other_order:
-                    return None
-                node = cls(other_order[-1])
-                in_slice = in_order[:in_order.index(other_order[-1])]
-                other_slice = other_order[:len(in_slice)]
-                node.left = make_node(in_slice, other_slice)
-                in_slice = in_order[in_order.index(other_order[-1])+1:]
-                other_slice = other_order[-len(in_slice)-1:-1]
-                node.right = make_node(in_slice, other_slice)
-                return node    
-        else:
-            raise KeyError("Invalid argument for kind. "
-                           "Expected \"in-pre\" or \"in-post\"")
-        return make_node(in_order, other_order)
+    @property
+    def prev(self):
+        return getattr(self, "_prev", None)
+
+    @prev.setter
+    def prev(self, other):
+        self._prev = other
+        if is_node(other):
+            other._next = self
+
+    @property
+    def next(self):
+        return getattr(self, "_next", None)
+
+    @next.setter
+    def next(self, other):
+        self._next = other
+        if is_node(other):
+            other._prev = self
 
 def is_node(obj):
     """Check if `obj` is an instance of Node.
 
-    Look for the attributes that Node needs to function properly.
-
     Args:
         obj: Any object.
 
-    Return:
+    Returns:
         ``True`` if `obj` is an instance of Node, ``False`` otherwise.
     """
-    for attr in Node.__slots__:
-        if not hasattr(obj, attr):
-            return False
-    else:
-        return True
+    return isinstance(obj, Node)
+
+def is_left(node):
+    """Check if `node` is a left child.
+
+    Return:
+        ``True`` if `node` is the left child of its parent, ``False`` otherwise, or if parent is not set.
+    """
+    return (is_node(node.parent)
+            and node.parent.left is node)
+
+def is_right(node):
+    """Check if `node` is a right child.
+
+    Return:
+        ``True`` if `node` is the right child of its parent, ``False`` otherwise, or if parent is not set.
+    """
+    return (is_node(node.parent)
+            and node.parent.right is node)
 
 def is_leaf(node):
     """Check if `node` is a leaf node.
 
-    Return:
-        ``True`` if `node` has no children nodes, ``False`` otherwise, or
-        if `node` is not an instance of Node.
+    Returns:
+        ``True`` if `node` has a parent node but no children, ``False`` otherwise.
     """
-    for side in Node.__slots__[1:]:
-        if getattr(node, side, 1):
-            return False
-    else:
-        return True
+    return (node.parent is not None
+            and node.left is None
+            and node.right is None)
+
+def is_root(node):
+    """Check if `node` is a root node.
+
+    Return:
+        ``True`` if `node` has a child node but no parent, ``False`` otherwise.
+    """
+    return ((node.left is not None or node.right is not None) 
+            and node.parent is None)
+
+def is_orphan(node):
+    """Check if `node` is an orphan node.
+
+    Return:
+        ``True`` if `node` has no parent or children node, ``False`` otherwise.
+    """
+    return (node.parent is None
+            and node.left is None
+            and node.right is None)
 
