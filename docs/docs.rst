@@ -1,10 +1,10 @@
-*************
-Documentation
-*************
+***************
+ Documentation
+***************
 
-==================
-:mod:`binary_tree`
-==================
+====================
+ :mod:`binary_tree`
+====================
 
 .. automodule:: binary_tree
     :members:

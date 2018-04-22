@@ -1,6 +1,6 @@
-****
-Home
-****
+******
+ Home
+******
 
 Welcome to the documentation page of binary_tree!
 
@@ -11,9 +11,9 @@ Welcome to the documentation page of binary_tree!
     :target: https://binary-tree.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
-========
-Contents
-========
+==========
+ Contents
+==========
 
 .. toctree::
     :maxdepth: 2
