@@ -111,10 +111,10 @@ If the other object does not have a `value` attribute, the object itself is take
 
 This allows the following comparisons to work:
 
->>> root = Node(1)
+>>> root == Node(1)
 True
 
->>> root = 1
+>>> root == 1
 True
 
 ------------------------
