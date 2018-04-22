@@ -32,13 +32,3 @@ __all__ = ["Node", "is_node", "is_left", "is_right", "is_leaf", "is_root",
 
 del node, tree
 
-try:
-    from .tools import ensure_type
-except ImportError:
-    pass
-else:
-    ensure_node = ensure_type(root=Node, node=Node, nodes=Node)
-    for name in __all__:
-        globals()[name] = ensure_node(globals()[name])
-    del tools, ensure_type, name
-
