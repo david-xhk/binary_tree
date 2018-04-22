@@ -7,7 +7,7 @@ import pytest
 from binary_tree import *
 
 tree_string = "1,2,3,4,,5,6"
-repr_string = "Node(1, Node(2, Node(4)), Node(3, Node(5), Node(6)))"
+repr_string = "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 in_order = [4,2,1,5,3,6]
 pre_order = [1,2,4,3,5,6]
 post_order = [4,2,5,6,3,1]
