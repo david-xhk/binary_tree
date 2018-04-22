@@ -228,7 +228,7 @@ traverse_level_order()
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
 
 .. note::
-    traverse_level_order() will output a list of lists, each representing a level in the tree.
+    traverse_level_order() will yield lists of Nodes, which represents a level in the tree.
 
 traverse()
 ^^^^^^^^^^
@@ -248,7 +248,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for your
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also iterate over an instance of :class:`~binary_tree.Node` to traverse a binary tree for your convenience. Level-order is the default mode of traversal. ::
+You can also iterate over an instance of :class:`~binary_tree.Node` to traverse its tree structure. Level-order is the default mode of traversal. ::
 
     >>> for node in root:
     ...     print(node)
