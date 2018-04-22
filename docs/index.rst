@@ -16,7 +16,7 @@ Welcome to the documentation page of binary_tree!
 ==========
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     readme
     docs
