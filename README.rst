@@ -35,7 +35,7 @@ To create an instance, pass a value into :class:`~binary_tree.Node`.
 
 Node attributes
 ^^^^^^^^^^^^^^^
-Nodes have the following attributes:
+:class:`~binary_tree.Node`s have the following attributes:
 
 * Children nodes
   
@@ -51,7 +51,7 @@ Nodes have the following attributes:
 
   * :attr:`~binary_tree.Node.parent`
 
-These attributes are supposed to be instances of :class:`~binary_tree.Node` themselves if they are present. 
+These attributes are supposed to be instances of :class:`~binary_tree.Node` themselves, if they are present. 
 
 Setting Node attributes
 ^^^^^^^^^^^^^^^^^^^^^^^
