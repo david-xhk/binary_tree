@@ -80,49 +80,49 @@ The following functions can be used to check if a :class:`~binary_tree.Node` has
 
 is_node()
 ^^^^^^^^^
-:func:`~binary_tree.is_node`
+:func:`~binary_tree.is_node` checks if an object is an instance of :class:`~binary_tree.Node`.
 
 >>> tree.is_node(parent_node)
 True
 
 is_left()
 ^^^^^^^^^
-:func:`~binary_tree.is_left`
+:func:`~binary_tree.is_left` checks if a :class:`~binary_tree.Node` instance is a left child.
 
 >>> tree.is_left(parent_node.left)
 True
 
 is_right()
 ^^^^^^^^^^
-:func:`~binary_tree.is_right`
+:func:`~binary_tree.is_right` checks if a :class:`~binary_tree.Node` instance is a right child.
 
 >>> tree.is_right(parent_node.right)
 True
 
 is_leaf()
 ^^^^^^^^^
-:func:`~binary_tree.is_leaf`
+:func:`~binary_tree.is_leaf` checks if a :class:`~binary_tree.Node` instance is a leaf node.
 
 >>> tree.is_leaf(parent_node.right)
 True
 
 is_root()
 ^^^^^^^^^
-:func:`~binary_tree.is_root`
+:func:`~binary_tree.is_root` checks if a :class:`~binary_tree.Node` instance is a root node.
 
 >>> tree.is_root(parent_node):
 True
 
 is_orphan()
 ^^^^^^^^^^^
-:func:`~binary_tree.is_orphan`
+:func:`~binary_tree.is_orphan` checks if a :class:`~binary_tree.Node` instance is an orphan node.
 
 >>> lonely_node = Node(1)
 >>> tree.is_orphan(lonely_node)
 True
 
-Equality testing
-^^^^^^^^^^^^^^^^
+Equality tests
+^^^^^^^^^^^^^^
 Nodes have a special way of testing equality, which is to tentatively compare its own value with the other object's value. 
 
 If the other object does not have a `value` attribute, the object itself is taken as the basis of comparison. 
@@ -194,28 +194,28 @@ With a tree set up, there are several functions you can use to traverse down the
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.traverse_pre_order`
+:func:`~binary_tree.traverse_pre_order` traverses a binary tree in pre-order.
 
 >>> list(tree.traverse_pre_order(root))
 [Node(1), Node(2), Node(4), Node(3), Node(5)]
 
 traverse_in_order()
 ^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.traverse_in_order`
+:func:`~binary_tree.traverse_in_order` traverses a binary tree in in-order.
 
 >>> list(tree.traverse_in_order(root))
 [Node(4), Node(2), Node(1), Node(5), Node(3)]
 
 traverse_post_order()
 ^^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.traverse_post_order`
+:func:`~binary_tree.traverse_post_order` traverses a binary tree in post-order.
 
 >>> list(tree.traverse_post_order(root))
 [Node(4), Node(2), Node(5), Node(3), Node(1)]
 
 traverse_level_order()
 ^^^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.traverse_level_order`
+:func:`~binary_tree.traverse_level_order` traverses a binary tree in level-order.
 
 >>> list(tree.traverse_level_order(root))
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
@@ -241,7 +241,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for your
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also iterate over a :class:`~binary_tree.Node` to traverse a binary tree for convenience. Level-order is the default mode of traversal. 
+You can also iterate over a :class:`~binary_tree.Node` to traverse a binary tree for your convenience. Level-order is the default mode of traversal. 
 
 >>> for node in root:
 >>>     print(node)
@@ -259,28 +259,28 @@ The following functions are available to find certain properties of a binary tre
 
 is_symmetrical()
 ^^^^^^^^^^^^^^^^
-:func:`~binary_tree.is_symmetrical`
+:func:`~binary_tree.is_symmetrical` checks for symmetry in a binary tree.
 
 >>> tree.is_symmetrical(root)
 False
 
 get_max_depth()
 ^^^^^^^^^^^^^^^
-:func:`~binary_tree.get_max_depth`
+:func:`~binary_tree.get_max_depth` calculates the maximum depth of a binary tree.
 
 >>> tree.get_max_depth(root)
 3
 
 get_path()
 ^^^^^^^^^^
-:func:`~binary_tree.get_path`
+:func:`~binary_tree.get_path` gets the path of a node in a binary tree.
 
 >>> tree.get_path(root.right.left)
 [Node(1), Node(3), Node(5)]
 
 get_all_paths()
 ^^^^^^^^^^^^^^^
-:func:`~binary_tree.get_all_paths`
+:func:`~binary_tree.get_all_paths` finds every leaf path in a binary tree.
 
 >>> for path in tree.get_all_paths(root):
 >>>     print(path)
@@ -292,14 +292,14 @@ get_all_paths()
 
 has_path_sum()
 ^^^^^^^^^^^^^^
-:func:`~binary_tree.has_path_sum`
+:func:`~binary_tree.has_path_sum` determines if there is a path that adds up to a certain value.
 
 >>> tree.has_path_sum(root, 7)
 True
 
 find_path()
 ^^^^^^^^^^^
-:func:`~binary_tree.find_path`
+:func:`~binary_tree.find_path` finds the path of a node in a binary tree.
 
 >>> tree.find_path(5)
 [Node(1), Node(3), Node(5)]
@@ -309,7 +309,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`~binary_tree.get_lca`
+:func:`~binary_tree.get_lca` gets the lowest common ancestor of two nodes in a binary tree.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)
@@ -318,7 +318,7 @@ Node(2)
 Node(1)
 
 .. note::
-    Since Node :ref:`tests for equality tentatively <Equality testing>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, *provided that the value is unique within the tree*.
+    Since Node :ref:`tests for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, *provided that the value is unique within the tree*.
 
 =========
  Credits
