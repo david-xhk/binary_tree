@@ -8,28 +8,8 @@ binary_tree provides a Node object and some useful tools for a binary tree data 
 Features
 ========
 
-* Construct or deconstruct a binary tree through
-
-  * String
-  * In-order and pre-order traversal
-  * In-order and post-order traversal
-
-* Check if a binary tree
-
-  * Has a certain path sum
-  * Is symmetrical
-
-* Traverse a binary tree in 
-    
-  * Pre-order
-  * In-order
-  * Post-order
-  * Level-order
-
-* Get from a binary tree
-
-  * All root-to-leaf paths
-  * The maximum depth
+.. toctree::
+    :maxdepth: 2
 
 =====
 Usage
