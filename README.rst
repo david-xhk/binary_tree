@@ -2,7 +2,7 @@
 About
 *****
 
-binary_tree provides a Node object and some useful tools like constructors and tree traversals for a binary tree data structure.
+binary_tree provides a Node object and some useful tools for a binary tree data structure.
 
 ========
 Features
@@ -39,13 +39,13 @@ Usage
 Importing
 ---------
 
-To use the functions provided by :mod:`binary_tree`, you can do the following import:
+To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
->>> import binary_tree as tree
+    import binary_tree as tree
 
-If you would like to use :class:`~binary_tree.Node` on its own, you may also write:
+If you would like to use :class:`~binary_tree.Node` on its own, you may also write::
     
->>> from binary_tree import Node
+    from binary_tree import Node
 
 -------------
 Making a node 
@@ -125,7 +125,11 @@ True
 >>> tree.is_orphan(lonely_node)
 True
 
-Nodes have a special way of testing equality, which is to tentatively compare its own value with the other object's value. If the other object does not have a `value` attribute, the object itself is taken as the basis of comparison. This allows the following comparisons to work:
+Nodes have a special way of testing equality, which is to tentatively compare its own value with the other object's value. 
+
+If the other object does not have a `value` attribute, the object itself is taken as the basis of comparison. 
+
+This allows the following comparisons to work:
 
 >>> root = Node(1)
 True
@@ -141,33 +145,42 @@ To generate a binary tree, you can pass in a string of values into :func:`~binar
 
 >>> tree_string = "1,2,3,4,,5,6"
 >>> root = tree.from_string(tree_string)
-Node(1)
+>>> repr(root)
+"Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
 .. note::
     
-    Node.from_string() will grow the tree structure in **level-order**.
+    from_string() will grow the tree structure in **level-order**.
 
 Another way is with an in-order and pre-order traversal using :func:`~binary_tree.from_orders`, which reconstructs the original tree structure.
 
 >>> in_order = [4,2,1,5,3,6]
 >>> pre_order = [1,2,4,3,5,6]
 >>> root = tree.from_orders("in-pre", in_order, pre_order)
-Node(1)
+>>> repr(root)
+"Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
 Alternatively, you can use an in-order and post-order traversal.
 
 >>> post_order = [4,2,5,6,3,1]
->>> root = tree.from_orders("in-post", in_order, post_order)
-Node(1)
+>>> repr(root)
+"Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
 .. note::
     
     There should not be duplicates present in `in_order` and `pre_order` or `post_order`.
 
-When using the above methods to construct a binary tree, the neighbour nodes in each level will be automatically connected for you using :func:`~binary_tree.connect_nodes`. You may use this function again to reconfigure a tree after it is modified. 
+When using the above methods to construct a binary tree, the neighbour nodes in each level will be automatically connected for you using :func:`~binary_tree.connect_nodes`.
+
+You may use this function again to reconfigure a tree after it is modified. 
 
 >>> root.right.right = None  # Prune the right branch of the right node
->>> connect_nodes(root)
+>>> tree.connect_nodes(root)
+
+Just as a tree can be constructed from string, it can be deconstructed back into one too, using :func:`~binary_tree.to_string`.
+
+>>> tree.to_string(root)
+"1,2,3,4,,5"
 
 ------------------------
 Traversing a binary tree
@@ -178,67 +191,89 @@ With a tree set up, there are several functions you can use to traverse down the
 * :func:`pre-order <binary_tree.traverse_pre_order>`
 
 >>> for node in tree.traverse_pre_order(root):
->>>     print(node.value)
-1
-2
-4
-3
-5
+>>>     print(node)
+Node(1)
+Node(2)
+Node(4)
+Node(3)
+Node(5)
 
 * :func:`in-order <binary_tree.traverse_in_order>`
 
 >>> for node in tree.traverse_in_order(root):
->>>     print(node.value)
-4
-2
-1
-5
-3
+>>>     print(node)
+Node(4)
+Node(2)
+Node(1)
+Node(5)
+Node(3)
 
 * :func:`post-order <binary_tree.traverse_post_order>`
 
 >>> for node in tree.traverse_post_order(root):
->>> print(node.value)
-4
-2
-5
-3
-1
+>>>     print(node)
+Node(4)
+Node(2)
+Node(5)
+Node(3)
+Node(1)
 
 * :func:`level-order <binary_tree.traverse_level_order>`
 
 >>> for level in tree.traverse_level_order(root):
 >>>     for node in level:
->>>           print(node.value)
-1
-2
-3
-4
-5
+>>>           print(node)
+Node(1)
+Node(2)
+Node(3)
+Node(4)
+Node(5)
 
 .. note::
     
-    traverse_level_order will output a list of lists, each representing a level in the tree.
+    traverse_level_order() will output a list of lists, each representing a level in the tree.
 
 Level-order is also the default mode of traversal when iterating over a root node.
 
 >>> for node in root:
->>>     print(node.value)
-1
-2
-3
-4
-5
+>>>     print(node)
+Node(1)
+Node(2)
+Node(3)
+Node(4)
+Node(5)
 
 A single dispatch function, :func:`~binary_tree.traverse`, is available for your convenience.
-    
->>> for kind in ("pre", "in", "post", "level"):
->>>     traversal = list(tree.traverse(root, kind))
->>>     print(traversal)
-[Node(1), Node(2), Node(4), Node(3), Node(5)]
-[Node(4), Node(2), Node(1), Node(5), Node(3)]
-[Node(4), Node(2), Node(5), Node(3), Node(1)],
-[[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
+
+>>> for node in tree.traverse(root, "pre"):
+>>>     print(node)
+Node(1)
+Node(2)
+Node(4)
+Node(3)
+Node(5)
+
+>>> for node in tree.traverse(root, "in"):
+>>>     print(node)
+Node(4)
+Node(2)
+Node(1)
+Node(5)
+Node(3)
+
+>>> for node in tree.traverse(root, "post"):
+>>>     print(node)
+Node(4)
+Node(2)
+Node(5)
+Node(3)
+Node(1)
+
+>>> for level in tree.traverse(root, "level"):
+>>>     print(level)
+[Node(1)]
+[Node(2), Node(3)]
+[Node(4), Node(5)]
 
 -----------------------
 Analyzing a binary tree
@@ -269,7 +304,8 @@ False
 [Node(1), Node(3), Node(5)]
 
 .. note::
-    get_all_paths will search for paths using post-order traversal.
+
+    get_all_paths() will search for paths using post-order traversal.
 
 * :func:`~binary_tree.has_path_sum`
 
@@ -291,6 +327,10 @@ Node(2)
 
 >>> tree.get_lca(root, 1, 3, 5)
 Node(1)
+
+.. note::
+
+    Since Node compares for equality tentatively, it is possible to exploit this by simply passing in the value of the Node you wish to refer to, *provided that the value is unique within the tree*.
 
 =======
 Credits
