@@ -8,8 +8,7 @@ binary_tree provides a Node object and some useful tools for a binary tree data 
 Features
 ========
 
-.. toctree::
-    :maxdepth: 2
+.. contents:: :local:
 
 =====
 Usage
