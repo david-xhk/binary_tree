@@ -2,7 +2,7 @@
  About
 *******
 
-binary_tree provides a Node object and some useful tools for a binary tree data structure.
+:mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful tools for a binary tree data structure.
 
 ==========
  Features
