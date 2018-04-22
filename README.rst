@@ -138,9 +138,9 @@ True
 >>> root == 1
 True
 
--------------------
- Setting up a tree 
--------------------
+------------------------
+ Setting up a Node tree 
+------------------------
 
 from_string()
 ^^^^^^^^^^^^^
@@ -193,9 +193,9 @@ Just as a tree can be constructed from string, it can be deconstructed back into
 >>> tree.to_string(root)
 "1,2,3,4,,5"
 
--------------------
- Traversing a tree
--------------------
+------------------------
+ Traversing a Node tree
+------------------------
 
 With a tree set up, there are several functions you can use to traverse down the tree.
 
@@ -258,9 +258,9 @@ You can also iterate over an instance of :class:`~binary_tree.Node` to traverse 
     Node(4)
     Node(5)
 
-------------------
- Analyzing a tree
-------------------
+-----------------------
+ Analyzing a Node tree
+-----------------------
 
 The following functions are available to find certain properties of a binary tree.
 
