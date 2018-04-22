@@ -64,14 +64,14 @@ True
 
 >>> right_node = Node(2)
 >>> parent_node.right = right_node
-
+>>>
 >>> right_node.parent is parent_node
 True
 
 Likewise, setting a neighbour node will affect the corresponding neighbour node.
 
 >>> right_node.prev = left_node
-
+>>>
 >>> left_node.next is right_node
 True
 
@@ -138,9 +138,9 @@ True
 >>> root == 1
 True
 
---------------------------
- Setting up a binary tree 
---------------------------
+-------------------
+ Setting up a tree 
+-------------------
 
 from_string()
 ^^^^^^^^^^^^^
@@ -148,7 +148,7 @@ To generate a binary tree, you can pass in a string of values into :func:`~binar
 
 >>> tree_string = "1,2,3,4,,5,6"
 >>> root = tree.from_string(tree_string)
-
+>>>
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
@@ -162,7 +162,7 @@ Another way is with an in-order and pre-order traversal using :func:`~binary_tre
 >>> in_order = [4,2,1,5,3,6]
 >>> pre_order = [1,2,4,3,5,6]
 >>> root = tree.from_orders("in-pre", in_order, pre_order)
-
+>>>
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
@@ -170,7 +170,7 @@ Alternatively, you can use an in-order and post-order traversal.
 
 >>> post_order = [4,2,5,6,3,1]
 >>> root = tree.from_orders("in-post", in_order, post_order)
-
+>>>
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
@@ -193,9 +193,9 @@ Just as a tree can be constructed from string, it can be deconstructed back into
 >>> tree.to_string(root)
 "1,2,3,4,,5"
 
---------------------------
- Traversing a binary tree
---------------------------
+-------------------
+ Traversing a tree
+-------------------
 
 With a tree set up, there are several functions you can use to traverse down the tree.
 
@@ -258,9 +258,9 @@ You can also iterate over an instance of :class:`~binary_tree.Node` to traverse 
     Node(4)
     Node(5)
 
--------------------------
- Analyzing a binary tree
--------------------------
+------------------
+ Analyzing a tree
+------------------
 
 The following functions are available to find certain properties of a binary tree.
 
