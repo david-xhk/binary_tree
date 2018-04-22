@@ -6,13 +6,13 @@ For example::
 
     from binary_tree import from_string, from_orders, traverse
 
-    node = tree_from_string("1,2,,3,4,,5")
+    node = from_string("1,2,,3,4,,5")
     
     in_order = list(traverse("in", node))
     pre_order = list(traverse("pre", node))
     node2 = from_orders("in-pre", in_order, pre_order)
 
->>> node == node2
+>>> repr(node) == repr(node2)
 True
 """
 
