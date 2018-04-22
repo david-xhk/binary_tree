@@ -228,7 +228,7 @@ traverse_level_order()
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
 
 .. note::
-    traverse_level_order() will yield lists of Nodes, which represents a level in the tree.
+    traverse_level_order() will yield lists of Nodes, each one representing a level in the tree.
 
 traverse()
 ^^^^^^^^^^
@@ -316,7 +316,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`~binary_tree.get_lca` gets the lowest common ancestor of two nodes in a binary tree.
+:func:`~binary_tree.get_lca` gets the lowest common ancestor of two or more nodes in a binary tree.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)

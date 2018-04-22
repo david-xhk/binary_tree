@@ -379,11 +379,11 @@ def find_path(root, node):
             return get_path(root_node)
 
 def get_lca(root, *nodes):
-    """Get the lowest common ancestor of two nodes in a binary tree.
+    """Get the lowest common ancestor of two or more nodes in a binary tree.
     
     Args:
         root (Node): The root node of a binary tree.
-        *nodes (Node): Various nodes in the binary tree.
+        *nodes (Node): Nodes in the binary tree.
 
     Returns:
         Node: The lowest common ancestor of `nodes`, or ``None`` if there is no common ancestor.
