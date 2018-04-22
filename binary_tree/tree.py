@@ -42,8 +42,7 @@ def from_string(tree_string, cls=Node):
     in each level (level-order).
     
     Args:
-        tree_string (str): A level-order binary tree traversal, separated
-        by commas.
+        tree_string (str): A level-order binary tree traversal, separated by commas.
         cls (type): The class constructor for the tree. Defaults to Node.
     
     Returns:

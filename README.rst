@@ -35,8 +35,6 @@ To create an instance, pass a value into :class:`~binary_tree.Node`.
 
 Node attributes
 ^^^^^^^^^^^^^^^
-:class:`~binary_tree.Node`s have the following attributes:
-
 * Children nodes
   
   * :attr:`~binary_tree.Node.left`
@@ -60,6 +58,9 @@ Setting Node attributes
 >>> parent_node = Node(3, left=left_node)
 
 Reciprocative relationships will be set automatically. For example, when you set a child node, its parent is automatically set for you.
+
+>>> left_node.parent is parent_node
+True
 
 >>> right_node = Node(2)
 >>> parent_node.right = right_node
@@ -87,35 +88,35 @@ True
 
 is_left()
 ^^^^^^^^^
-:func:`~binary_tree.is_left` checks if a :class:`~binary_tree.Node` instance is a left child.
+:func:`~binary_tree.is_left` checks if an instance of :class:`~binary_tree.Node` is a left child.
 
 >>> tree.is_left(parent_node.left)
 True
 
 is_right()
 ^^^^^^^^^^
-:func:`~binary_tree.is_right` checks if a :class:`~binary_tree.Node` instance is a right child.
+:func:`~binary_tree.is_right` checks if an instance of :class:`~binary_tree.Node` is a right child.
 
 >>> tree.is_right(parent_node.right)
 True
 
 is_leaf()
 ^^^^^^^^^
-:func:`~binary_tree.is_leaf` checks if a :class:`~binary_tree.Node` instance is a leaf node.
+:func:`~binary_tree.is_leaf` checks if an instance of :class:`~binary_tree.Node` is a leaf node.
 
 >>> tree.is_leaf(parent_node.right)
 True
 
 is_root()
 ^^^^^^^^^
-:func:`~binary_tree.is_root` checks if a :class:`~binary_tree.Node` instance is a root node.
+:func:`~binary_tree.is_root` checks if an instance of :class:`~binary_tree.Node` is a root node.
 
 >>> tree.is_root(parent_node):
 True
 
 is_orphan()
 ^^^^^^^^^^^
-:func:`~binary_tree.is_orphan` checks if a :class:`~binary_tree.Node` instance is an orphan node.
+:func:`~binary_tree.is_orphan` checks if an instance of :class:`~binary_tree.Node` is an orphan node.
 
 >>> lonely_node = Node(1)
 >>> tree.is_orphan(lonely_node)
@@ -241,7 +242,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for your
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also iterate over a :class:`~binary_tree.Node` to traverse a binary tree for your convenience. Level-order is the default mode of traversal. 
+You can also iterate over an instance of :class:`~binary_tree.Node` to traverse a binary tree for your convenience. Level-order is the default mode of traversal. 
 
 >>> for node in root:
 >>>     print(node)
