@@ -8,7 +8,8 @@ binary_tree provides a Node object and some useful tools for a binary tree data 
 Features
 ========
 
-.. contents:: :local:
+.. contents:: 
+    :local:
 
 =====
 Usage
