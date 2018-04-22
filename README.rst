@@ -11,7 +11,6 @@ Features
 .. contents:: 
     :local:
 
-=====
 Usage
 =====
 
