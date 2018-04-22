@@ -84,6 +84,34 @@ def from_string(tree_string, cls=Node):
         # next_level is an empty list, so subsequent node values are lost.
         return root
 
+def to_string(root):
+    """Serialize a binary tree into a string.
+    
+    Args:
+        root (Node): The root node of a binary tree.
+    
+    Returns:
+        str:  A level-order binary tree traversal, separated
+        by commas.
+    """
+    tree_values = []
+    level = [root]
+    while any(level):
+        level_values = []
+        next_level = []
+        for node in level:
+            level_values.append(getattr(node, "value", None))
+            for side in ["left", "right"]:
+                next_level.append(getattr(node, side, None))
+        for value in level_values:
+            if value:
+                tree_values.append(str(value))
+            else:
+                tree_values.append("")
+        level = next_level
+    else:
+        return ",".join(tree_values)
+
 @connected
 def from_orders(kind, in_order, other_order, cls=Node):
     """Generate a binary tree from in-order and pre/post-order traversal.

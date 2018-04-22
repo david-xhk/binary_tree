@@ -26,9 +26,9 @@ class Node(object):
     def __repr__(self):
         args = [str(self.value)]
         if not is_leaf(self):
-            args.append(repr(self.left))
+            args.append("left=" + repr(self.left))
             if is_node(self.right):
-                args.append(repr(self.right))
+                args.append("right=" + repr(self.right))
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
