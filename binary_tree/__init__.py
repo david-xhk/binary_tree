@@ -24,11 +24,11 @@ from .node import *
 from .tree import *
 
 __all__ = ["Node", "is_node", "is_left", "is_right", "is_leaf", "is_root", 
-           "is_orphan", "from_string", "to_string", "from_orders", 
-           "traverse_pre_order", "traverse_in_order", "traverse_post_order", 
-           "traverse_level_order", "traverse", "is_symmetrical",
-           "connect_nodes", "max_depth", "get_path", "all_paths",
-           "has_sum", "find_path", "get_lca"]
+           "is_orphan", "from_string", "from_orders", "connect_nodes",
+           "to_string", "traverse_pre_order", "traverse_in_order",
+           "traverse_post_order", "traverse_level_order", "traverse",
+           "is_symmetrical", "max_depth", "get_path", "all_paths", "has_sum",
+           "find_path", "get_lca"]
 
 del node, tree
 
