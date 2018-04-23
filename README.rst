@@ -214,7 +214,7 @@ connect_nodes()
 ^^^^^^^^^^^^^^^
 When using the above methods to construct a binary tree, the neighbour nodes in each level are already connected using :func:`~binary_tree.connect_nodes`.
 
-You may use this function again to reconfigure a tree after modifying it, or to connect a tree structure that was manually set up.
+You may use this function again to reconfigure a tree after modifying it, or to connect one that was manually set up.
 
 >>> root.right.right = None  # Prune the right branch of the right node
 >>> tree.connect_nodes(root)
