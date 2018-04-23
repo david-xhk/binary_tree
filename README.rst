@@ -37,8 +37,6 @@ Node attributes
 
   * :attr:`~binary_tree.Node.value`
 
-The following attributes are supposed to be instances of :class:`~binary_tree.Node` themselves, if they are present. 
-
 * Children nodes
   
   * :attr:`~binary_tree.Node.left`
@@ -52,6 +50,9 @@ The following attributes are supposed to be instances of :class:`~binary_tree.No
 * Parent node
 
   * :attr:`~binary_tree.Node.parent`
+
+.. note::
+    The parent, children, and neighbour nodes should be instances of :class:`~binary_tree.Node` if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
