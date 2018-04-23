@@ -4,6 +4,14 @@
 
 :mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful tools for a binary tree data structure.
 
+==============
+ Installation
+==============
+
+To install binary_tree, run this in your terminal::
+
+    $ pip install git+git://github.com/han-keong/binary_tree
+
 ==========
  Features
 ==========
@@ -11,19 +19,15 @@
 .. contents:: 
     :local:
 
------------------------
- Importing binary_tree
------------------------
+-----------
+ Importing
+-----------
 
-To install binary_tree, run this in your terminal::
-
-    $ pip install git+git://github.com/han-keong/binary_tree
-
-To use the functions provided by :mod:`binary_tree`, you can do the following import::
+The conventional way of importing :mod:`binary_tree` is to do::
 
     import binary_tree as tree
 
-If you would like to use :class:`~binary_tree.Node` on its own, you may also write::
+If you would like to use :class:`~binary_tree.Node` on its own, you may also include::
     
     from binary_tree import Node
 
