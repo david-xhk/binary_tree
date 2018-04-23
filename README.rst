@@ -348,7 +348,7 @@ Node(2)
 Node(1)
 
 .. note::
-    Since Node :ref:`tests for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, *provided that the value is unique within the tree*.
+    Since Nodes :ref:`test for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, provided that *the value is unique within the tree*.
 
 =========
  Credits
