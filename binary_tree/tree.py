@@ -259,7 +259,7 @@ def traverse(root, kind):
         kind (str): "pre" or "in" or "post" or "level".
 
     Returns:
-        The traversal generator iterator for `kind`.
+        The generator iterator of the traversal for `kind`.
     
     Raises:
         KeyError: If `kind` is not one of the possible options.
