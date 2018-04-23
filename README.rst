@@ -203,7 +203,7 @@ Alternatively, you can use an in-order and post-order traversal.
 
 connect_nodes()
 ^^^^^^^^^^^^^^^
-When using the above methods to construct a binary tree, the neighbour nodes in each level will be automatically connected for you using :func:`~binary_tree.connect_nodes`.
+When using the above methods to construct a binary tree, the neighbour nodes in each level will already be connected using :func:`~binary_tree.connect_nodes`.
 
 You may use this function again to reconfigure a tree after it is modified. 
 
