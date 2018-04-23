@@ -138,10 +138,11 @@ True
 >>> parent_node == 1
 True
 
-.. note::
-    If you would like to test if two nodes have the same tree structure, you may do::
+If you would like to test if two nodes have the same tree structure, you may compare their repr() strings.
 
-        repr(root) == repr(root2)
+>>> parent_node2 = Node(1, left=Node(2), right=Node(3))
+>>> repr(parent_node) == repr(parent_node2)
+True
 
 ------------------------
  Setting up a Node tree 
