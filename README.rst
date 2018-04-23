@@ -11,9 +11,13 @@
 .. contents:: 
     :local:
 
------------
- Importing
------------
+-----------------------
+ Importing binary_tree
+-----------------------
+
+To download binary_tree, run this in your terminal::
+
+    $ git clone https://github.com/han-keong/binary_tree.git
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
