@@ -15,9 +15,9 @@
  Importing binary_tree
 -----------------------
 
-To download binary_tree, run this in your terminal::
+To install binary_tree, run this in your terminal::
 
-    $ git clone https://github.com/han-keong/binary_tree.git
+    $ pip install git+git://github.com/han-keong/binary_tree
 
 To use the functions provided by :mod:`binary_tree`, you can do the following import::
 
