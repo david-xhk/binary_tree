@@ -50,7 +50,7 @@ def from_string(tree_string, cls=Node):
                 try:
                     value = next(values)
                 except StopIteration:  # values has been exhausted.
-                    break
+                    break  # break out of all loops
                 if value in ["", "null"]:  # Not a node.
                     continue
                 try:
@@ -62,7 +62,7 @@ def from_string(tree_string, cls=Node):
                 next_level.append(child)
             else:
                 continue
-            break  # break out of all loops
+            break
         else:
             level = next_level
             continue
@@ -70,7 +70,6 @@ def from_string(tree_string, cls=Node):
     connect_nodes(root)
     return root
 
-@connected
 def from_orders(kind, in_order, other_order, cls=Node):
     """Generate a binary tree from in-order and pre/post-order traversal.
 
