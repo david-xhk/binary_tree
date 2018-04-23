@@ -141,7 +141,7 @@ def is_orphan(node):
     """Check if `node` is an orphan node.
 
     Return:
-        ``True`` if `node` has no parent or children node, ``False`` otherwise.
+        ``True`` if `node` has no parent or children nodes, ``False`` otherwise.
     """
     return (node.parent is None
             and node.left is None
