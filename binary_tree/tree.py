@@ -301,7 +301,7 @@ def is_symmetrical(root):
     else:
         return True
 
-def get_max_depth(root):
+def max_depth(root):
     """Calculate the maximum depth of a binary tree.
     
     Args:
@@ -329,7 +329,7 @@ def get_path(node):
     path.reverse()
     return path
 
-def get_all_paths(root):
+def all_paths(root):
     """Find every leaf path in a binary tree.
     
     Args:
@@ -342,7 +342,7 @@ def get_all_paths(root):
         if is_leaf(node):
             yield get_path(node)
 
-def has_path_sum(root, value):
+def has_sum(root, value):
     """Determine if there is a path that adds up to `value`.
     
     Args:
@@ -352,7 +352,7 @@ def has_path_sum(root, value):
     Returns:
         ``True`` if a path that adds up to `value` exists, ``False`` otherwise.
     """
-    for path in get_all_paths(root):
+    for path in all_paths(root):
         total = None
         for node in path:
             if total is None:
@@ -365,7 +365,7 @@ def has_path_sum(root, value):
         return False
 
 def find_path(root, node):
-    """Find the path of a node in a binary tree.
+    """Find the path of some node in a binary tree.
     
     Args:
         root (Node): The root node of a binary tree.

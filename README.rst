@@ -294,11 +294,11 @@ is_symmetrical()
 >>> tree.is_symmetrical(root)
 False
 
-get_max_depth()
-^^^^^^^^^^^^^^^
-:func:`~binary_tree.get_max_depth` calculates the maximum depth of a binary tree.
+max_depth()
+^^^^^^^^^^^
+:func:`~binary_tree.max_depth` calculates the maximum depth of a binary tree.
 
->>> tree.get_max_depth(root)
+>>> tree.max_depth(root)
 3
 
 get_path()
@@ -308,28 +308,28 @@ get_path()
 >>> tree.get_path(root.right.left)
 [Node(1), Node(3), Node(5)]
 
-get_all_paths()
-^^^^^^^^^^^^^^^
-:func:`~binary_tree.get_all_paths` finds every leaf path in a binary tree. ::
+all_paths()
+^^^^^^^^^^^
+:func:`~binary_tree.all_paths` finds every leaf path in a binary tree. ::
 
-    >>> for path in tree.get_all_paths(root):
+    >>> for path in tree.all_paths(root):
     ...     print(path)
     [Node(1), Node(2), Node(4)]
     [Node(1), Node(3), Node(5)]
 
 .. note::
-    get_all_paths() will search for paths using post-order traversal.
+    all_paths() searches for paths using post-order traversal.
 
-has_path_sum()
-^^^^^^^^^^^^^^
-:func:`~binary_tree.has_path_sum` determines if there is a path that adds up to a certain value.
+has_sum()
+^^^^^^^^^
+:func:`~binary_tree.has_sum` determines if there is a path that adds up to a certain value.
 
->>> tree.has_path_sum(root, 7)
+>>> tree.has_sum(root, 7)
 True
 
 find_path()
 ^^^^^^^^^^^
-:func:`~binary_tree.find_path` finds the path of a node in a binary tree.
+:func:`~binary_tree.find_path` finds the path of some node in a binary tree.
 
 >>> tree.find_path(5)
 [Node(1), Node(3), Node(5)]
