@@ -256,7 +256,7 @@ traverse_level_order()
 
 traverse()
 ^^^^^^^^^^
-A single dispatch function, :func:`~binary_tree.traverse`, is available for your convenience.
+A single dispatch function, :func:`~binary_tree.traverse`, is available for convenience.
 
 >>> list(tree.traverse(root, "pre"))
 [Node(1), Node(2), Node(4), Node(3), Node(5)]
