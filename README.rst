@@ -141,6 +141,7 @@ True
 If you would like to test if two nodes have the same tree structure, you may compare their repr() strings.
 
 >>> parent_node2 = Node(1, left=Node(2), right=Node(3))
+>>> 
 >>> repr(parent_node) == repr(parent_node2)
 True
 
