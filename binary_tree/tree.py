@@ -313,13 +313,13 @@ def get_max_depth(root):
     return sum(1 for level in traverse_level_order(root))
 
 def get_path(node):
-    """Get the path of a node in a binary tree.
+    """Trace the ancestry of a node.
     
     Args:
         node (Node): A node in the binary tree.
 
     Returns:
-        list[Node, ...]: A list of every node from the root to `node`.
+        list[Node, ...]: The ancestry of a node in left-to-right order.
     """    
     path = [node]
     parent = node.parent

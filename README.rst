@@ -291,7 +291,7 @@ get_max_depth()
 
 get_path()
 ^^^^^^^^^^
-:func:`~binary_tree.get_path` gets the path of a node in a binary tree.
+:func:`~binary_tree.get_path` traces the ancestry of a node.
 
 >>> tree.get_path(root.right.left)
 [Node(1), Node(3), Node(5)]
