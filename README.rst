@@ -217,7 +217,7 @@ Just as a tree can be constructed from string, it can be deconstructed back into
  Traversing a Node tree
 ------------------------
 
-With a tree set up, there are several functions you can use to traverse down the tree.
+With a tree structure set up, there are several functions you can use to traverse it.
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
