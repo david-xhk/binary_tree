@@ -268,7 +268,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for your
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also iterate over an instance of :class:`~binary_tree.Node` to traverse its tree structure. Level-order is the default mode of traversal. ::
+You can also iterate over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
 
     >>> for node in root:
     ...     print(node)
@@ -277,6 +277,9 @@ You can also iterate over an instance of :class:`~binary_tree.Node` to traverse 
     Node(3)
     Node(4)
     Node(5)
+
+.. note::
+    Iterating over a Node uses level-order traversal. 
 
 -----------------------
  Analyzing a Node tree
