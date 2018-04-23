@@ -33,6 +33,8 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
 
 Node attributes
 ^^^^^^^^^^^^^^^
+Every :class:`~binary_tree.Node` has the following attributes:
+
 * Stored value
 
   * :attr:`~binary_tree.Node.value`
