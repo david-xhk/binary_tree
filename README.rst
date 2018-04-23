@@ -39,6 +39,10 @@ To create an instance, pass a value into :class:`~binary_tree.Node`.
 
 Node attributes
 ^^^^^^^^^^^^^^^
+* Stored value
+
+  * :attr:`~binary_tree.Node.value`
+
 * Children nodes
   
   * :attr:`~binary_tree.Node.left`
