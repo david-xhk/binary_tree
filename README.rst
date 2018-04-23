@@ -139,9 +139,9 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-Nodes have a special way of testing equality, which is to tentatively compare its own value with the other object's value. 
+Nodes have a special way of testing equality, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
 
-If the other object does not have a `value` attribute, the object itself is taken as the basis of comparison. 
+If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
 This allows the following comparisons to work:
 
