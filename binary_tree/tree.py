@@ -30,6 +30,9 @@ def from_string(tree_string, cls=None):
     Returns:
         A newly instantiated Node representing `tree_string`.
         If `tree_string` has no root value, returns ``None``.
+
+    Note:
+        Empty spaces can be represented by an immediate comma or "null" for explicitness.
     """
     if cls is None:
         cls = Node

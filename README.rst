@@ -168,29 +168,38 @@ True
 
 from_string()
 ^^^^^^^^^^^^^
-To generate a binary tree, you can pass in a string of values into :func:`~binary_tree.from_string`.
+A tree string should be in level-order and separated by commas.
+
+>>> tree_string = "1,2,3,4,5,6"
+
+Empty spaces can be represented by an immediate comma or "null" for explicitness.
 
 >>> tree_string = "1,2,3,4,,5,6"
+>>> tree_string = "1,2,3,4,null,5,6"
+
+Pass the string into :func:`~binary_tree.from_string` to generate a binary tree.
+
 >>> root = tree.from_string(tree_string)
->>>
+
+You can use :func:`repr` to see a representation of the tree structure created.
+
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
-
-.. note::
-    from_string() will grow the tree structure in **level-order**.
 
 from_orders()
 ^^^^^^^^^^^^^
-Another way is with an in-order and pre-order traversal using :func:`~binary_tree.from_orders`, which reconstructs the original tree structure.
+Another way to set up a binary tree is with its in-order and pre-order traversals.
 
 >>> in_order = [4,2,1,5,3,6]
 >>> pre_order = [1,2,4,3,5,6]
+
+Pass the appropriate key and the traversals into :func:`~binary_tree.from_orders` to reconstruct the original tree structure.
+
 >>> root = tree.from_orders("in-pre", in_order, pre_order)
->>>
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
-Alternatively, you can use an in-order and post-order traversal.
+Alternatively, you can use the in-order and post-order traversal.
 
 >>> post_order = [4,2,5,6,3,1]
 >>> root = tree.from_orders("in-post", in_order, post_order)
@@ -203,9 +212,9 @@ Alternatively, you can use an in-order and post-order traversal.
 
 connect_nodes()
 ^^^^^^^^^^^^^^^
-When using the above methods to construct a binary tree, the neighbour nodes in each level will already be connected using :func:`~binary_tree.connect_nodes`.
+When using the above methods to construct a binary tree, the neighbour nodes in each level are already connected using :func:`~binary_tree.connect_nodes`.
 
-You may use this function again to reconfigure a tree after it is modified. 
+You may use this function again to reconfigure a tree after modifying it, or to connect a tree structure that was manually set up.
 
 >>> root.right.right = None  # Prune the right branch of the right node
 >>> tree.connect_nodes(root)
