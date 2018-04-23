@@ -31,7 +31,7 @@ Node initialization
 ^^^^^^^^^^^^^^^^^^^
 To create an instance, pass a value into :class:`~binary_tree.Node`.
 
->>> left_node = Node(1)
+>>> left_node = Node(2)
 
 Node attributes
 ^^^^^^^^^^^^^^^
@@ -55,14 +55,14 @@ Setting Node attributes
 ^^^^^^^^^^^^^^^^^^^^^^^
 :class:`~binary_tree.Node` attributes can be set on initialization using keyword arguments.
 
->>> parent_node = Node(3, left=left_node)
+>>> parent_node = Node(1, left=left_node)
 
 Reciprocative relationships will be set automatically. For example, when you set a child node, its parent is automatically set for you.
 
 >>> left_node.parent is parent_node
 True
 
->>> right_node = Node(2)
+>>> right_node = Node(3)
 >>> parent_node.right = right_node
 >>>
 >>> right_node.parent is parent_node
@@ -132,10 +132,10 @@ If the other object does not have a `value` attribute, the object itself is take
 
 This allows the following comparisons to work:
 
->>> root == Node(1)
+>>> parent_node == Node(1)
 True
 
->>> root == 1
+>>> parent_node == 1
 True
 
 ------------------------
