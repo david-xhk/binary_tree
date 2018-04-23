@@ -31,17 +31,13 @@ If you would like to use :class:`~binary_tree.Node` on its own, you may also wri
  Making a Node
 ---------------
 
-Node initialization
-^^^^^^^^^^^^^^^^^^^
-To create an instance, pass a value into :class:`~binary_tree.Node`.
-
->>> left_node = Node(2)
-
 Node attributes
 ^^^^^^^^^^^^^^^
 * Stored value
 
   * :attr:`~binary_tree.Node.value`
+
+The following attributes are supposed to be instances of :class:`~binary_tree.Node` themselves, if they are present. 
 
 * Children nodes
   
@@ -57,15 +53,21 @@ Node attributes
 
   * :attr:`~binary_tree.Node.parent`
 
-These attributes are supposed to be instances of :class:`~binary_tree.Node` themselves, if they are present. 
+Node initialization
+^^^^^^^^^^^^^^^^^^^
+When initializing a :class:`~binary_tree.Node`, a :attr:`~binary_tree.Node.value` must be provided. 
 
-Setting Node attributes
-^^^^^^^^^^^^^^^^^^^^^^^
-:class:`~binary_tree.Node` attributes can be set on initialization using keyword arguments.
+>>> left_node = Node(2)
+
+Meanwhile, the other attributes can be set using keyword arguments.
 
 >>> parent_node = Node(1, left=left_node)
 
-Reciprocative relationships will be set automatically. For example, when you set a child node, its parent is automatically set for you.
+Setting Node attributes
+^^^^^^^^^^^^^^^^^^^^^^^
+Attributes that are reciprocative are set automatically.
+
+For example, when you set a child node, its parent is also set behind the scenes.
 
 >>> left_node.parent is parent_node
 True
