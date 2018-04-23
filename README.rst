@@ -279,7 +279,7 @@ You can also iterate over an instance of :class:`~binary_tree.Node` to traverse 
     Node(5)
 
 .. note::
-    Iterating over a Node uses level-order traversal. 
+    Iterating over a Node goes by level-order traversal. 
 
 -----------------------
  Analyzing a Node tree
