@@ -52,7 +52,7 @@ Node attributes
   * :attr:`~binary_tree.Node.parent`
 
 .. note::
-    The parent, children, and neighbour nodes should be instances of :class:`~binary_tree.Node` if they are present. 
+    The parent, children, and neighbour nodes should be instances of Node if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
