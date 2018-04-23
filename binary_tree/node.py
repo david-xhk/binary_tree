@@ -9,8 +9,8 @@ class Node(object):
         value: The node value.
         left (Node, optional): The left child node, if present.
         right (Node, optional): The right child node, if present.
-        prev (Node, optional): The node on the adjacent left, if present.
-        next (Node, optional): The node on the adjacent right, if present.
+        prev (Node, optional): The nearest neighbour node on the left, if present.
+        next (Node, optional): The nearest neighbour node on the right, if present.
         parent (Node, optional): The parent node, if present.
     """
     __slots__ = ["value", "_left", "_right", "_prev", "_next", "parent"]
