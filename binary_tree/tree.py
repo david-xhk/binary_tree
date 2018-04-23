@@ -17,24 +17,6 @@ def connect_nodes(root):
             prev_node, level[i].prev, next_node, level[-i-1].next = (
                 level[i], prev_node, level[-i-1], next_node)
 
-def connected(func):
-    """Connect nodes after the root is returned.
-
-    Args:
-        func: A binary tree constructor.
-
-    Returns:
-        func: The root returned will be connected.
-    """
-    @functools.wraps(func)
-    def inner(*args, **kwargs):
-        root = func(*args, **kwargs)
-        if root:
-            connect_nodes(root)
-        return root
-    return inner
-
-@connected
 def from_string(tree_string, cls=Node):
     """Generate a binary tree from a string.
 
@@ -68,7 +50,7 @@ def from_string(tree_string, cls=Node):
                 try:
                     value = next(values)
                 except StopIteration:  # values has been exhausted.
-                    return root
+                    break
                 if value in ["", "null"]:  # Not a node.
                     continue
                 try:
@@ -78,38 +60,15 @@ def from_string(tree_string, cls=Node):
                 child = cls(value)
                 setattr(node, side, child)
                 next_level.append(child)
-        level = next_level
-    else:  
-        # next_level is an empty list, so subsequent node values are lost.
-        return root
-
-def to_string(root):
-    """Serialize a binary tree into a string.
-    
-    Args:
-        root (Node): The root node of a binary tree.
-    
-    Returns:
-        str:  A level-order binary tree traversal, separated
-        by commas.
-    """
-    tree_values = []
-    level = [root]
-    while any(level):
-        level_values = []
-        next_level = []
-        for node in level:
-            level_values.append(getattr(node, "value", None))
-            for side in ["left", "right"]:
-                next_level.append(getattr(node, side, None))
-        for value in level_values:
-            if value:
-                tree_values.append(str(value))
             else:
-                tree_values.append("")
-        level = next_level
-    else:
-        return ",".join(tree_values)
+                continue
+            break  # break out of all loops
+        else:
+            level = next_level
+            continue
+        break
+    connect_nodes(root)
+    return root
 
 @connected
 def from_orders(kind, in_order, other_order, cls=Node):
@@ -164,7 +123,37 @@ def from_orders(kind, in_order, other_order, cls=Node):
     else:
         raise KeyError("Invalid argument for kind. "
                        "Expected \"in-pre\" or \"in-post\"")
-    return make_node(in_order, other_order)
+    root = make_node(in_order, other_order)
+    connect_nodes(root)
+    return root
+
+def to_string(root):
+    """Serialize a binary tree into a string.
+    
+    Args:
+        root (Node): The root node of a binary tree.
+    
+    Returns:
+        str:  A level-order binary tree traversal, separated
+        by commas.
+    """
+    tree_values = []
+    level = [root]
+    while any(level):
+        level_values = []
+        next_level = []
+        for node in level:
+            level_values.append(getattr(node, "value", None))
+            for side in ["left", "right"]:
+                next_level.append(getattr(node, side, None))
+        for value in level_values:
+            if value:
+                tree_values.append(str(value))
+            else:
+                tree_values.append("")
+        level = next_level
+    else:
+        return ",".join(tree_values)
 
 def traverse_pre_order(root):
     """Traverse a binary tree in pre-order.
