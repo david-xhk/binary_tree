@@ -239,7 +239,7 @@ traverse_level_order()
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
 
 .. note::
-    traverse_level_order() will yield lists of Nodes, each one representing a level in the tree.
+    traverse_level_order() will yield lists of Nodes, each representing a level in the tree.
 
 traverse()
 ^^^^^^^^^^
