@@ -8,8 +8,8 @@ For example::
 
     node = from_string("1,2,,3,4,,5")
     
-    in_order = list(traverse("in", node))
-    pre_order = list(traverse("pre", node))
+    in_order = list(traverse(node, "in"))
+    pre_order = list(traverse(node, "pre"))
     node2 = from_orders("in-pre", in_order, pre_order)
 
 >>> repr(node) == repr(node2)
