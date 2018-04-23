@@ -86,12 +86,10 @@ def from_orders(kind, in_order, other_order, cls=None):
         cls (type): The class constructor for the tree. Defaults to Node.
 
     Returns:
-        A newly instantiated Node entailing `in_order` and `other_order`.
-        If either arguments are empty, returns ``None``.
+        A newly instantiated Node entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
 
     Raises:
-        ValueError: If `in_order` and `other_order` do not correspond or 
-            contain duplicates.
+        ValueError: If `in_order` and `other_order` do not correspond to a tree structure or contain duplicates.
         KeyError: If `kind` is not one of the accepted keys.
 
     Note:
