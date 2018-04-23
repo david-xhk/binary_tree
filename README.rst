@@ -19,9 +19,9 @@ To install binary_tree, run this in your terminal::
 .. contents:: 
     :local:
 
------------
- Importing
------------
+-----------------------
+ Importing binary_tree
+-----------------------
 
 The conventional way of importing :mod:`binary_tree` is to do::
 
