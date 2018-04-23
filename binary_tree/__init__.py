@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""This package consists of a Node class and functions for processing a binary tree data structure. 
+"""This module consists of a Node class and functions for processing a binary tree data structure. 
 
 For example::
 
