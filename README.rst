@@ -2,7 +2,7 @@
  About
 *******
 
-binary_tree provides a :class:`Node` object, :mod:`node` functions, and :mod:`tree` functions for a binary tree data structure.
+binary_tree provides a :class:`~binary_tree.Node` object, :mod:`node` functions, and :mod:`tree` functions for a binary tree data structure.
 
 ==============
  Installation
@@ -33,32 +33,32 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
 Node attributes
 ^^^^^^^^^^^^^^^
-Every :class:`Node` has the following attributes:
+Every :class:`~binary_tree.Node` has the following attributes:
 
 * Stored value
 
-  * :attr:`~Node.value`
+  * :attr:`~binary_tree.Node.value`
 
 * Children nodes
   
-  * :attr:`~Node.left`
-  * :attr:`~Node.right`
+  * :attr:`~binary_tree.Node.left`
+  * :attr:`~binary_tree.Node.right`
 
 * Neighbour nodes
   
-  * :attr:`~Node.prev`
-  * :attr:`~Node.next`
+  * :attr:`~binary_tree.Node.prev`
+  * :attr:`~binary_tree.Node.next`
 
 * Parent node
 
-  * :attr:`~Node.parent`
+  * :attr:`~binary_tree.Node.parent`
 
 .. note::
     The parent, children, and neighbour nodes should be instances of Node if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
-When initializing a :class:`Node`, a :attr:`~Node.value` must be provided. 
+When initializing a :class:`~binary_tree.Node`, a :attr:`~binary_tree.Node.value` must be provided. 
 
 >>> left_node = Node(2)
 
@@ -92,46 +92,46 @@ True
  Checking a Node
 -----------------
 
-The following functions can be used to check if a :class:`Node` has certain properties.
+The following functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
 
 is_node()
 ^^^^^^^^^
-:func:`node.is_node` checks if an object is an instance of :class:`Node`.
+:func:`node.is_node` checks if an object is an instance of :class:`~binary_tree.Node`.
 
 >>> node.is_node(parent_node)
 True
 
 is_left()
 ^^^^^^^^^
-:func:`node.is_left` checks if an instance of :class:`Node` is a left child.
+:func:`node.is_left` checks if an instance of :class:`~binary_tree.Node` is a left child.
 
 >>> node.is_left(parent_node.left)
 True
 
 is_right()
 ^^^^^^^^^^
-:func:`node.is_right` checks if an instance of :class:`Node` is a right child.
+:func:`node.is_right` checks if an instance of :class:`~binary_tree.Node` is a right child.
 
 >>> node.is_right(parent_node.right)
 True
 
 is_leaf()
 ^^^^^^^^^
-:func:`node.is_leaf` checks if an instance of :class:`Node` is a leaf node.
+:func:`node.is_leaf` checks if an instance of :class:`~binary_tree.Node` is a leaf node.
 
 >>> node.is_leaf(parent_node.right)
 True
 
 is_root()
 ^^^^^^^^^
-:func:`node.is_root` checks if an instance of :class:`Node` is a root node.
+:func:`node.is_root` checks if an instance of :class:`~binary_tree.Node` is a root node.
 
 >>> node.is_root(parent_node):
 True
 
 is_orphan()
 ^^^^^^^^^^^
-:func:`node.is_orphan` checks if an instance of :class:`Node` is an orphan node.
+:func:`node.is_orphan` checks if an instance of :class:`~binary_tree.Node` is an orphan node.
 
 >>> lonely_node = Node(1)
 >>> node.is_orphan(lonely_node)
@@ -139,9 +139,9 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-Nodes have a special way of testing :meth:`equality <Node.__eq__>`, which is to tentatively compare the :attr:`~Node.value` of itself and the other object. 
+Nodes have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
 
-If the other object does not have a :attr:`~Node.value` attribute, the object itself is taken as the basis of comparison. 
+If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
 This allows the following comparisons to work:
 
@@ -151,7 +151,7 @@ True
 >>> parent_node == 1
 True
 
-If you would like to test if two nodes have the same tree structure, you may compare their :meth:`repr <Node.__repr__>` strings.
+If you would like to test if two nodes have the same tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__>` strings.
 
 >>> parent_node2 = Node(1, left=Node(2), right=Node(3))
 >>> 
@@ -177,7 +177,7 @@ Pass the string into :func:`tree.from_string` to generate a binary tree.
 
 >>> root = tree.from_string(tree_string)
 
-You can use :meth:`repr <Node.__repr__>` to see a representation of the tree structure created.
+You can use :meth:`repr <binary_tree.Node.__repr__>` to see a representation of the tree structure created.
 
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
@@ -277,7 +277,7 @@ A single dispatch function, :func:`tree.traverse`, is available for convenience.
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also :meth:`iterate <Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
+You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
 
     >>> for node in root:
     ...     print(node)

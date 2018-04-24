@@ -2,7 +2,7 @@
 
 """This module contains functions for binary trees."""
 
-from .node import Node, is_node, is_leaf
+from node import Node, is_node, is_leaf
 import functools
 
 def connect_nodes(root):
