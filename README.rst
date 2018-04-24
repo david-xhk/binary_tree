@@ -2,7 +2,7 @@
  About
 *******
 
-:mod:`binary_tree` provides a :class:`~binary_tree.Node` object and some useful tools for a binary tree data structure.
+binary_tree provides a :class:`~binary_tree.Node` object and :mod:`~binary_tree.tree`, a module containing some useful tools for a binary tree data structure.
 
 ==============
  Installation
@@ -25,7 +25,7 @@ To install binary_tree, run this in your terminal::
 
 The conventional way of importing from :mod:`binary_tree` is to do::
 
-    from binary_tree import tree, Node
+    from binary_tree import Node, tree
 
 ---------------
  Making a Node
