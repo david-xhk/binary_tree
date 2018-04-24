@@ -12,7 +12,7 @@
     :special-members: __repr__, __iter__, __eq__
 
 ==========================
- :mod:`~binary_tree.tree`
+ :mod:`binary_tree.tree`
 ==========================
 
 .. automodule:: binary_tree.tree
