@@ -139,7 +139,7 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-Nodes have a special way of testing :meth:`~binary_tree.Node.__eq__`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
+Nodes have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
 
 If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
@@ -277,7 +277,7 @@ A single dispatch function, :func:`~binary_tree.traverse`, is available for conv
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also :meth:`iter <binary_tree.Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
+You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
 
     >>> for node in root:
     ...     print(node)
