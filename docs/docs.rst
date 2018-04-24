@@ -2,18 +2,26 @@
  Documentation
 ***************
 
-============================
- :class:`~binary_tree.Node`
-============================
+=============
+ binary_tree
+=============
+
+.. currentmodule:: binary_tree
+
+.. automodule:: binary_tree
+
+------
+ Node
+------
 
 .. autoclass:: binary_tree.Node
     :members:
     :member-order: bysource
     :special-members: __repr__, __iter__, __eq__
 
-==========================
- :mod:`binary_tree.tree`
-==========================
+------
+ tree
+------
 
 .. automodule:: binary_tree.tree
     :members:
