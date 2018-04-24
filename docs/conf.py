@@ -24,8 +24,9 @@ sys.path.insert(0, os.path.abspath('..'))
 
 import binary_tree
 from binary_tree import Node
-import binary_tree.node
-import binary_tree.tree
+from binary_tree import node
+#import binary_tree.node
+import binary_tree.tree as tree
 
 # -- General configuration ---------------------------------------------
 
