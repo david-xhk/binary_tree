@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""This module consists of a Node class, node functions, and tree functions for processing a binary tree data structure. 
+"""This module provides a :class:`~binary_tree.Node` object, :mod:`~binary_tree.node` functions, and :mod:`~binary_tree.tree` functions for a binary tree data structure.
 
 For example::
 

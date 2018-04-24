@@ -2,7 +2,7 @@
  About
 *******
 
-binary_tree provides a :class:`~binary_tree.Node` object, :mod:`~binary_tree.node` functions, and :mod:`~binary_tree.tree` functions for a binary tree data structure.
+.. automodule:: binary_tree
 
 ==============
  Installation
