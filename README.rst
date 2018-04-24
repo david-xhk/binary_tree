@@ -41,28 +41,28 @@ Every :class:`~binary_tree.Node` has the following attributes:
 
 * Stored value
 
-  * :instanceattribute:`~binary_tree.Node.value`
+  * :attr:`~binary_tree.Node.value`
 
 * Children nodes
   
-  * :instanceattribute:`~binary_tree.Node.left`
-  * :instanceattribute:`~binary_tree.Node.right`
+  * :attr:`~binary_tree.Node.left`
+  * :attr:`~binary_tree.Node.right`
 
 * Neighbour nodes
   
-  * :instanceattribute:`~binary_tree.Node.prev`
-  * :instanceattribute:`~binary_tree.Node.next`
+  * :attr:`~binary_tree.Node.prev`
+  * :attr:`~binary_tree.Node.next`
 
 * Parent node
 
-  * :instanceattribute:`~binary_tree.Node.parent`
+  * :attr:`~binary_tree.Node.parent`
 
 .. note::
     The parent, children, and neighbour nodes should be instances of Node if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
-When initializing a :class:`~binary_tree.Node`, a :ivar:`~binary_tree.Node.value` must be provided. 
+When initializing a :class:`~binary_tree.Node`, a :attr:`~binary_tree.Node.value` must be provided. 
 
 >>> left_node = Node(2)
 
@@ -143,9 +143,9 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-Nodes have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :ivar:`~binary_tree.Node.value` of itself and the other object. 
+Nodes have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
 
-If the other object does not have a :ivar:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
+If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
 This allows the following comparisons to work:
 
