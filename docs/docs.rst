@@ -2,8 +2,6 @@
  Documentation
 ***************
 
-.. currentmodule:: binary_tree
-
 .. automodule:: binary_tree
 
 ======
@@ -19,7 +17,7 @@
  node
 ======
 
-.. automodule:: node
+.. automodule:: binary_tree.node
     :members:
     :member-order: bysource
     :exclude-members: Node
@@ -28,7 +26,7 @@
  tree
 ======
 
-.. automodule:: tree
+.. automodule:: binary_tree.tree
     :members:
     :member-order: bysource
 

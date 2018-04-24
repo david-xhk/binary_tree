@@ -27,6 +27,10 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
     from binary_tree import Node, node, tree
 
+You may also want to import all functions directly from binary_tree::
+
+    from binary_tree import *
+
 ---------------
  Making a Node
 ---------------
