@@ -27,7 +27,7 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
     from binary_tree import Node, node, tree
 
-You may also want to import all functions directly::
+You may also import all functions available by doing::
 
     from binary_tree import *
 
@@ -41,21 +41,21 @@ Every :class:`~binary_tree.Node` has the following attributes:
 
 * Stored value
 
-  * :ivar:`~binary_tree.Node.value`
+  * :instanceattribute:`~binary_tree.Node.value`
 
 * Children nodes
   
-  * :ivar:`~binary_tree.Node.left`
-  * :ivar:`~binary_tree.Node.right`
+  * :instanceattribute:`~binary_tree.Node.left`
+  * :instanceattribute:`~binary_tree.Node.right`
 
 * Neighbour nodes
   
-  * :ivar:`~binary_tree.Node.prev`
-  * :ivar:`~binary_tree.Node.next`
+  * :instanceattribute:`~binary_tree.Node.prev`
+  * :instanceattribute:`~binary_tree.Node.next`
 
 * Parent node
 
-  * :ivar:`~binary_tree.Node.parent`
+  * :instanceattribute:`~binary_tree.Node.parent`
 
 .. note::
     The parent, children, and neighbour nodes should be instances of Node if they are present. 
