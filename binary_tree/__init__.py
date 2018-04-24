@@ -30,5 +30,3 @@ __all__ = ["Node", "is_node", "is_left", "is_right", "is_leaf", "is_root",
            "is_symmetrical", "max_depth", "get_path", "all_paths", "has_sum",
            "find_path", "get_lca"]
 
-del node
-
