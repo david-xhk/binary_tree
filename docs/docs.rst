@@ -2,6 +2,8 @@
  Documentation
 ***************
 
+.. automodule:: binary_tree
+
 ======
  Node
 ======
