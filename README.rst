@@ -151,7 +151,7 @@ True
 >>> parent_node == 1
 True
 
-If you would like to test if two nodes have the same tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__` strings.
+If you would like to test if two nodes have the same tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__>` strings.
 
 >>> parent_node2 = Node(1, left=Node(2), right=Node(3))
 >>> 
@@ -177,7 +177,7 @@ Pass the string into :func:`~binary_tree.from_string` to generate a binary tree.
 
 >>> root = tree.from_string(tree_string)
 
-You can use :func:`repr` to see a representation of the tree structure created.
+You can use :meth:`repr <binary_tree.Node.__repr__>` to see a representation of the tree structure created.
 
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
