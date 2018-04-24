@@ -20,9 +20,6 @@ __author__ = 'Han Keong'
 __email__ = 'hk997@live.com'
 __version__ = '0.1.0'
 
-import node
-import tree
-
 from .node import *
 from .tree import *
 

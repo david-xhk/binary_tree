@@ -2,7 +2,7 @@
  About
 *******
 
-binary_tree provides a :class:`~binary_tree.Node` object, :mod:`node` functions, and :mod:`tree` functions for a binary tree data structure.
+binary_tree provides a :class:`~binary_tree.Node` object, :mod:`~binary_tree.node` functions, and :mod:`~binary_tree.tree` functions for a binary tree data structure.
 
 ==============
  Installation
@@ -27,7 +27,7 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
     from binary_tree import Node, node, tree
 
-You may also want to import all functions directly from binary_tree::
+You may also want to import all functions directly::
 
     from binary_tree import *
 
@@ -100,42 +100,42 @@ The following functions can be used to check if a :class:`~binary_tree.Node` has
 
 is_node()
 ^^^^^^^^^
-:func:`node.is_node` checks if an object is an instance of :class:`~binary_tree.Node`.
+:func:`node.is_node() <binary_tree.node.is_node>` checks if an object is an instance of :class:`~binary_tree.Node`.
 
 >>> node.is_node(parent_node)
 True
 
 is_left()
 ^^^^^^^^^
-:func:`node.is_left` checks if an instance of :class:`~binary_tree.Node` is a left child.
+:func:`node.is_left() <binary_tree.node.is_left>` checks if an instance of :class:`~binary_tree.Node` is a left child.
 
 >>> node.is_left(parent_node.left)
 True
 
 is_right()
 ^^^^^^^^^^
-:func:`node.is_right` checks if an instance of :class:`~binary_tree.Node` is a right child.
+:func:`node.is_right() <binary_tree.node.is_right>` checks if an instance of :class:`~binary_tree.Node` is a right child.
 
 >>> node.is_right(parent_node.right)
 True
 
 is_leaf()
 ^^^^^^^^^
-:func:`node.is_leaf` checks if an instance of :class:`~binary_tree.Node` is a leaf node.
+:func:`node.is_leaf() <binary_tree.node.is_leaf>` checks if an instance of :class:`~binary_tree.Node` is a leaf node.
 
 >>> node.is_leaf(parent_node.right)
 True
 
 is_root()
 ^^^^^^^^^
-:func:`node.is_root` checks if an instance of :class:`~binary_tree.Node` is a root node.
+:func:`node.is_root() <binary_tree.node.is_root>` checks if an instance of :class:`~binary_tree.Node` is a root node.
 
 >>> node.is_root(parent_node):
 True
 
 is_orphan()
 ^^^^^^^^^^^
-:func:`node.is_orphan` checks if an instance of :class:`~binary_tree.Node` is an orphan node.
+:func:`node.is_orphan() <binary_tree.node.is_orphan>` checks if an instance of :class:`~binary_tree.Node` is an orphan node.
 
 >>> lonely_node = Node(1)
 >>> node.is_orphan(lonely_node)
@@ -177,7 +177,7 @@ Empty spaces can be represented by an immediate comma or "null" to be explicit.
 >>> tree_string = "1,2,3,4,,5,6"
 >>> tree_string = "1,2,3,4,null,5,6"
 
-Pass the string into :func:`tree.from_string` to generate a binary tree.
+Pass the string into :func:`tree.from_string() <binary_tree.tree.from_string>` to generate a binary tree.
 
 >>> root = tree.from_string(tree_string)
 
@@ -193,7 +193,7 @@ Another way to set up a binary tree is with its in-order and pre-order traversal
 >>> in_order = [4,2,1,5,3,6]
 >>> pre_order = [1,2,4,3,5,6]
 
-Pass the appropriate key and the traversals into :func:`tree.from_orders` to reconstruct the original tree structure.
+Pass the appropriate key and the traversals into :func:`tree.from_orders() <binary_tree.tree.from_orders>` to reconstruct the original tree structure.
 
 >>> root = tree.from_orders("in-pre", in_order, pre_order)
 >>> repr(root)
@@ -212,7 +212,7 @@ Alternatively, you can use the in-order and post-order traversal.
 
 connect_nodes()
 ^^^^^^^^^^^^^^^
-When using the above methods to construct a binary tree, the neighbour nodes in each level are already connected using :func:`tree.connect_nodes`.
+When using the above methods to construct a binary tree, the neighbour nodes in each level are already connected using :func:`tree.connect_nodes() <binary_tree.tree.connect_nodes>`.
 
 You may use this function again to reconfigure a tree after modifying it, or to connect one that was manually set up.
 
@@ -221,7 +221,7 @@ You may use this function again to reconfigure a tree after modifying it, or to 
 
 to_string()
 ^^^^^^^^^^^
-Just as a tree can be constructed from string, it can be deconstructed back into one too, using :func:`tree.to_string`.
+Just as a tree can be constructed from string, it can be deconstructed back into one too, using :func:`tree.to_string() <binary_tree.tree.to_string>`.
 
 >>> tree.to_string(root)
 "1,2,3,4,,5"
@@ -234,28 +234,28 @@ With a tree structure set up, there are several functions you can use to travers
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
-:func:`tree.traverse_pre_order` traverses a binary tree in pre-order.
+:func:`tree.traverse_pre_order() <binary_tree.tree.traverse_pre_order>` traverses a binary tree in pre-order.
 
 >>> list(tree.traverse_pre_order(root))
 [Node(1), Node(2), Node(4), Node(3), Node(5)]
 
 traverse_in_order()
 ^^^^^^^^^^^^^^^^^^^
-:func:`tree.traverse_in_order` traverses a binary tree in in-order.
+:func:`tree.traverse_in_order() <binary_tree.tree.traverse_in_order>` traverses a binary tree in in-order.
 
 >>> list(tree.traverse_in_order(root))
 [Node(4), Node(2), Node(1), Node(5), Node(3)]
 
 traverse_post_order()
 ^^^^^^^^^^^^^^^^^^^^^
-:func:`tree.traverse_post_order` traverses a binary tree in post-order.
+:func:`tree.traverse_post_order() <binary_tree.tree.traverse_post_order>` traverses a binary tree in post-order.
 
 >>> list(tree.traverse_post_order(root))
 [Node(4), Node(2), Node(5), Node(3), Node(1)]
 
 traverse_level_order()
 ^^^^^^^^^^^^^^^^^^^^^^
-:func:`tree.traverse_level_order` traverses a binary tree in level-order.
+:func:`tree.traverse_level_order() <binary_tree.tree.traverse_level_order>` traverses a binary tree in level-order.
 
 >>> list(tree.traverse_level_order(root))
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
@@ -265,7 +265,7 @@ traverse_level_order()
 
 traverse()
 ^^^^^^^^^^
-A single dispatch function, :func:`tree.traverse`, is available for convenience.
+A single dispatch function, :func:`tree.traverse() <binary_tree.tree.traverse>`, is available for convenience.
 
 >>> list(tree.traverse(root, "pre"))
 [Node(1), Node(2), Node(4), Node(3), Node(5)]
@@ -302,28 +302,28 @@ The following functions are available to find certain properties of a binary tre
 
 is_symmetrical()
 ^^^^^^^^^^^^^^^^
-:func:`tree.is_symmetrical` checks for symmetry in a binary tree.
+:func:`tree.is_symmetrical() <binary_tree.tree.is_symmetrical>` checks for symmetry in a binary tree.
 
 >>> tree.is_symmetrical(root)
 False
 
 max_depth()
 ^^^^^^^^^^^
-:func:`tree.max_depth` calculates the maximum depth of a binary tree.
+:func:`tree.max_depth() <binary_tree.tree.max_depth>` calculates the maximum depth of a binary tree.
 
 >>> tree.max_depth(root)
 3
 
 get_path()
 ^^^^^^^^^^
-:func:`tree.get_path` traces the ancestry of a node.
+:func:`tree.get_path() <binary_tree.tree.get_path>` traces the ancestry of a node.
 
 >>> tree.get_path(root.right.left)
 [Node(1), Node(3), Node(5)]
 
 all_paths()
 ^^^^^^^^^^^
-:func:`tree.all_paths` finds every leaf path in a binary tree. ::
+:func:`tree.all_paths() <binary_tree.tree.all_paths>` finds every leaf path in a binary tree. ::
 
     >>> for path in tree.all_paths(root):
     ...     print(path)
@@ -335,14 +335,14 @@ all_paths()
 
 has_sum()
 ^^^^^^^^^
-:func:`tree.has_sum` determines if there is a path that adds up to a certain value.
+:func:`tree.has_sum() <binary_tree.tree.has_sum>` determines if there is a path that adds up to a certain value.
 
 >>> tree.has_sum(root, 7)
 True
 
 find_path()
 ^^^^^^^^^^^
-:func:`tree.find_path` finds the path of some node in a binary tree.
+:func:`tree.find_path() <binary_tree.tree.find_path>` finds the path of some node in a binary tree.
 
 >>> tree.find_path(5)
 [Node(1), Node(3), Node(5)]
@@ -352,7 +352,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`tree.get_lca` gets the lowest common ancestor of two or more nodes in a binary tree.
+:func:`tree.get_lca() <binary_tree.tree.get_lca>` gets the lowest common ancestor of two or more nodes in a binary tree.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)

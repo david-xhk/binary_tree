@@ -20,11 +20,9 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../binary_tree'))
 sys.path.insert(0, os.path.abspath('..'))
 
 import binary_tree
-from binary_tree import node, tree
 
 # -- General configuration ---------------------------------------------
 
