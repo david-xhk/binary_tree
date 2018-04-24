@@ -2,14 +2,19 @@
  Documentation
 ***************
 
-====================
- :mod:`binary_tree`
-====================
+============================
+ :class:`~binary_tree.Node`
+============================
 
-.. automodule:: binary_tree
+.. autoclass:: binary_tree.Node
     :members:
-    :imported-members:
     :member-order: bysource
 
+==========================
+ :mod:`~binary_tree.tree`
+==========================
 
+.. automodule:: binary_tree.tree
+    :members:
+    :member-order: bysource
 

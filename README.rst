@@ -23,13 +23,9 @@ To install binary_tree, run this in your terminal::
  Importing binary_tree
 -----------------------
 
-The conventional way of importing :mod:`binary_tree` is to do::
+The conventional way of importing from :mod:`binary_tree` is to do::
 
-    import binary_tree as tree
-
-If you would like to use :class:`~binary_tree.Node` on its own, you may also include::
-    
-    from binary_tree import Node
+    from binary_tree import tree, Node
 
 ---------------
  Making a Node
