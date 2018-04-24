@@ -23,7 +23,8 @@ import sys
 sys.path.insert(0, os.path.abspath('../binary_tree'))
 sys.path.insert(0, os.path.abspath('..'))
 
-import binary_tree, node, tree
+import binary_tree
+from binary_tree import Node, node, tree
 
 # -- General configuration ---------------------------------------------
 
