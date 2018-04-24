@@ -24,6 +24,13 @@ class Node(object):
         return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
+        """Return a full representation of self.
+
+        The repr string is composed of self.value, repr(self.left), and repr(self.right).
+
+        Returns:
+            str: The repr string of self.
+        """
         args = [str(self.value)]
         if not is_leaf(self):
             args.append("left=" + repr(self.left))
@@ -32,12 +39,27 @@ class Node(object):
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
+        """Tentatively compare the `value` attribute of self and `other`.
+
+        If `other` does not have a `value` attribute, use `other` itself as a basis of comparison.
+
+        Args:
+            other: Any object.
+
+        Returns:
+            ``True`` if self.value is equal to other.value or other, ``False`` otherwise.
+        """
         return self.value == getattr(other, "value", other)
 
     def __ne__(self, other):
         return self.value != getattr(other, "value", other)
 
     def __iter__(self):
+        """Traverse the tree structure of self in level-order.
+
+        Yields:
+            Node: A node in the tree structure of self.
+        """
         level = [self]
         while level:
             next_level = []
