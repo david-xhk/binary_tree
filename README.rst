@@ -4,14 +4,6 @@
 
 :mod:`binary_tree` provides a :class:`~binary_tree.Node` object, :mod:`~binary_tree.node` functions, and :mod:`~binary_tree.tree` functions for a binary tree data structure.
 
-==============
- Installation
-==============
-
-To install binary_tree, run this in your terminal::
-
-    $ pip install git+git://github.com/han-keong/binary_tree
-
 ==========
  Features
 ==========
@@ -362,6 +354,14 @@ Node(1)
 
 .. note::
     Since Nodes :ref:`test for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, provided that *the value is unique within the tree*.
+
+==============
+ Installation
+==============
+
+To install binary_tree, run this in your terminal::
+
+    $ pip install git+git://github.com/han-keong/binary_tree
 
 =========
  Credits
