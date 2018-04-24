@@ -9,7 +9,7 @@
 .. automodule:: binary_tree
     :members:
     :imported-members:
-    :member-order:
+    :member-order: bysource
 
 
 
