@@ -17,7 +17,7 @@ def connect_nodes(root):
             prev_node, level[i].prev, next_node, level[-i-1].next = (
                 level[i], prev_node, level[-i-1], next_node)
 
-def from_string(tree_string, cls=None):
+def from_string(tree_string, cls=Node):
     """Generate a binary tree from a string.
 
     Instantiates the left child, and then the right child for every node 
@@ -34,8 +34,6 @@ def from_string(tree_string, cls=None):
     Note:
         Empty spaces can be represented by an immediate comma or "null" for explicitness.
     """
-    if cls is None:
-        cls = Node
     for char in " []\n'\"":
         tree_string = tree_string.replace(char, "")
     values = iter(tree_string.split(","))
@@ -75,7 +73,7 @@ def from_string(tree_string, cls=None):
     connect_nodes(root)
     return root
 
-def from_orders(kind, in_order, other_order, cls=None):
+def from_orders(kind, in_order, other_order, cls=Node):
     """Generate a binary tree from in-order and pre/post-order traversal.
 
     Recursively instantiates the parent, its left child, and then its 
@@ -98,8 +96,6 @@ def from_orders(kind, in_order, other_order, cls=None):
     Note:
         There cannot be any duplicates in `in_order` and `other_order`.
     """
-    if cls is None:
-        cls = Node
     if kind == "in-pre":
         def make_node(in_order, other_order):
             if not in_order or not other_order:
