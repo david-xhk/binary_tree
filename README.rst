@@ -88,7 +88,7 @@ True
  Checking a Node
 -----------------
 
-The following functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
+The following :mod:`~binary_tree.node` functions functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
 
 is_node()
 ^^^^^^^^^
@@ -158,6 +158,8 @@ True
  Setting up a Node tree 
 ------------------------
 
+The :mod:`~binary_tree.tree` module contains all the relevant functions for binary trees.
+
 from_string()
 ^^^^^^^^^^^^^
 A tree string should be in level-order and separated by commas.
@@ -222,7 +224,7 @@ Just as a tree can be constructed from string, it can be deconstructed back into
  Traversing a Node tree
 ------------------------
 
-With a tree structure set up, there are several functions you can use to traverse it.
+With a tree structure set up, there are several :mod:`~binary_tree.tree` functions you can use to traverse it.
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
