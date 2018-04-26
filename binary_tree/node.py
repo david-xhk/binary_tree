@@ -26,7 +26,7 @@ class Node(object):
     def __repr__(self):
         """Return a full representation of self.
 
-        The repr string is composed of :attr:`~binary_tree.node.Node.value`, repr(:attr:`~binary_tree.node.Node.left`), and repr(:attr:`~binary_tree.node.Node.right`).
+        The repr string is composed of :attr:`~binary_tree.node.Node.value`, the repr string of :attr:`~binary_tree.node.Node.left`, and the repr string of :attr:`~binary_tree.node.Node.right`.
 
         Returns:
             str: The repr string of self.
