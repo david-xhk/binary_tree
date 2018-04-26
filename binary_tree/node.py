@@ -26,7 +26,7 @@ class Node(object):
     def __repr__(self):
         """Return a full representation of `self`.
 
-        The repr string is composed of :attr:`~binary_tree.node.Node.value`, the repr string of :attr:`~binary_tree.node.Node.left`, and the repr string of :attr:`~binary_tree.node.Node.right`.
+        The repr string is composed of :attr:`~binary_tree.Node.value`, the repr string of :attr:`~binary_tree.Node.left`, and the repr string of :attr:`~binary_tree.Node.right`.
 
         Returns:
             str: The :func:`repr` string of `self`.
@@ -39,15 +39,15 @@ class Node(object):
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
-        """Tentatively compare the :attr:`~binary_tree.node.Node.value` of `self` and `other`.
+        """Tentatively compare the :attr:`~binary_tree.Node.value` of `self` and `other`.
 
-        If `other` does not have a :attr:`~binary_tree.node.Node.value`, use `other` itself as a basis of comparison.
+        If `other` does not have a :attr:`~binary_tree.Node.value`, use `other` itself as a basis of comparison.
 
         Args:
             other: Any object.
 
         Returns:
-            ``True`` if the :attr:`~binary_tree.node.Node.value` of `self` is equal to the :attr:`~binary_tree.node.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
+            ``True`` if the :attr:`~binary_tree.Node.value` of `self` is equal to the :attr:`~binary_tree.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
         """
         return self.value == getattr(other, "value", other)
 
@@ -58,7 +58,7 @@ class Node(object):
         """Traverse the tree structure of `self` in level-order.
 
         Yields:
-            A :class:`~binary_tree.node.Node` in the tree structure of `self`.
+            A :class:`~binary_tree.Node` in the tree structure of `self`.
         """
         level = [self]
         while level:
@@ -112,30 +112,30 @@ class Node(object):
             other._prev = self
 
 def is_node(obj):
-    """Check if `obj` is an instance of :class:`~binary_tree.node.Node`.
+    """Check if `obj` is an instance of :class:`~binary_tree.Node`.
 
     Args:
         obj: Any object.
 
     Returns:
-        ``True`` if `obj` is an instance of :class:`~binary_tree.node.Node`, ``False`` otherwise.
+        ``True`` if `obj` is an instance of :class:`~binary_tree.Node`, ``False`` otherwise.
     """
     return isinstance(obj, Node)
 
 def is_left(node):
-    """Check if `node` is a :attr:`~binary_tree.node.Node.left` child.
+    """Check if `node` is a :attr:`~binary_tree.Node.left` child.
 
     Return:
-        ``True`` if `node` is the :attr:`~binary_tree.node.Node.left` node of its :attr:`~binary_tree.node.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.node.Node.parent` is not set.
+        ``True`` if `node` is the :attr:`~binary_tree.Node.left` node of its :attr:`~binary_tree.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.Node.parent` is not set.
     """
     return (is_node(node.parent)
             and node.parent.left is node)
 
 def is_right(node):
-    """Check if `node` is a :attr:`~binary_tree.node.Node.right` child.
+    """Check if `node` is a :attr:`~binary_tree.Node.right` child.
 
     Return:
-        ``True`` if `node` is the :attr:`~binary_tree.node.Node.right` node of its :attr:`~binary_tree.node.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.node.Node.parent` is not set.
+        ``True`` if `node` is the :attr:`~binary_tree.Node.right` node of its :attr:`~binary_tree.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.Node.parent` is not set.
     """
     return (is_node(node.parent)
             and node.parent.right is node)
@@ -144,7 +144,7 @@ def is_leaf(node):
     """Check if `node` is a leaf node.
 
     Returns:
-        ``True`` if `node` has a :attr:`~binary_tree.node.Node.parent` but no :attr:`~binary_tree.node.Node.left` or :attr:`~binary_tree.node.Node.right` node, ``False`` otherwise.
+        ``True`` if `node` has a :attr:`~binary_tree.Node.parent` but no :attr:`~binary_tree.Node.left` or :attr:`~binary_tree.Node.right` node, ``False`` otherwise.
     """
     return (node.parent is not None
             and node.left is None
@@ -154,7 +154,7 @@ def is_root(node):
     """Check if `node` is a root node.
 
     Return:
-        ``True`` if `node` has a :attr:`~binary_tree.node.Node.left` or :attr:`~binary_tree.node.Node.right` node but no :attr:`~binary_tree.node.Node.parent` node, ``False`` otherwise.
+        ``True`` if `node` has a :attr:`~binary_tree.Node.left` or :attr:`~binary_tree.Node.right` node but no :attr:`~binary_tree.Node.parent` node, ``False`` otherwise.
     """
     return ((node.left is not None or node.right is not None) 
             and node.parent is None)
