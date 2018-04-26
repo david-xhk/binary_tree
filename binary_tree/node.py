@@ -29,7 +29,7 @@ class Node(object):
         The string returned is composed of :attr:`~binary_tree.Node.value`, the :func:`repr` of :attr:`~binary_tree.Node.left`, and the :func:`repr` of :attr:`~binary_tree.Node.right`.
 
         Returns:
-            str: The :func:`repr` of `self`.
+            The :func:`repr` of `self`.
         """
         args = [str(self.value)]
         if not is_leaf(self):
