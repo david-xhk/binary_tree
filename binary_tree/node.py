@@ -24,12 +24,12 @@ class Node(object):
         return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
-        """Return a full representation of self.
+        """Return a full representation of `self`.
 
         The repr string is composed of :attr:`~binary_tree.node.Node.value`, the repr string of :attr:`~binary_tree.node.Node.left`, and the repr string of :attr:`~binary_tree.node.Node.right`.
 
         Returns:
-            str: The repr string of self.
+            str: The :func:`repr` string of `self`.
         """
         args = [str(self.value)]
         if not is_leaf(self):
@@ -39,7 +39,7 @@ class Node(object):
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
-        """Tentatively compare the :attr:`~binary_tree.node.Node.value` of self and `other`.
+        """Tentatively compare the :attr:`~binary_tree.node.Node.value` of `self` and `other`.
 
         If `other` does not have a :attr:`~binary_tree.node.Node.value`, use `other` itself as a basis of comparison.
 
@@ -47,7 +47,7 @@ class Node(object):
             other: Any object.
 
         Returns:
-            ``True`` if the :attr:`~binary_tree.node.Node.value` of self is equal to the :attr:`~binary_tree.node.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
+            ``True`` if the :attr:`~binary_tree.node.Node.value` of `self` is equal to the :attr:`~binary_tree.node.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
         """
         return self.value == getattr(other, "value", other)
 
@@ -55,10 +55,10 @@ class Node(object):
         return self.value != getattr(other, "value", other)
 
     def __iter__(self):
-        """Traverse the tree structure of self in level-order.
+        """Traverse the tree structure of `self` in level-order.
 
         Yields:
-            A :class:`~binary_tree.node.Node` in the tree structure of self.
+            A :class:`~binary_tree.node.Node` in the tree structure of `self`.
         """
         level = [self]
         while level:
