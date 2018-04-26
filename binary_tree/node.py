@@ -26,10 +26,10 @@ class Node(object):
     def __repr__(self):
         """Return a full representation of `self`.
 
-        The repr string is composed of :attr:`~binary_tree.Node.value`, the repr string of :attr:`~binary_tree.Node.left`, and the repr string of :attr:`~binary_tree.Node.right`.
+        The string returned is composed of :attr:`~binary_tree.Node.value`, the :func:`repr` of :attr:`~binary_tree.Node.left`, and the :func:`repr` of :attr:`~binary_tree.Node.right`.
 
         Returns:
-            str: The :func:`repr` string of `self`.
+            str: The :func:`repr` of `self`.
         """
         args = [str(self.value)]
         if not is_leaf(self):
@@ -163,7 +163,7 @@ def is_orphan(node):
     """Check if `node` is an orphan node.
 
     Return:
-        ``True`` if `node` has no parent or children nodes, ``False`` otherwise.
+        ``True`` if `node` has no :attr:`~binary_tree.Node.parent`, :attr:`~binary_tree.Node.left`, and :attr:`~binary_tree.Node.right` node, ``False`` otherwise.
     """
     return (node.parent is None
             and node.left is None
