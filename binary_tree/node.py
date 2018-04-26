@@ -123,7 +123,7 @@ def is_node(obj):
     return isinstance(obj, Node)
 
 def is_left(node):
-    """Check if `node` is a left child.
+    """Check if `node` is a :attr:`~binary_tree.node.Node.left` child.
 
     Return:
         ``True`` if `node` is the :attr:`~binary_tree.node.Node.left` node of its :attr:`~binary_tree.node.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.node.Node.parent` is not set.
@@ -132,7 +132,7 @@ def is_left(node):
             and node.parent.left is node)
 
 def is_right(node):
-    """Check if `node` is a right child.
+    """Check if `node` is a :attr:`~binary_tree.node.Node.right` child.
 
     Return:
         ``True`` if `node` is the :attr:`~binary_tree.node.Node.right` node of its :attr:`~binary_tree.node.Node.parent`, ``False`` otherwise, or if its :attr:`~binary_tree.node.Node.parent` is not set.
