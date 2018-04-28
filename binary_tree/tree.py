@@ -9,7 +9,7 @@ def connect_nodes(root):
     """Connect the nodes in each level down the tree.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
     """
     for level in traverse_level_order(root):
         prev_node, next_node = None, None
@@ -25,14 +25,14 @@ def from_string(tree_string, cls=Node):
     
     Args:
         tree_string (str): A level-order binary tree traversal, separated by commas.
-        cls (type): The class constructor for the tree. Defaults to Node.
+        cls (type): The class constructor for the tree. Defaults to :class:`~binary_tree.Node`.
     
     Returns:
-        A newly instantiated Node representing `tree_string`.
+        A newly instantiated :class:`~binary_tree.Node` representing `tree_string`.
         If `tree_string` has no root value, returns ``None``.
 
     Note:
-        Empty spaces can be represented by an immediate comma or "null" for explicitness.
+        Empty spaces can be represented by an immediate comma or ``"null"`` for explicitness.
     """
     for char in " []\n'\"":
         tree_string = tree_string.replace(char, "")
@@ -84,10 +84,10 @@ def from_orders(kind, in_order, other_order, cls=Node):
         in_order (list[int, ...]): The in-order traversal of a binary tree.
         other_order (list[int, ...]): Either the tree's pre-order or 
             post-order traversal.
-        cls (type): The class constructor for the tree. Defaults to Node.
+        cls (type): The class constructor for the tree. Defaults to :class:`~binary_tree.Node`.
 
     Returns:
-        A newly instantiated Node entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
+        A newly instantiated :class:`~binary_tree.Node` entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
 
     Raises:
         ValueError: If `in_order` and `other_order` do not correspond to a tree structure or contain duplicates.
@@ -128,10 +128,10 @@ def from_orders(kind, in_order, other_order, cls=Node):
     return root
 
 def to_string(root):
-    """Serialize a binary tree into a string.
+    """Deconstruct a binary tree into a string.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
     
     Returns:
         str:  A level-order binary tree traversal, separated
@@ -161,10 +161,10 @@ def traverse_pre_order(root):
     Visit the parent, the left child, and then the right child.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Yields:
-        Node: A node in the binary tree.
+        A :class:`~binary_tree.Node` instance in the binary tree.
     """
     queue = [root]
     while queue:
@@ -182,10 +182,10 @@ def traverse_in_order(root):
     Visit the left child, the parent, and then the right child.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Yields:
-        Node: A node in the binary tree.
+        A :class:`~binary_tree.Node` instance in the binary tree.
     """
     queue = [root]
     while True:
@@ -207,10 +207,10 @@ def traverse_post_order(root):
     Visit the left child, the right child, and then the parent.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Yields:
-        Node: A node in the binary tree.
+        A :class:`~binary_tree.Node` instance in the binary tree.
     """
     queue = [root]
     visited = []
@@ -234,10 +234,10 @@ def traverse_level_order(root):
     Visit the left child, and then the right child for each parent in each level.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Yields:
-        list[Node, ...]: A level of nodes in the binary tree.
+        A list of :class:`~binary_tree.Node` instances representing one level in the binary tree.
     """
     level = [root]
     while level:
@@ -251,14 +251,14 @@ def traverse_level_order(root):
         level = next_level
 
 def traverse(root, kind):
-    """Dispatch root to the `kind` traversal.
+    """Forward `root` to the `kind` of traversal.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
         kind (str): "pre" or "in" or "post" or "level".
 
     Returns:
-        The generator iterator of the traversal for `kind`.
+        The generator iterator of the `kind` of traversal.
     
     Raises:
         KeyError: If `kind` is not one of the possible options.
@@ -270,7 +270,7 @@ def is_symmetrical(root):
     """Check for symmetry in a binary tree.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Returns:
         ``True`` if the binary tree is symmetrical, ``False`` otherwise.
@@ -294,7 +294,7 @@ def max_depth(root):
     """Calculate the maximum depth of a binary tree.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Returns:
         int: The total number of levels of the binary tree.
@@ -302,10 +302,10 @@ def max_depth(root):
     return sum(1 for level in traverse_level_order(root))
 
 def get_path(node):
-    """Trace the ancestry of a node.
+    """Trace the ancestry of a :class:`~binary_tree.Node` instance.
     
     Args:
-        node (Node): A node in the binary tree.
+        node: A :class:`~binary_tree.Node` instance in a binary tree.
 
     Returns:
         list[Node, ...]: The ancestry of a node in left-to-right order.
@@ -322,10 +322,10 @@ def all_paths(root):
     """Find every leaf path in a binary tree.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
 
     Yields:
-        list[Node, ...]: A list of every node from the root to a leaf.
+        A list of :class:`~binary_tree.Node` instances from the root node to a leaf node.
     """
     for node in traverse_post_order(root):
         if is_leaf(node):
@@ -335,7 +335,7 @@ def has_sum(root, value):
     """Determine if there is a path that adds up to `value`.
     
     Args:
-        root (Node): The root node of a binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
         value: The value to check for.
 
     Returns:
@@ -354,28 +354,28 @@ def has_sum(root, value):
         return False
 
 def find_path(root, node):
-    """Find the path of some node in a binary tree.
+    """Find the path of some :class:`~binary_tree.Node` instance or value in a binary tree.
     
     Args:
-        root (Node): The root node of a binary tree.
-        node (Node): A node in the binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
+        node: A :class:`~binary_tree.Node` instance or value in the binary tree.
 
     Returns:
-        list[Node, ...]: A list of every node from `root` to `node`, or ``None`` if `node` is absent in `root`.
+        A list of every :class:`~binary_tree.Node` instance from the root node to the :class:`~binary_tree.Node` instance of `node`, or ``None`` if it is absent in `root`.
     """
     for root_node in traverse_post_order(root):
         if node == root_node:
             return get_path(root_node)
 
 def get_lca(root, *nodes):
-    """Get the lowest common ancestor of two or more nodes in a binary tree.
+    """Get the lowest common ancestor of two or more :class:`~binary_tree.Node` instances in a binary tree.
     
     Args:
-        root (Node): The root node of a binary tree.
-        *nodes (Node): Nodes in the binary tree.
+        root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
+        *nodes (Node): :class:`~binary_tree.Node` instances in the binary tree.
 
     Returns:
-        Node: The lowest common ancestor of `nodes`, or ``None`` if there is no common ancestor.
+        Node: The lowest common ancestor of the :class:`~binary_tree.Node` instances for `nodes`, or ``None`` if there is no common ancestor.
     """
     if len(nodes) < 2:
         return None
