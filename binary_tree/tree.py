@@ -20,7 +20,7 @@ def connect_nodes(root):
 def from_string(tree_string, cls=Node):
     """Construct a :class:`~binary_tree.Node` instance with the binary tree structure represented by `tree_string`.
 
-    Initializes the root :class:`~binary_tree.Node` instance (the first level), then the left child and then the right child for every parent :class:`~binary_tree.Node` instance in each level (level-order).
+    Initializes the root :class:`~binary_tree.Node` instance (the first level), and while there are still values- initializes :attr:`~binary_tree.Node.left` and then :attr:`~binary_tree.Node.right` for every :class:`~binary_tree.Node` instance per level (level-order).
     
     Args:
         tree_string (str): A level-order binary tree traversal, separated by commas.
@@ -74,7 +74,7 @@ def from_string(tree_string, cls=Node):
 def from_orders(kind, in_order, other_order, cls=Node):
     """Construct a :class:`~binary_tree.Node` instance with the binary tree structure that entails `in-order` and `other_order`.
 
-    Recursively initializes the :class:`~binary_tree.Node` instance for the parent, its left child, then its right child (pre-order).
+    Recursively initializes :attr:`~binary_tree.Node.parent`, :attr:`~binary_tree.Node.left`, and then :attr:`~binary_tree.Node.right`. (pre-order).
     
     Args:
         kind (str): Either "in-pre" or "in-post".
@@ -155,7 +155,7 @@ def to_string(root):
 def traverse_pre_order(root):
     """Traverse `root` in pre-order.
 
-    Visit the parent, the left child, and then the right child :class:`~binary_tree.Node` instance.
+    Visit :attr:`~binary_tree.Node.parent`, :attr:`~binary_tree.Node.left`, and then :attr:`~binary_tree.Node.right`.
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
@@ -176,7 +176,7 @@ def traverse_pre_order(root):
 def traverse_in_order(root):
     """Traverse `root` in in-order.
 
-    Visit the left child, the parent, and then the right child :class:`~binary_tree.Node` instance.
+    Visit :attr:`~binary_tree.Node.left`, :attr:`~binary_tree.Node.parent`, and then :attr:`~binary_tree.Node.right`.
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
@@ -201,7 +201,7 @@ def traverse_in_order(root):
 def traverse_post_order(root):
     """Traverse `root` in post-order.
 
-    Visit the left child, the right child, and then the parent :class:`~binary_tree.Node` instance.
+    Visit :attr:`~binary_tree.Node.left`, :attr:`~binary_tree.Node.right`, and then :attr:`~binary_tree.Node.parent`.
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
@@ -228,7 +228,7 @@ def traverse_post_order(root):
 def traverse_level_order(root):
     """Traverse `root` in level-order.
 
-    In each level, visit the left child and then the right child for each parent :class:`~binary_tree.Node` instance.
+    Visit :attr:`~binary_tree.Node.left` and then :attr:`~binary_tree.Node.right` for each :attr:`~binary_tree.Node.parent` per level.
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
