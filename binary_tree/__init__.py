@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""This module provides a Node object, node functions, and tree functions for a binary tree data structure.
+"""This module provides a Node class, node functions, and tree functions for a binary tree data structure.
 
 For example::
 

@@ -7,11 +7,11 @@ class Node(object):
 
     Attributes:
         value: The node value.
-        left (Node, optional): The left child node, if present.
-        right (Node, optional): The right child node, if present.
-        prev (Node, optional): The nearest neighbour node on the left, if present.
-        next (Node, optional): The nearest neighbour node on the right, if present.
-        parent (Node, optional): The parent node, if present.
+        left: The left child :class:`~binary_tree.Node` instance, if present.
+        right: The right child :class:`~binary_tree.Node` instance, if present.
+        prev: The left neighbouring :class:`~binary_tree.Node` instance, if present.
+        next: The right neighbouring :class:`~binary_tree.Node` instance, if present.
+        parent: The parent :class:`~binary_tree.Node` instance, if present.
     """
     __slots__ = ["value", "_left", "_right", "_prev", "_next", "parent"]
 
@@ -26,10 +26,10 @@ class Node(object):
     def __repr__(self):
         """Return a full representation of ``self``.
 
-        The string returned is composed of :attr:`~binary_tree.Node.value`, the :func:`repr` of :attr:`~binary_tree.Node.left`, and the :func:`repr` of :attr:`~binary_tree.Node.right`.
+        :meth:`repr() <binary_tree.Node.__repr__>` is composed of :attr:`~binary_tree.Node.value`, the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.left`, and the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.right`.
 
         Returns:
-            The :func:`repr` of ``self``.
+            The :meth:`repr() <binary_tree.Node.__repr__>` of ``self``.
         """
         args = [str(self.value)]
         if not is_leaf(self):
