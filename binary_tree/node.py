@@ -24,12 +24,12 @@ class Node(object):
         return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
-        """Return a full representation of `self`.
+        """Return a full representation of ``self``.
 
         The string returned is composed of :attr:`~binary_tree.Node.value`, the :func:`repr` of :attr:`~binary_tree.Node.left`, and the :func:`repr` of :attr:`~binary_tree.Node.right`.
 
         Returns:
-            The :func:`repr` of `self`.
+            The :func:`repr` of ``self``.
         """
         args = [str(self.value)]
         if not is_leaf(self):
@@ -39,7 +39,7 @@ class Node(object):
         return "Node(" + ", ".join(args) + ")"
 
     def __eq__(self, other):
-        """Tentatively compare the :attr:`~binary_tree.Node.value` of `self` and `other`.
+        """Tentatively compare the :attr:`~binary_tree.Node.value` of ``self`` and `other`.
 
         If `other` does not have a :attr:`~binary_tree.Node.value`, use `other` itself as a basis of comparison.
 
@@ -47,7 +47,7 @@ class Node(object):
             other: Any object.
 
         Returns:
-            ``True`` if the :attr:`~binary_tree.Node.value` of `self` is equal to the :attr:`~binary_tree.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
+            ``True`` if the :attr:`~binary_tree.Node.value` of ``self`` is equal to the :attr:`~binary_tree.Node.value` of `other`, or `other` itself- and ``False`` otherwise.
         """
         return self.value == getattr(other, "value", other)
 
@@ -55,10 +55,10 @@ class Node(object):
         return self.value != getattr(other, "value", other)
 
     def __iter__(self):
-        """Traverse the tree structure of `self` in level-order.
+        """Traverse the tree structure of ``self`` in level-order.
 
         Yields:
-            A :class:`~binary_tree.Node` in the tree structure of `self`.
+            A :class:`~binary_tree.Node` in the tree structure of ``self``.
         """
         level = [self]
         while level:
