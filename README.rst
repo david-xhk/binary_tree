@@ -50,7 +50,7 @@ Every :class:`~binary_tree.Node` has the following attributes:
   * :attr:`~binary_tree.Node.parent`
 
 .. note::
-    The parent, children, and neighbour nodes should be instances of :class:`~binary_tree.Node` if they are present. 
+    All the attributes above besides :attr:`~binary_tree.Node.value` should be instances of :class:`~binary_tree.Node` if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
@@ -135,7 +135,7 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-:class:`~binary_tree.Node` has a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
+:class:`~binary_tree.Node` instances have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of ``self`` and the other object. 
 
 If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
@@ -147,7 +147,7 @@ True
 >>> parent_node == 1
 True
 
-If you would like to test if two instances of :class:`~binary_tree.Node` have the same binary tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__>` strings.
+If you would like to test if two instances of :class:`~binary_tree.Node` have the same binary tree structure, you may compare their :meth:`repr() <binary_tree.Node.__repr__>` strings.
 
 >>> parent_node2 = Node(1, left=Node(2), right=Node(3))
 >>> 
@@ -175,7 +175,7 @@ Pass the string into :func:`~binary_tree.tree.from_string` to generate a :class:
 
 >>> root = tree.from_string(tree_string)
 
-You can use :meth:`repr <binary_tree.Node.__repr__>` to see the binary tree structure of the :class:`~binary_tree.Node` instance.
+You can use :meth:`repr() <binary_tree.Node.__repr__>` to see the binary tree structure of the :class:`~binary_tree.Node` instance.
 
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
@@ -297,12 +297,14 @@ The following :mod:`~binary_tree.tree` functions are available to find certain p
 is_symmetrical()
 ^^^^^^^^^^^^^^^^
 :func:`~binary_tree.tree.is_symmetrical` checks for symmetry in the binary tree structure of a root :class:`~binary_tree.Node` instance.
+
 >>> tree.is_symmetrical(root)
 False
 
 max_depth()
 ^^^^^^^^^^^
 :func:`~binary_tree.tree.max_depth` calculates the maximum depth of the binary tree structure of a root :class:`~binary_tree.Node` instance.
+
 >>> tree.max_depth(root)
 3
 
@@ -344,7 +346,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more :class:`~binary_tree.Node` instances in the binary tree structure of a root :class:`~binary_tree.Node` instance.
+:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more :class:`~binary_tree.Node` instances or values in the binary tree structure of a root :class:`~binary_tree.Node` instance.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)
@@ -353,7 +355,7 @@ Node(2)
 Node(1)
 
 .. note::
-    Since :class:`~binary_tree.Node` :ref:`tests for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the :class:`~binary_tree.Node` instance you wish to refer to, provided that the value is *unique within the binary tree structure*.
+    It is possible to pass the value of the :class:`~binary_tree.Node` instance you wish to refer to because of :ref:`the way equality is tested for <Equality tests>`. However, the value *must be unique* within the binary tree structure.
 
 ==============
  Installation
