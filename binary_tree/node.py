@@ -24,12 +24,12 @@ class Node(object):
         return "Node(" + str(self.value) + ")"
 
     def __repr__(self):
-        """Return a full representation of ``self``.
+        """Get the full representation of ``self``.
 
-        :meth:`repr() <binary_tree.Node.__repr__>` is composed of :attr:`~binary_tree.Node.value`, the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.left`, and the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.right`.
+        :meth:`repr() <binary_tree.Node.__repr__>` comprises of :attr:`~binary_tree.Node.value`, the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.left` if present, and the :meth:`repr() <binary_tree.Node.__repr__>` of :attr:`~binary_tree.Node.right` if present.
 
         Returns:
-            The :meth:`repr() <binary_tree.Node.__repr__>` of ``self``.
+            str: A full representation of ``self``.
         """
         args = [str(self.value)]
         if not is_leaf(self):
