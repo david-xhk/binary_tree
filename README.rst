@@ -50,7 +50,7 @@ Every :class:`~binary_tree.Node` has the following attributes:
   * :attr:`~binary_tree.Node.parent`
 
 .. note::
-    The parent, children, and neighbour nodes should be instances of Node if they are present. 
+    The parent, children, and neighbour nodes should be instances of :class:`~binary_tree.Node` if they are present. 
 
 Node initialization
 ^^^^^^^^^^^^^^^^^^^
@@ -166,7 +166,7 @@ A tree string should be in level-order and separated by commas.
 
 >>> tree_string = "1,2,3,4,5,6"
 
-Empty spaces can be represented by an immediate comma or "null" to be explicit.
+Empty spaces can be represented by an immediate comma or ``"null"`` to be explicit.
 
 >>> tree_string = "1,2,3,4,,5,6"
 >>> tree_string = "1,2,3,4,null,5,6"
