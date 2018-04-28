@@ -158,7 +158,7 @@ True
  Setting up a Node tree 
 ------------------------
 
-The :mod:`~binary_tree.tree` module contains all the relevant functions for binary trees.
+The :mod:`~binary_tree.tree` module contains all the relevant functions for binary tree structures.
 
 from_string()
 ^^^^^^^^^^^^^
@@ -208,14 +208,14 @@ connect_nodes()
 ^^^^^^^^^^^^^^^
 When using the above methods to construct a :class:`~binary_tree.Node` instance, the neighbour nodes in each level of its binary tree structure are already connected using :func:`~binary_tree.tree.connect_nodes`.
 
-You may use this function again to reconfigure the binary tree structure of a :class:`~binary_tree.Node` instance after modifying it, or to connect a binary tree strucutre that was manually set up.
+You may use this function again to reconfigure the tree structure of a root :class:`~binary_tree.Node` instance after modifying it, or to connect one that was manually set up.
 
 >>> root.right.right = None  # Prune the right branch of the right child
 >>> tree.connect_nodes(root)
 
 to_string()
 ^^^^^^^^^^^
-Just as a binary tree can be constructed from string, it can be deconstructed back into one too, using :func:`~binary_tree.tree.to_string`.
+Just as a binary tree structure can be constructed from string, it can be deconstructed back into one too, using :func:`~binary_tree.tree.to_string`.
 
 >>> tree.to_string(root)
 "1,2,3,4,,5"
@@ -228,34 +228,34 @@ With a binary tree structure set up, there are several :mod:`~binary_tree.tree` 
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.tree.traverse_pre_order` traverses a binary tree in pre-order.
+:func:`~binary_tree.tree.traverse_pre_order` traverses the binary tree structure of a root :class:`~binary_tree.Node` instance in pre-order.
 
 >>> list(tree.traverse_pre_order(root))
 [Node(1), Node(2), Node(4), Node(3), Node(5)]
 
 traverse_in_order()
 ^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.tree.traverse_in_order` traverses a binary tree in in-order.
+:func:`~binary_tree.tree.traverse_in_order` traverses the binary tree structure of a root :class:`~binary_tree.Node` instance in in-order.
 
 >>> list(tree.traverse_in_order(root))
 [Node(4), Node(2), Node(1), Node(5), Node(3)]
 
 traverse_post_order()
 ^^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.tree.traverse_post_order` traverses a binary tree in post-order.
+:func:`~binary_tree.tree.traverse_post_order` traverses the binary tree structure of a root :class:`~binary_tree.Node` instance in post-order.
 
 >>> list(tree.traverse_post_order(root))
 [Node(4), Node(2), Node(5), Node(3), Node(1)]
 
 traverse_level_order()
 ^^^^^^^^^^^^^^^^^^^^^^
-:func:`~binary_tree.tree.traverse_level_order` traverses a binary tree in level-order.
+:func:`~binary_tree.tree.traverse_level_order` traverses the binary tree structure of a root :class:`~binary_tree.Node` instance in level-order.
 
 >>> list(tree.traverse_level_order(root))
 [[Node(1)], [Node(2), Node(3)], [Node(4), Node(5)]]
 
 .. note::
-    traverse_level_order() will yield lists containing instances of :class:`~binary_tree.Node`. Each list represents a level in the tree.
+    :func:`~binary_tree.tree.traverse_level_order()` will yield lists containing instances of :class:`~binary_tree.Node`. Each list represents a level in the binary tree structure.
 
 traverse()
 ^^^^^^^^^^
@@ -275,7 +275,7 @@ A single dispatch function, :func:`~binary_tree.tree.traverse`, is available for
 
 Iterating over a Node
 ^^^^^^^^^^^^^^^^^^^^^
-You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its tree structure. ::
+You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :class:`~binary_tree.Node` to traverse its binary tree structure. ::
 
     >>> for node in root:
     ...     print(node)
@@ -292,19 +292,17 @@ You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :cl
  Analyzing a Node tree
 -----------------------
 
-The following functions are available to find certain properties of a binary tree structure.
+The following :mod:`~binary_tree.tree` functions are available to find certain properties of a binary tree structure.
 
 is_symmetrical()
 ^^^^^^^^^^^^^^^^
-:func:`~binary_tree.tree.is_symmetrical` checks for symmetry in a binary tree.
-
+:func:`~binary_tree.tree.is_symmetrical` checks for symmetry in the binary tree structure of a root :class:`~binary_tree.Node` instance.
 >>> tree.is_symmetrical(root)
 False
 
 max_depth()
 ^^^^^^^^^^^
-:func:`~binary_tree.tree.max_depth` calculates the maximum depth of a binary tree.
-
+:func:`~binary_tree.tree.max_depth` calculates the maximum depth of the binary tree structure of a root :class:`~binary_tree.Node` instance.
 >>> tree.max_depth(root)
 3
 
@@ -317,7 +315,7 @@ get_path()
 
 all_paths()
 ^^^^^^^^^^^
-:func:`~binary_tree.tree.all_paths` finds every leaf path in a binary tree. ::
+:func:`~binary_tree.tree.all_paths` finds every leaf path in the binary tree structure of a root :class:`~binary_tree.Node` instance. ::
 
     >>> for path in tree.all_paths(root):
     ...     print(path)
@@ -329,14 +327,14 @@ all_paths()
 
 has_sum()
 ^^^^^^^^^
-:func:`~binary_tree.tree.has_sum` determines if there is a path that adds up to a certain value.
+:func:`~binary_tree.tree.has_sum` determines if there is a path in the binary tree structure of a root :class:`~binary_tree.Node` instance that adds up to a certain value.
 
 >>> tree.has_sum(root, 7)
 True
 
 find_path()
 ^^^^^^^^^^^
-:func:`~binary_tree.tree.find_path` finds the path of some :class:`~binary_tree.Node` instance or value in a binary tree.
+:func:`~binary_tree.tree.find_path` finds the path of some :class:`~binary_tree.Node` instance or value in the binary tree structure of a root :class:`~binary_tree.Node` instance.
 
 >>> tree.find_path(5)
 [Node(1), Node(3), Node(5)]
@@ -346,7 +344,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more :class:`~binary_tree.Node` instances in a binary tree.
+:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more :class:`~binary_tree.Node` instances in the binary tree structure of a root :class:`~binary_tree.Node` instance.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)
