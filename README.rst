@@ -88,7 +88,7 @@ True
  Checking a Node
 -----------------
 
-The following :mod:`~binary_tree.node` functions functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
+The following :mod:`~binary_tree.node` functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
 
 is_node()
 ^^^^^^^^^
@@ -135,7 +135,7 @@ True
 
 Equality tests
 ^^^^^^^^^^^^^^
-Nodes have a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
+:class:`~binary_tree.Node` has a special way of testing :meth:`equality <binary_tree.Node.__eq__>`, which is to tentatively compare the :attr:`~binary_tree.Node.value` of itself and the other object. 
 
 If the other object does not have a :attr:`~binary_tree.Node.value` attribute, the object itself is taken as the basis of comparison. 
 
@@ -147,7 +147,7 @@ True
 >>> parent_node == 1
 True
 
-If you would like to test if two nodes have the same tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__>` strings.
+If you would like to test if two instances of :class:`~binary_tree.Node` have the same binary tree structure, you may compare their :meth:`repr <binary_tree.Node.__repr__>` strings.
 
 >>> parent_node2 = Node(1, left=Node(2), right=Node(3))
 >>> 
@@ -171,23 +171,23 @@ Empty spaces can be represented by an immediate comma or ``"null"`` to be explic
 >>> tree_string = "1,2,3,4,,5,6"
 >>> tree_string = "1,2,3,4,null,5,6"
 
-Pass the string into :func:`~binary_tree.tree.from_string` to generate a binary tree.
+Pass the string into :func:`~binary_tree.tree.from_string` to generate a :class:`~binary_tree.Node` instance with the desired binary tree structure.
 
 >>> root = tree.from_string(tree_string)
 
-You can use :meth:`repr <binary_tree.Node.__repr__>` to see a representation of the tree structure created.
+You can use :meth:`repr <binary_tree.Node.__repr__>` to see the binary tree structure of the :class:`~binary_tree.Node` instance.
 
 >>> repr(root)
 "Node(1, left=Node(2, left=Node(4)), right=Node(3, left=Node(5), right=Node(6)))"
 
 from_orders()
 ^^^^^^^^^^^^^
-Another way to set up a binary tree is with its in-order and pre-order traversals.
+Another way to set up a binary tree structure is with its in-order and pre-order traversals.
 
 >>> in_order = [4,2,1,5,3,6]
 >>> pre_order = [1,2,4,3,5,6]
 
-Pass the appropriate key and the traversals into :func:`~binary_tree.tree.from_orders` to reconstruct the original tree structure.
+Pass the appropriate key and the traversals into :func:`~binary_tree.tree.from_orders` to generate a :class:`~binary_tree.Node` instance with the original tree structure.
 
 >>> root = tree.from_orders("in-pre", in_order, pre_order)
 >>> repr(root)
@@ -206,16 +206,16 @@ Alternatively, you can use the in-order and post-order traversal.
 
 connect_nodes()
 ^^^^^^^^^^^^^^^
-When using the above methods to construct a binary tree, the neighbour nodes in each level are already connected using :func:`~binary_tree.tree.connect_nodes`.
+When using the above methods to construct a :class:`~binary_tree.Node` instance, the neighbour nodes in each level of its binary tree structure are already connected using :func:`~binary_tree.tree.connect_nodes`.
 
-You may use this function again to reconfigure a tree after modifying it, or to connect one that was manually set up.
+You may use this function again to reconfigure the binary tree structure of a :class:`~binary_tree.Node` instance after modifying it, or to connect a binary tree strucutre that was manually set up.
 
->>> root.right.right = None  # Prune the right branch of the right node
+>>> root.right.right = None  # Prune the right branch of the right child
 >>> tree.connect_nodes(root)
 
 to_string()
 ^^^^^^^^^^^
-Just as a tree can be constructed from string, it can be deconstructed back into one too, using :func:`~binary_tree.tree.to_string`.
+Just as a binary tree can be constructed from string, it can be deconstructed back into one too, using :func:`~binary_tree.tree.to_string`.
 
 >>> tree.to_string(root)
 "1,2,3,4,,5"
@@ -224,7 +224,7 @@ Just as a tree can be constructed from string, it can be deconstructed back into
  Traversing a Node tree
 ------------------------
 
-With a tree structure set up, there are several :mod:`~binary_tree.tree` functions you can use to traverse it.
+With a binary tree structure set up, there are several :mod:`~binary_tree.tree` functions you can use to traverse it.
 
 traverse_pre_order()
 ^^^^^^^^^^^^^^^^^^^^
@@ -286,13 +286,13 @@ You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :cl
     Node(5)
 
 .. note::
-    Iterating over a Node goes by level-order traversal. 
+    Iteration over a :class:`~binary_tree.Node` instance goes by level-order traversal. 
 
 -----------------------
  Analyzing a Node tree
 -----------------------
 
-The following functions are available to find certain properties of a binary tree.
+The following functions are available to find certain properties of a binary tree structure.
 
 is_symmetrical()
 ^^^^^^^^^^^^^^^^
@@ -310,7 +310,7 @@ max_depth()
 
 get_path()
 ^^^^^^^^^^
-:func:`~binary_tree.tree.get_path` traces the ancestry of a node.
+:func:`~binary_tree.tree.get_path` traces the ancestry of a :class:`~binary_tree.Node` instance.
 
 >>> tree.get_path(root.right.left)
 [Node(1), Node(3), Node(5)]
@@ -325,7 +325,7 @@ all_paths()
     [Node(1), Node(3), Node(5)]
 
 .. note::
-    all_paths() searches for paths using post-order traversal.
+    :func:`~binary_tree.tree.all_paths()` searches for paths using post-order traversal.
 
 has_sum()
 ^^^^^^^^^
@@ -336,7 +336,7 @@ True
 
 find_path()
 ^^^^^^^^^^^
-:func:`~binary_tree.tree.find_path` finds the path of some node in a binary tree.
+:func:`~binary_tree.tree.find_path` finds the path of some :class:`~binary_tree.Node` instance or value in a binary tree.
 
 >>> tree.find_path(5)
 [Node(1), Node(3), Node(5)]
@@ -346,7 +346,7 @@ find_path()
 
 get_lca()
 ^^^^^^^^^
-:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more nodes in a binary tree.
+:func:`~binary_tree.tree.get_lca` gets the lowest common ancestor of two or more :class:`~binary_tree.Node` instances in a binary tree.
 
 >>> tree.get_lca(root, 2, 4)
 Node(2)
@@ -355,13 +355,13 @@ Node(2)
 Node(1)
 
 .. note::
-    Since Nodes :ref:`test for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the node you wish to refer to, provided that *the value is unique within the tree*.
+    Since :class:`~binary_tree.Node` :ref:`tests for equality tentatively <Equality tests>`, it is possible to exploit this by simply passing in the value of the :class:`~binary_tree.Node` instance you wish to refer to, provided that the value is *unique within the binary tree structure*.
 
 ==============
  Installation
 ==============
 
-To install binary_tree, run this in your terminal::
+To install :mod:`binary_tree`, run this in your terminal::
 
     $ pip install git+git://github.com/han-keong/binary_tree
 
@@ -369,7 +369,7 @@ To install binary_tree, run this in your terminal::
  Credits
 =========
 
-binary_tree was written by Han Keong <hk997@live.com>.
+:mod:`binary_tree` was written by Han Keong <hk997@live.com>.
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
