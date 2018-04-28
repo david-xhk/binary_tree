@@ -19,7 +19,7 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
     from binary_tree import Node, node, tree
 
-You may also import all functions available by doing::
+You may also import all available functions by doing::
 
     from binary_tree import *
 
@@ -66,7 +66,7 @@ Setting Node attributes
 ^^^^^^^^^^^^^^^^^^^^^^^
 Attributes that are reciprocative are set automatically.
 
-For example, when you set a child node, its parent is also set behind the scenes.
+For example, when you set the :attr:`~binary_tree.Node.left` or :attr:`~binary_tree.Node.right` attribute of a :class:`~binary_tree.Node` instance, the child's :attr:`~binary_tree.Node.parent` attribute is also set behind the scenes.
 
 >>> left_node.parent is parent_node
 True
@@ -77,7 +77,7 @@ True
 >>> right_node.parent is parent_node
 True
 
-Likewise, setting a neighbour node will affect the corresponding neighbour node.
+Likewise, setting the :attr:`~binary_tree.Node.prev` or :attr:`~binary_tree.Node.next` attribute of a :class:`~binary_tree.Node` instance will affect the other corresponding neighbour attribute.
 
 >>> right_node.prev = left_node
 >>>
