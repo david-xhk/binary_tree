@@ -6,7 +6,7 @@ from .node import Node, is_node, is_leaf
 import functools
 
 def connect_nodes(root):
-    """Connect the nodes in each level down the tree.
+    """Connect the instances of :class:`~binary_tree.Node` in each level of the tree.
     
     Args:
         root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
@@ -20,16 +20,14 @@ def connect_nodes(root):
 def from_string(tree_string, cls=Node):
     """Generate a binary tree from a string.
 
-    Instantiates the left child, and then the right child for every node 
-    in each level (level-order).
+    Initializes the root :class:`~binary_tree.Node` instance (the first level), then the left child and then the right child for every parent :class:`~binary_tree.Node` instance in each level (level-order).
     
     Args:
         tree_string (str): A level-order binary tree traversal, separated by commas.
         cls (type): The class constructor for the tree. Defaults to :class:`~binary_tree.Node`.
     
     Returns:
-        A newly instantiated :class:`~binary_tree.Node` representing `tree_string`.
-        If `tree_string` has no root value, returns ``None``.
+        A newly initialized :class:`~binary_tree.Node` instance representing `tree_string`. If `tree_string` has no root value, returns ``None``.
 
     Note:
         Empty spaces can be represented by an immediate comma or ``"null"`` for explicitness.
@@ -76,8 +74,7 @@ def from_string(tree_string, cls=Node):
 def from_orders(kind, in_order, other_order, cls=Node):
     """Generate a binary tree from in-order and pre/post-order traversal.
 
-    Recursively instantiates the parent, its left child, and then its 
-    right child (pre-order).
+    Recursively initializes the :class:`~binary_tree.Node` instance for the parent, its left child, then its right child (pre-order).
     
     Args:
         kind (str): Either "in-pre" or "in-post".
@@ -87,10 +84,10 @@ def from_orders(kind, in_order, other_order, cls=Node):
         cls (type): The class constructor for the tree. Defaults to :class:`~binary_tree.Node`.
 
     Returns:
-        A newly instantiated :class:`~binary_tree.Node` entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
+        A newly initialized :class:`~binary_tree.Node` instance entailing `in_order` and `other_order`. If either arguments are empty, returns ``None``.
 
     Raises:
-        ValueError: If `in_order` and `other_order` do not correspond to a tree structure or contain duplicates.
+        ValueError: If `in_order` and `other_order` do not correspond to a binary tree structure or contain duplicates.
         KeyError: If `kind` is not one of the accepted keys.
 
     Note:
@@ -158,7 +155,7 @@ def to_string(root):
 def traverse_pre_order(root):
     """Traverse a binary tree in pre-order.
 
-    Visit the parent, the left child, and then the right child.
+    Visit the parent, the left child, and then the right child :class:`~binary_tree.Node` instance.
     
     Args:
         root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
@@ -179,7 +176,7 @@ def traverse_pre_order(root):
 def traverse_in_order(root):
     """Traverse a binary tree in in-order.
 
-    Visit the left child, the parent, and then the right child.
+    Visit the left child, the parent, and then the right child :class:`~binary_tree.Node` instance.
     
     Args:
         root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
@@ -204,7 +201,7 @@ def traverse_in_order(root):
 def traverse_post_order(root):
     """Traverse a binary tree in post-order.
 
-    Visit the left child, the right child, and then the parent.
+    Visit the left child, the right child, and then the parent :class:`~binary_tree.Node` instance.
     
     Args:
         root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
@@ -231,7 +228,7 @@ def traverse_post_order(root):
 def traverse_level_order(root):
     """Traverse a binary tree in level-order.
 
-    Visit the left child, and then the right child for each parent in each level.
+    In each level, visit the left child and then the right child for each parent :class:`~binary_tree.Node` instance.
     
     Args:
         root: The :class:`~binary_tree.Node` instance that is the root of a binary tree.
