@@ -13,8 +13,8 @@ Example:
       pre_order = list(traverse(node, "pre"))
       node2 = from_orders("in-pre", in_order, pre_order)
 
->>> repr(node) == repr(node2)
-True
+    >>> repr(node) == repr(node2)
+    True
 """
 
 __author__ = 'Han Keong'
