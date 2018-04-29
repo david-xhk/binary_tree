@@ -11,9 +11,9 @@
 .. contents:: 
     :local:
 
------------------------
- Importing binary_tree
------------------------
+--------------------
+ Import binary_tree
+--------------------
 
 The conventional way of importing from :mod:`binary_tree` is to do::
 
@@ -23,9 +23,9 @@ You may also import everything by doing::
 
     from binary_tree import *
 
----------------
- Making a Node
----------------
+------------------
+ Construct a node
+------------------
 
 Node attributes
 ^^^^^^^^^^^^^^^
@@ -84,9 +84,9 @@ Likewise, setting the :attr:`~binary_tree.Node.prev` or :attr:`~binary_tree.Node
 >>> left_node.next is right_node
 True
 
------------------
- Checking a Node
------------------
+--------------
+ Check a node
+--------------
 
 The following :mod:`~binary_tree.node` functions can be used to check if a :class:`~binary_tree.Node` has certain properties.
 
@@ -154,9 +154,9 @@ If you would like to test if two instances of :class:`~binary_tree.Node` have th
 >>> repr(parent_node) == repr(parent_node2)
 True
 
-------------------------
- Setting up a Node tree 
-------------------------
+----------------------
+ Set up a binary tree 
+----------------------
 
 The :mod:`~binary_tree.tree` module contains all the relevant functions for binary tree structures.
 
@@ -221,7 +221,7 @@ Just as a binary tree structure can be constructed from string, it can be decons
 "1,2,3,4,,5"
 
 ------------------------
- Traversing a Node tree
+ Traverse a binary tree
 ------------------------
 
 With a binary tree structure set up, there are several :mod:`~binary_tree.tree` functions you can use to traverse it.
@@ -289,7 +289,7 @@ You can also :meth:`iterate <binary_tree.Node.__iter__>` over an instance of :cl
     Iteration over a :class:`~binary_tree.Node` instance goes by level-order traversal. 
 
 -----------------------
- Analyzing a Node tree
+ Analyze a binary tree
 -----------------------
 
 The following :mod:`~binary_tree.tree` functions are available to find certain properties of a binary tree structure.
