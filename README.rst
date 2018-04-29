@@ -4,16 +4,13 @@
 
 :mod:`binary_tree` provides a :class:`~binary_tree.Node` object, :mod:`~binary_tree.node` functions, and :mod:`~binary_tree.tree` functions for a binary tree data structure.
 
-==========
- Features
-==========
+==============
+ Installation
+==============
 
-.. contents:: 
-    :local:
+To install :mod:`binary_tree`, run this in your terminal::
 
---------------------
- Import binary_tree
---------------------
+    $ pip install git+git://github.com/han-keong/binary_tree
 
 The conventional way of importing from :mod:`binary_tree` is to do::
 
@@ -22,6 +19,13 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 You may also import everything by doing::
 
     from binary_tree import *
+
+==========
+ Features
+==========
+
+.. contents:: 
+    :local:
 
 ------------------
  Construct a node
@@ -356,14 +360,6 @@ Node(1)
 
 .. note::
     It is possible to pass the value of the :class:`~binary_tree.Node` instance you wish to refer to because of :ref:`the way equality is tested for <Equality tests>`. However, the value *must be unique* within the binary tree structure.
-
-==============
- Installation
-==============
-
-To install :mod:`binary_tree`, run this in your terminal::
-
-    $ pip install git+git://github.com/han-keong/binary_tree
 
 =========
  Credits
