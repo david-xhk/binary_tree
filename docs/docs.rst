@@ -30,39 +30,39 @@
 
 Setting up a Node tree 
 ----------------------
-.. automethod:: binary_tree.tree.from_string
+.. autofunction:: binary_tree.tree.from_string
 
-.. automethod:: binary_tree.tree.from_orders
+.. autofunction:: binary_tree.tree.from_orders
 
-.. automethod:: binary_tree.tree.connect_nodes
+.. autofunction:: binary_tree.tree.connect_nodes
 
-.. automethod:: binary_tree.tree.to_string
+.. autofunction:: binary_tree.tree.to_string
 
 Traversing a Node tree 
 ----------------------
-.. automethod:: binary_tree.tree.traverse_pre_order
+.. autofunction:: binary_tree.tree.traverse_pre_order
 
-.. automethod:: binary_tree.tree.traverse_in_order
+.. autofunction:: binary_tree.tree.traverse_in_order
 
-.. automethod:: binary_tree.tree.traverse_post_order
+.. autofunction:: binary_tree.tree.traverse_post_order
 
-.. automethod:: binary_tree.tree.traverse_level_order
+.. autofunction:: binary_tree.tree.traverse_level_order
 
-.. automethod:: binary_tree.tree.traverse
+.. autofunction:: binary_tree.tree.traverse
 
 Analyzing a Node tree
 ---------------------
-.. automethod:: binary_tree.tree.is_symmetrical
+.. autofunction:: binary_tree.tree.is_symmetrical
 
-.. automethod:: binary_tree.tree.max_depth
+.. autofunction:: binary_tree.tree.max_depth
 
-.. automethod:: binary_tree.tree.get_path
+.. autofunction:: binary_tree.tree.get_path
 
-.. automethod:: binary_tree.tree.all_paths
+.. autofunction:: binary_tree.tree.all_paths
 
-.. automethod:: binary_tree.tree.has_sum
+.. autofunction:: binary_tree.tree.has_sum
 
-.. automethod:: binary_tree.tree.find_path
+.. autofunction:: binary_tree.tree.find_path
 
-.. automethod:: binary_tree.tree.get_lca
+.. autofunction:: binary_tree.tree.get_lca
 
