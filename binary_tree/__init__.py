@@ -2,15 +2,16 @@
 
 """This module provides a Node class, node functions, and tree functions for a binary tree data structure.
 
-For example::
+Example:
+    ::
 
-    from binary_tree import from_string, from_orders, traverse
+      from binary_tree import from_string, from_orders, traverse
 
-    node = from_string("1,2,,3,4,,5")
-    
-    in_order = list(traverse(node, "in"))
-    pre_order = list(traverse(node, "pre"))
-    node2 = from_orders("in-pre", in_order, pre_order)
+      node = from_string("1,2,,3,4,,5")
+      
+      in_order = list(traverse(node, "in"))
+      pre_order = list(traverse(node, "pre"))
+      node2 = from_orders("in-pre", in_order, pre_order)
 
 >>> repr(node) == repr(node2)
 True
