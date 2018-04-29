@@ -27,6 +27,42 @@
 ======
 
 .. automodule:: binary_tree.tree
-    :members:
-    :member-order: bysource
+
+Setting up a Node tree 
+----------------------
+.. automethod:: binary_tree.tree.from_string
+
+.. automethod:: binary_tree.tree.from_orders
+
+.. automethod:: binary_tree.tree.connect_nodes
+
+.. automethod:: binary_tree.tree.to_string
+
+Traversing a Node tree 
+----------------------
+.. automethod:: binary_tree.tree.traverse_pre_order
+
+.. automethod:: binary_tree.tree.traverse_in_order
+
+.. automethod:: binary_tree.tree.traverse_post_order
+
+.. automethod:: binary_tree.tree.traverse_level_order
+
+.. automethod:: binary_tree.tree.traverse
+
+Analyzing a Node tree
+---------------------
+.. automethod:: binary_tree.tree.is_symmetrical
+
+.. automethod:: binary_tree.tree.max_depth
+
+.. automethod:: binary_tree.tree.get_path
+
+.. automethod:: binary_tree.tree.all_paths
+
+.. automethod:: binary_tree.tree.has_sum
+
+.. automethod:: binary_tree.tree.find_path
+
+.. automethod:: binary_tree.tree.get_lca
 

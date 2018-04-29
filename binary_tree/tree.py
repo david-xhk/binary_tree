@@ -383,10 +383,10 @@ def get_lca(root, *nodes):
     lca_index = None
     for node in nodes:
         path = find_path(root, node)
+        paths.append(path)
         max_index = len(path) - 1
         if lca_index is None or max_index < lca_index:
             lca_index = max_index
-        paths.append(path)
     ref_path = paths.pop()
     for path in paths:
         while path[lca_index] is not ref_path[lca_index]:
