@@ -19,7 +19,7 @@ The conventional way of importing from :mod:`binary_tree` is to do::
 
     from binary_tree import Node, node, tree
 
-You may also import all available functions by doing::
+You may also import everything by doing::
 
     from binary_tree import *
 

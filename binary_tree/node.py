@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""This module contains the interface for the Node class."""
+"""This module contains functions for the Node class."""
 
 class Node(object):
     """The basic unit of a binary tree structure.
