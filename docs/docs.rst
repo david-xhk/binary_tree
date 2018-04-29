@@ -52,8 +52,8 @@ Checking for a Node instance in a binary tree structure
 
 .. automodule:: binary_tree.tree
 
-Setting up a Node instance with a binary tree structure 
--------------------------------------------------------
+Constructing a Node instance with a binary tree structure 
+---------------------------------------------------------
 .. autofunction:: binary_tree.tree.from_string
 
 .. autofunction:: binary_tree.tree.from_orders
