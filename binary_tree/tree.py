@@ -320,6 +320,8 @@ def get_path(node):
 
 def all_paths(root):
     """Find every leaf path in `root`.
+
+    Searches for leaf nodes in `root` using post-order traversal. 
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
@@ -362,6 +364,9 @@ def find_path(root, node):
 
     Returns:
         A list of every :class:`~binary_tree.Node` instance from `root` to (the :class:`~binary_tree.Node` instance of) `node`, or ``None`` if `node` is absent in `root`.
+
+    Note:
+        If `node` is a value, it must be unique within the binary tree structure of `root`.
     """
     for root_node in traverse_post_order(root):
         if node == root_node:
@@ -376,6 +381,9 @@ def get_lca(root, *nodes):
 
     Returns:
         The :class:`~binary_tree.Node` instance that is the lowest common ancestor of (the :class:`~binary_tree.Node` instances of) `nodes` in `root`, or ``None`` if there is no common ancestor.
+
+    Note:
+        Values in `nodes` must be unique within the binary tree structure of `root`.
     """
     if len(nodes) < 2:
         return None
