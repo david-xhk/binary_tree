@@ -321,7 +321,7 @@ def get_path(node):
 def all_paths(root):
     """Find every leaf path in `root`.
 
-    Searches for leaf nodes in `root` using post-order traversal. 
+    Search for leaf nodes in `root` using post-order traversal. 
     
     Args:
         root: A root :class:`~binary_tree.Node` instance.
