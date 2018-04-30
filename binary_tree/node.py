@@ -55,10 +55,10 @@ class Node(object):
         return self.value != getattr(other, "value", other)
 
     def __iter__(self):
-        """Traverse the tree structure of ``self`` in level-order.
+        """Traverse the binary tree structure of ``self`` in level-order.
 
         Yields:
-            A :class:`~binary_tree.Node` in the tree structure of ``self``.
+            A :class:`~binary_tree.Node` in the binary tree structure of ``self``.
         """
         level = [self]
         while level:
